@@ -65,32 +65,32 @@ namespace DAL.Vulcan.Mongo.Core.Helpers
             //return GetUniqueCompaniesForTeam(team.CompanyGroups, team.Companies);
         }
 
-        private List<CompanyRef> GetUniqueCompaniesForTeam(List<CompanyGroupRef> companyGroups, List<CompanyRef> companyRefs)
-        {
-            var result = new List<CompanyRef>();
-
-            foreach (var companyGroupRef in companyGroups)
-            {
-                var companyGroup = companyGroupRef.AsCompanyGroup();
-                var companies = companyGroup.GetAllCompanies();
-                foreach (var companyRef in companies)
-                {
-                    if (result.All(x => x.Id != companyRef.Id))
-                    {
-                        result.Add(companyRef);
-                    }
-                }
-            }
-            foreach (var companyRef in companyRefs)
-            {
-                if (result.All(x => x.Id != companyRef.Id))
-                {
-                    result.Add(companyRef);
-                }
-            }
-
-            return result;
-        }
+        // private List<CompanyRef> GetUniqueCompaniesForTeam(List<CompanyGroupRef> companyGroups, List<CompanyRef> companyRefs)
+        // {
+        //     var result = new List<CompanyRef>();
+        //
+        //     foreach (var companyGroupRef in companyGroups)
+        //     {
+        //         var companyGroup = companyGroupRef.AsCompanyGroup();
+        //         var companies = companyGroup.GetAllCompanies();
+        //         foreach (var companyRef in companies)
+        //         {
+        //             if (result.All(x => x.Id != companyRef.Id))
+        //             {
+        //                 result.Add(companyRef);
+        //             }
+        //         }
+        //     }
+        //     foreach (var companyRef in companyRefs)
+        //     {
+        //         if (result.All(x => x.Id != companyRef.Id))
+        //         {
+        //             result.Add(companyRef);
+        //         }
+        //     }
+        //
+        //     return result;
+        // }
 
         public (CompanyRef CompanyRef, Address PrimaryAddress, List<Address> OtherAddresses) GetAllCompanyInfoFromIMetal(string coid, string companyId)
         {
