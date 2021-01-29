@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="Topshelf" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BI.DAL.DataWarehouse.Core\BI.DAL.DataWarehouse.Core.csproj" />
+    <ProjectReference Include="..\BI.DAL.Mongo\BI.DAL.Mongo.csproj" />
+    <ProjectReference Include="..\DAL.Common\DAL.Common.csproj" />
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Base\DAL.Vulcan.Mongo.Base.csproj" />
+  </ItemGroup>
+
+</Project>

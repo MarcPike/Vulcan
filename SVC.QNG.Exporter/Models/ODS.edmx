@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ODSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Vulcan_CrmQuote">
+          <Key>
+            <PropertyRef Name="QuoteId" />
+          </Key>
+          <Property Name="QuoteId" Type="int" Nullable="false" />
+          <Property Name="ObjectId" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Coid" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="CompanyCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="ProspectName" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="RevisionNumber" Type="int" Nullable="false" />
+          <Property Name="TeamName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="IsProspect" Type="bit" Nullable="false" />
+          <Property Name="QuoteStatus" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ExportIMetalStatus" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="ExportRequestedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SalesOrderId" Type="int" Nullable="false" />
+          <Property Name="CustomerNotes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SalesPersonNotes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SalesPerson" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsLost" Type="bit" Nullable="false" />
+          <Property Name="LostReason" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="PaymentTerms" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FreightTerms" Type="nvarchar" MaxLength="4000" Nullable="false" />
+          <Property Name="ValidityDays" Type="int" Nullable="false" />
+          <Property Name="RfqNumber" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SalesGroupCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SubmitDateTimeUTC" Type="datetime" Nullable="false" />
+          <Property Name="WonDateTimeUTC" Type="datetime" Nullable="false" />
+          <Property Name="ReportDateTimeUTC" Type="datetime" />
+          <Property Name="CreateDateTimeUTC" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDateTimeUTC" Type="datetime" Nullable="false" />
+          <Property Name="ImportDateTimeUTC" Type="datetime" Nullable="false" />
+          <Property Name="LostDateTimeUTC" Type="datetime" />
+          <Property Name="ExpiredDateTimeUTC" Type="datetime" />
+          <Property Name="QuoteLinkId" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="QuoteLinkType" Type="nvarchar" MaxLength="1" />
+          <Property Name="Bid" Type="bit" Nullable="false" />
+          <Property Name="OrderClassificationCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderClassificationDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactFirstName" Type="nvarchar" MaxLength="30" />
+          <Property Name="ContactLastName" Type="nvarchar" MaxLength="30" />
+          <Property Name="ContactMiddleName" Type="nvarchar" MaxLength="30" />
+          <Property Name="ContactEmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPhoneNumber" Type="nvarchar" MaxLength="30" />
+          <Property Name="LostComments" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Vulcan_CrmQuoteItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuoteId" Type="int" Nullable="false" />
+          <Property Name="QuoteItemId" Type="int" Nullable="false" />
+          <Property Name="StartingProductCoid" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="StartingProductId" Type="int" Nullable="false" />
+          <Property Name="StartingOuterDiameter" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="StartingInsideDiameter" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="StartingProductCode" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="StartingProductType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StartingStockGrade" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StartingMetalCategory" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="StartingProductCondition" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="TagNumber" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="FinishProductCoid" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="FinishProductId" Type="int" Nullable="false" />
+          <Property Name="FinishOuterDiameter" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="FinishInsideDiameter" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="FinishProductCode" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="FinishProductType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FinishStockGrade" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FinishMetalCategory" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FinishProductCondition" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="CostPerInch" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="CostPerPound" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="CostPerKg" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="CostPerPiece" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="Pieces" Type="int" Nullable="false" />
+          <Property Name="TotalPounds" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalKilograms" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="KerfInchesPerCut" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="ExchangeRate" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalFeet" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalInches" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="IsCostMadeup" Type="bit" Nullable="false" />
+          <Property Name="TheoWeight" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="KerfTotalCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="KerfTotalPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalCutCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="ProductionCostTotal" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="ProductionPriceTotal" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="MaterialTotalPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="MaterialTotalPriceOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerPound" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerPoundOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerInch" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerInchOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerKilogram" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerKilogramOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerFoot" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerFootOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="Currency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="TestPieceInches" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TestPiecesTotalPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="Margin" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="MarginOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="OemType" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="PartSpecification" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="PartNumber" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PoNumber" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="LeadTime" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CustomerNotes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SalesPersonNotes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LostReason" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="LostProductCode" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="IsLost" Type="bit" Nullable="false" />
+          <Property Name="QuoteSource" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="IsQuickQuoteItem" Type="bit" Nullable="false" />
+          <Property Name="QuickQuoteItemLabel" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="QuickQuoteItemCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="QuickQuoteItemPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="QuickQuoteItemFinishedProductCode" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="QuickQuoteItemPieces" Type="int" Nullable="false" />
+          <Property Name="QuickQuoteItemQuantity" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="QuickQuoteItemQuantityType" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="QuickQuoteItemRegret" Type="bit" Nullable="false" />
+          <Property Name="RequestedProductCode" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="CutCostPerPiece" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="CutCostPerPieceOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="FinalPriceOverrideType" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="FinalPriceOverrideValue" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="DisplayCurrency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="StartingPounds" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="FinishPounds" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="StartingKilograms" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="FinishKilograms" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="FinalPrice" Type="numeric" Precision="12" Scale="4" />
+          <Property Name="FinalMargin" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="PricePerEach" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="MaterialOnlyCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="CreateDateTimeUTC" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDateTimeUTC" Type="datetime" Nullable="false" />
+          <Property Name="ImportDateTimeUTC" Type="datetime" />
+          <Property Name="LostDateTimeUTC" Type="datetime" />
+          <Property Name="StartingProductSize" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FinishProductSize" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="StartingProductCategory" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FinishedProductCategory" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="HeatNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="BaseCurrency" Type="nvarchar" MaxLength="3" />
+          <Property Name="BaseCostPerInch" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseCostPerKg" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseCostPerPiece" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseCostPerPound" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseCutCostPerPiece" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseCutCostPerPieceOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseFinalMargin" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseFinalPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseFinalPriceOverrideValue" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseMaterialOnlyCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseMaterialTotalPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseMaterialTotalPriceOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerEach" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerFoot" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerFootOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerInch" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerInchOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerKilogram" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerKilogramOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerPound" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BasePricePerPoundOverride" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseProductionCostTotal" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseProductionPriceTotal" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseTotalCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseTotalCutCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseKerfTotalCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseKerfTotalPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseTestPiecesTotalPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseQuickQuoteItemCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseQuickQuoteItemPrice" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="LostComments" Type="nvarchar" MaxLength="500" />
+          <Property Name="StartingStratificationRank" Type="nvarchar" MaxLength="3" />
+          <Property Name="FinishedStratificationRank" Type="nvarchar" MaxLength="3" />
+          <Property Name="CalcItemRegret" Type="bit" />
+          <Property Name="CalcItemBaseUnitCost" Type="numeric" Precision="12" Scale="4" />
+          <Property Name="CalcItemBaseUnitPrice" Type="numeric" Precision="12" Scale="4" />
+          <Property Name="CalcItemUnitCost" Type="numeric" Precision="12" Scale="4" />
+          <Property Name="CalcItemUnitPrice" Type="numeric" Precision="12" Scale="4" />
+          <Property Name="CalcItemTotalCost" Type="numeric" Precision="12" Scale="4" />
+          <Property Name="CalcItemTotalPrice" Type="numeric" Precision="12" Scale="4" />
+          <Property Name="CalcItemPieces" Type="int" />
+          <Property Name="CalcItemQuantity" Type="decimal" Precision="12" Scale="4" />
+          <Property Name="CalcItemQuantityUOM" Type="nvarchar" MaxLength="12" />
+          <Property Name="CalcItemStartingProductLabel" Type="nvarchar" MaxLength="250" />
+          <Property Name="CalcItemFinishedProductLabel" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Vulcan_CrmQuoteItem_ProductionCost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QIId" Type="int" Nullable="false" />
+          <Property Name="QuoteId" Type="int" Nullable="false" />
+          <Property Name="QuoteItemId" Type="int" Nullable="false" />
+          <Property Name="Coid" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="LocationName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ResourceType" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="PerType" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="TypeName" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="InternalCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="ProductionCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="MinimumCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalPounds" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalInches" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalPieces" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalInternalCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="TotalProductionCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="ImportDateTimeUTC" Type="datetime" />
+          <Property Name="BaseCurrency" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="BaseInternalCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseMinimumCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseProductionCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseTotalInternalCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="BaseTotalProductionCost" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vulcan_CrmQuoteItem_TestPieces">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QIId" Type="int" Nullable="false" />
+          <Property Name="QuoteId" Type="int" Nullable="false" />
+          <Property Name="QuoteItemId" Type="int" Nullable="false" />
+          <Property Name="Coid" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="TestName" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="StartingProductCode" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Pieces" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="numeric" Precision="12" Scale="4" Nullable="false" />
+          <Property Name="QuantityType" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="ImportDateTimeUTC" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem">
+          <End Role="Vulcan_CrmQuoteItem" Type="Self.Vulcan_CrmQuoteItem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vulcan_CrmQuoteItem_TestPieces" Type="Self.Vulcan_CrmQuoteItem_TestPieces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vulcan_CrmQuoteItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vulcan_CrmQuoteItem_TestPieces">
+              <PropertyRef Name="QIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ODSModelStoreContainer">
+          <EntitySet Name="Vulcan_CrmQuote" EntityType="Self.Vulcan_CrmQuote" Schema="dbo" Table="Vulcan.CrmQuote" store:Type="Tables" />
+          <EntitySet Name="Vulcan_CrmQuoteItem" EntityType="Self.Vulcan_CrmQuoteItem" Schema="dbo" Table="Vulcan.CrmQuoteItem" store:Type="Tables" />
+          <EntitySet Name="Vulcan_CrmQuoteItem_ProductionCost" EntityType="Self.Vulcan_CrmQuoteItem_ProductionCost" Schema="dbo" Table="Vulcan.CrmQuoteItem.ProductionCost" store:Type="Tables" />
+          <EntitySet Name="Vulcan_CrmQuoteItem_TestPieces" EntityType="Self.Vulcan_CrmQuoteItem_TestPieces" Schema="dbo" Table="Vulcan.CrmQuoteItem.TestPieces" store:Type="Tables" />
+          <AssociationSet Name="FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem" Association="Self.FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem">
+            <End Role="Vulcan_CrmQuoteItem" EntitySet="Vulcan_CrmQuoteItem" />
+            <End Role="Vulcan_CrmQuoteItem_TestPieces" EntitySet="Vulcan_CrmQuoteItem_TestPieces" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ODSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ODSContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Vulcan_CrmQuoteItem" EntityType="ODSModel.Vulcan_CrmQuoteItem" />
+          <EntitySet Name="Vulcan_CrmQuoteItem_ProductionCost" EntityType="ODSModel.Vulcan_CrmQuoteItem_ProductionCost" />
+          <EntitySet Name="Vulcan_CrmQuoteItem_TestPieces" EntityType="ODSModel.Vulcan_CrmQuoteItem_TestPieces" />
+          <AssociationSet Name="FK_Vulcan_CrmQuoteItem_ProductionCost_Vulcan_CrmQuoteItem_ProductionCost" Association="ODSModel.FK_Vulcan_CrmQuoteItem_ProductionCost_Vulcan_CrmQuoteItem_ProductionCost">
+            <End Role="Vulcan_CrmQuoteItem" EntitySet="Vulcan_CrmQuoteItem" />
+            <End Role="Vulcan_CrmQuoteItem_ProductionCost" EntitySet="Vulcan_CrmQuoteItem_ProductionCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem" Association="ODSModel.FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem">
+            <End Role="Vulcan_CrmQuoteItem" EntitySet="Vulcan_CrmQuoteItem" />
+            <End Role="Vulcan_CrmQuoteItem_TestPieces" EntitySet="Vulcan_CrmQuoteItem_TestPieces" />
+          </AssociationSet>
+          <EntitySet Name="Vulcan_CrmQuote" EntityType="ODSModel.Vulcan_CrmQuote" />
+          <AssociationSet Name="FK_Vulcan_CrmQuoteItem_Vulcan_CrmQuote" Association="ODSModel.FK_Vulcan_CrmQuoteItem_Vulcan_CrmQuote">
+            <End Role="Vulcan_CrmQuote" EntitySet="Vulcan_CrmQuote" />
+            <End Role="Vulcan_CrmQuoteItem" EntitySet="Vulcan_CrmQuoteItem" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Vulcan_CrmQuoteItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuoteId" Type="Int32" Nullable="false" />
+          <Property Name="QuoteItemId" Type="Int32" Nullable="false" />
+          <Property Name="StartingProductCoid" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="StartingProductId" Type="Int32" Nullable="false" />
+          <Property Name="StartingOuterDiameter" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="StartingInsideDiameter" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="StartingProductCode" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="StartingProductType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartingStockGrade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartingMetalCategory" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="StartingProductCondition" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="TagNumber" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="FinishProductCoid" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="FinishProductId" Type="Int32" Nullable="false" />
+          <Property Name="FinishOuterDiameter" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="FinishInsideDiameter" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="FinishProductCode" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="FinishProductType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FinishStockGrade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FinishMetalCategory" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FinishProductCondition" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CostPerInch" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="CostPerPound" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="CostPerKg" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="CostPerPiece" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="Pieces" Type="Int32" Nullable="false" />
+          <Property Name="TotalPounds" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalKilograms" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="ExchangeRate" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalFeet" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalInches" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="IsCostMadeup" Type="Boolean" Nullable="false" />
+          <Property Name="TheoWeight" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="KerfTotalCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="KerfTotalPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalCutCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="ProductionCostTotal" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="ProductionPriceTotal" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="MaterialTotalPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="MaterialTotalPriceOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerPound" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerPoundOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerInch" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerInchOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerKilogram" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerKilogramOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerFoot" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerFootOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="Currency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="TestPieceInches" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TestPiecesTotalPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="Margin" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="MarginOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="OemType" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="PartSpecification" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PartNumber" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PoNumber" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="LeadTime" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerNotes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SalesPersonNotes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LostReason" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="LostProductCode" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="IsLost" Type="Boolean" Nullable="false" />
+          <Property Name="QuoteSource" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IsQuickQuoteItem" Type="Boolean" Nullable="false" />
+          <Property Name="QuickQuoteItemLabel" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="QuickQuoteItemCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="QuickQuoteItemPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="QuickQuoteItemFinishedProductCode" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="QuickQuoteItemPieces" Type="Int32" Nullable="false" />
+          <Property Name="QuickQuoteItemQuantity" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="QuickQuoteItemQuantityType" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="QuickQuoteItemRegret" Type="Boolean" Nullable="false" />
+          <Property Name="RequestedProductCode" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CutCostPerPiece" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="CutCostPerPieceOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="FinalPriceOverrideType" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="FinalPriceOverrideValue" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="DisplayCurrency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="StartingPounds" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="FinishPounds" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="StartingKilograms" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="FinishKilograms" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="FinalPrice" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="FinalMargin" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="PricePerEach" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="MaterialOnlyCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <NavigationProperty Name="Vulcan_CrmQuoteItem_ProductionCost" Relationship="ODSModel.FK_Vulcan_CrmQuoteItem_ProductionCost_Vulcan_CrmQuoteItem_ProductionCost" FromRole="Vulcan_CrmQuoteItem" ToRole="Vulcan_CrmQuoteItem_ProductionCost" />
+          <NavigationProperty Name="Vulcan_CrmQuoteItem_TestPieces" Relationship="ODSModel.FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem" FromRole="Vulcan_CrmQuoteItem" ToRole="Vulcan_CrmQuoteItem_TestPieces" />
+          <NavigationProperty Name="Vulcan_CrmQuote" Relationship="ODSModel.FK_Vulcan_CrmQuoteItem_Vulcan_CrmQuote" FromRole="Vulcan_CrmQuoteItem" ToRole="Vulcan_CrmQuote" />
+          <Property Name="CreateDateTimeUTC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDateTimeUTC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ImportDateTimeUTC" Type="DateTime" Precision="3" />
+          <Property Name="LostDateTimeUTC" Type="DateTime" Precision="3" />
+          <Property Name="StartingProductSize" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" DefaultValue="&quot;&quot;" />
+          <Property Name="FinishProductSize" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" DefaultValue="&quot;&quot;" />
+          <Property Name="StartingProductCategory" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" DefaultValue="&quot;&quot;" />
+          <Property Name="FinishedProductCategory" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" DefaultValue="&quot;&quot;" />
+          <Property Name="HeatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BaseCurrency" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="KerfInchesPerCut" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseCostPerKg" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseCostPerPiece" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseCostPerPound" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseCutCostPerPiece" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseCutCostPerPieceOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseFinalMargin" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseFinalPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseFinalPriceOverrideValue" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseMaterialOnlyCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseMaterialTotalPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseMaterialTotalPriceOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerEach" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerFoot" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerFootOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerInch" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerInchOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerKilogram" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerKilogramOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerPound" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BasePricePerPoundOverride" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseProductionCostTotal" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseProductionPriceTotal" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseTotalCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseTotalCutCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseCostPerInch" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseKerfTotalCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseKerfTotalPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseTestPiecesTotalPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseQuickQuoteItemCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseQuickQuoteItemPrice" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="LostComments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StartingStratificationRank" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="FinishedStratificationRank" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="CalcItemRegret" Type="Boolean" />
+          <Property Name="CalcItemBaseUnitCost" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CalcItemBaseUnitPrice" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CalcItemUnitCost" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CalcItemUnitPrice" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CalcItemTotalCost" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CalcItemTotalPrice" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CalcItemPieces" Type="Int32" />
+          <Property Name="CalcItemQuantity" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="CalcItemQuantityUOM" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="CalcItemStartingProductLabel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CalcItemFinishedProductLabel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          </EntityType>
+        <EntityType Name="Vulcan_CrmQuoteItem_ProductionCost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QIId" Type="Int32" Nullable="false" />
+          <Property Name="QuoteId" Type="Int32" Nullable="false" />
+          <Property Name="QuoteItemId" Type="Int32" Nullable="false" />
+          <Property Name="Coid" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="LocationName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceType" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="PerType" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="InternalCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="ProductionCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="MinimumCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalPounds" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalInches" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalPieces" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalInternalCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="TotalProductionCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <NavigationProperty Name="Vulcan_CrmQuoteItem" Relationship="ODSModel.FK_Vulcan_CrmQuoteItem_ProductionCost_Vulcan_CrmQuoteItem_ProductionCost" FromRole="Vulcan_CrmQuoteItem_ProductionCost" ToRole="Vulcan_CrmQuoteItem" />
+          <Property Name="ImportDateTimeUTC" Type="DateTime" Precision="3" />
+          <Property Name="BaseCurrency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="BaseInternalCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseMinimumCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseProductionCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseTotalInternalCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="BaseTotalProductionCost" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+        </EntityType>
+        <EntityType Name="Vulcan_CrmQuoteItem_TestPieces">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QIId" Type="Int32" Nullable="false" />
+          <Property Name="QuoteId" Type="Int32" Nullable="false" />
+          <Property Name="QuoteItemId" Type="Int32" Nullable="false" />
+          <Property Name="Coid" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="TestName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="StartingProductCode" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Pieces" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="QuantityType" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vulcan_CrmQuoteItem" Relationship="ODSModel.FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem" FromRole="Vulcan_CrmQuoteItem_TestPieces" ToRole="Vulcan_CrmQuoteItem" />
+          <Property Name="ImportDateTimeUTC" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Vulcan_CrmQuoteItem_ProductionCost_Vulcan_CrmQuoteItem_ProductionCost">
+          <End Type="ODSModel.Vulcan_CrmQuoteItem" Role="Vulcan_CrmQuoteItem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ODSModel.Vulcan_CrmQuoteItem_ProductionCost" Role="Vulcan_CrmQuoteItem_ProductionCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vulcan_CrmQuoteItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vulcan_CrmQuoteItem_ProductionCost">
+              <PropertyRef Name="QIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem">
+          <End Type="ODSModel.Vulcan_CrmQuoteItem" Role="Vulcan_CrmQuoteItem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ODSModel.Vulcan_CrmQuoteItem_TestPieces" Role="Vulcan_CrmQuoteItem_TestPieces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vulcan_CrmQuoteItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vulcan_CrmQuoteItem_TestPieces">
+              <PropertyRef Name="QIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Vulcan_CrmQuote">
+          <Key>
+            <PropertyRef Name="QuoteId" />
+          </Key>
+          <Property Name="QuoteId" Type="Int32" Nullable="false" />
+          <Property Name="ObjectId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Coid" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="ProspectName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="RevisionNumber" Type="Int32" Nullable="false" />
+          <Property Name="TeamName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IsProspect" Type="Boolean" Nullable="false" />
+          <Property Name="QuoteStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ExportIMetalStatus" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerNotes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SalesPersonNotes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SalesPerson" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsLost" Type="Boolean" Nullable="false" />
+          <Property Name="LostReason" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentTerms" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FreightTerms" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ValidityDays" Type="Int32" Nullable="false" />
+          <Property Name="RfqNumber" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vulcan_CrmQuoteItem" Relationship="ODSModel.FK_Vulcan_CrmQuoteItem_Vulcan_CrmQuote" FromRole="Vulcan_CrmQuote" ToRole="Vulcan_CrmQuoteItem" />
+          <Property Name="SubmitDateTimeUTC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="WonDateTimeUTC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateDateTimeUTC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDateTimeUTC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ImportDateTimeUTC" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="ReportDateTimeUTC" Type="DateTime" Precision="3" />
+          <Property Name="LostDateTimeUTC" Type="DateTime" Precision="3" />
+          <Property Name="ExpiredDateTimeUTC" Type="DateTime" Precision="3" />
+          <Property Name="QuoteLinkId" Type="String" Nullable="false" MaxLength="38" FixedLength="false" Unicode="false" />
+          <Property Name="QuoteLinkType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SalesGroupCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Bid" Type="Boolean" Nullable="false" />
+          <Property Name="ExportRequestedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderClassificationCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" DefaultValue="&quot;&quot;" />
+          <Property Name="OrderClassificationDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" DefaultValue="&quot;&quot;" />
+          <Property Name="ContactFirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ContactLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ContactMiddleName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ContactEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LostComments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Vulcan_CrmQuoteItem_Vulcan_CrmQuote">
+          <End Type="ODSModel.Vulcan_CrmQuote" Role="Vulcan_CrmQuote" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ODSModel.Vulcan_CrmQuoteItem" Role="Vulcan_CrmQuoteItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vulcan_CrmQuote">
+              <PropertyRef Name="QuoteId" />
+            </Principal>
+            <Dependent Role="Vulcan_CrmQuoteItem">
+              <PropertyRef Name="QuoteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ODSModelStoreContainer" CdmEntityContainer="ODSContext">
+          <EntitySetMapping Name="Vulcan_CrmQuoteItem">
+            <EntityTypeMapping TypeName="ODSModel.Vulcan_CrmQuoteItem">
+              <MappingFragment StoreEntitySet="Vulcan_CrmQuoteItem">
+                <ScalarProperty Name="CalcItemFinishedProductLabel" ColumnName="CalcItemFinishedProductLabel" />
+                <ScalarProperty Name="CalcItemStartingProductLabel" ColumnName="CalcItemStartingProductLabel" />
+                <ScalarProperty Name="CalcItemQuantityUOM" ColumnName="CalcItemQuantityUOM" />
+                <ScalarProperty Name="CalcItemQuantity" ColumnName="CalcItemQuantity" />
+                <ScalarProperty Name="CalcItemPieces" ColumnName="CalcItemPieces" />
+                <ScalarProperty Name="CalcItemTotalPrice" ColumnName="CalcItemTotalPrice" />
+                <ScalarProperty Name="CalcItemTotalCost" ColumnName="CalcItemTotalCost" />
+                <ScalarProperty Name="CalcItemUnitPrice" ColumnName="CalcItemUnitPrice" />
+                <ScalarProperty Name="CalcItemUnitCost" ColumnName="CalcItemUnitCost" />
+                <ScalarProperty Name="CalcItemBaseUnitPrice" ColumnName="CalcItemBaseUnitPrice" />
+                <ScalarProperty Name="CalcItemBaseUnitCost" ColumnName="CalcItemBaseUnitCost" />
+                <ScalarProperty Name="CalcItemRegret" ColumnName="CalcItemRegret" />
+                <ScalarProperty Name="FinishedStratificationRank" ColumnName="FinishedStratificationRank" />
+                <ScalarProperty Name="StartingStratificationRank" ColumnName="StartingStratificationRank" />
+                <ScalarProperty Name="LostComments" ColumnName="LostComments" />
+                <ScalarProperty Name="QuickQuoteItemPieces" ColumnName="QuickQuoteItemPieces" />
+                <ScalarProperty Name="QuickQuoteItemPrice" ColumnName="QuickQuoteItemPrice" />
+                <ScalarProperty Name="BaseQuickQuoteItemPrice" ColumnName="BaseQuickQuoteItemPrice" />
+                <ScalarProperty Name="BaseQuickQuoteItemCost" ColumnName="BaseQuickQuoteItemCost" />
+                <ScalarProperty Name="BaseTestPiecesTotalPrice" ColumnName="BaseTestPiecesTotalPrice" />
+                <ScalarProperty Name="BaseKerfTotalPrice" ColumnName="BaseKerfTotalPrice" />
+                <ScalarProperty Name="BaseKerfTotalCost" ColumnName="BaseKerfTotalCost" />
+                <ScalarProperty Name="BaseCostPerInch" ColumnName="BaseCostPerInch" />
+                <ScalarProperty Name="BaseTotalCutCost" ColumnName="BaseTotalCutCost" />
+                <ScalarProperty Name="BaseTotalCost" ColumnName="BaseTotalCost" />
+                <ScalarProperty Name="BaseProductionPriceTotal" ColumnName="BaseProductionPriceTotal" />
+                <ScalarProperty Name="BaseProductionCostTotal" ColumnName="BaseProductionCostTotal" />
+                <ScalarProperty Name="BasePricePerPoundOverride" ColumnName="BasePricePerPoundOverride" />
+                <ScalarProperty Name="BasePricePerPound" ColumnName="BasePricePerPound" />
+                <ScalarProperty Name="BasePricePerKilogramOverride" ColumnName="BasePricePerKilogramOverride" />
+                <ScalarProperty Name="BasePricePerKilogram" ColumnName="BasePricePerKilogram" />
+                <ScalarProperty Name="BasePricePerInchOverride" ColumnName="BasePricePerInchOverride" />
+                <ScalarProperty Name="BasePricePerInch" ColumnName="BasePricePerInch" />
+                <ScalarProperty Name="BasePricePerFootOverride" ColumnName="BasePricePerFootOverride" />
+                <ScalarProperty Name="BasePricePerFoot" ColumnName="BasePricePerFoot" />
+                <ScalarProperty Name="BasePricePerEach" ColumnName="BasePricePerEach" />
+                <ScalarProperty Name="BaseMaterialTotalPriceOverride" ColumnName="BaseMaterialTotalPriceOverride" />
+                <ScalarProperty Name="BaseMaterialTotalPrice" ColumnName="BaseMaterialTotalPrice" />
+                <ScalarProperty Name="BaseMaterialOnlyCost" ColumnName="BaseMaterialOnlyCost" />
+                <ScalarProperty Name="BaseFinalPriceOverrideValue" ColumnName="BaseFinalPriceOverrideValue" />
+                <ScalarProperty Name="BaseFinalPrice" ColumnName="BaseFinalPrice" />
+                <ScalarProperty Name="BaseFinalMargin" ColumnName="BaseFinalMargin" />
+                <ScalarProperty Name="BaseCutCostPerPieceOverride" ColumnName="BaseCutCostPerPieceOverride" />
+                <ScalarProperty Name="BaseCutCostPerPiece" ColumnName="BaseCutCostPerPiece" />
+                <ScalarProperty Name="BaseCostPerPound" ColumnName="BaseCostPerPound" />
+                <ScalarProperty Name="BaseCostPerPiece" ColumnName="BaseCostPerPiece" />
+                <ScalarProperty Name="BaseCostPerKg" ColumnName="BaseCostPerKg" />
+                <ScalarProperty Name="KerfInchesPerCut" ColumnName="KerfInchesPerCut" />
+                <ScalarProperty Name="BaseCurrency" ColumnName="BaseCurrency" />
+                <ScalarProperty Name="HeatNumber" ColumnName="HeatNumber" />
+                <ScalarProperty Name="FinishedProductCategory" ColumnName="FinishedProductCategory" />
+                <ScalarProperty Name="StartingProductCategory" ColumnName="StartingProductCategory" />
+                <ScalarProperty Name="FinishProductSize" ColumnName="FinishProductSize" />
+                <ScalarProperty Name="StartingProductSize" ColumnName="StartingProductSize" />
+                <ScalarProperty Name="LostDateTimeUTC" ColumnName="LostDateTimeUTC" />
+                <ScalarProperty Name="ImportDateTimeUTC" ColumnName="ImportDateTimeUTC" />
+                <ScalarProperty Name="ModifiedDateTimeUTC" ColumnName="ModifiedDateTimeUTC" />
+                <ScalarProperty Name="CreateDateTimeUTC" ColumnName="CreateDateTimeUTC" />
+                <ScalarProperty Name="MaterialOnlyCost" ColumnName="MaterialOnlyCost" />
+                <ScalarProperty Name="PricePerEach" ColumnName="PricePerEach" />
+                <ScalarProperty Name="FinalMargin" ColumnName="FinalMargin" />
+                <ScalarProperty Name="FinalPrice" ColumnName="FinalPrice" />
+                <ScalarProperty Name="FinishKilograms" ColumnName="FinishKilograms" />
+                <ScalarProperty Name="StartingKilograms" ColumnName="StartingKilograms" />
+                <ScalarProperty Name="FinishPounds" ColumnName="FinishPounds" />
+                <ScalarProperty Name="StartingPounds" ColumnName="StartingPounds" />
+                <ScalarProperty Name="DisplayCurrency" ColumnName="DisplayCurrency" />
+                <ScalarProperty Name="FinalPriceOverrideValue" ColumnName="FinalPriceOverrideValue" />
+                <ScalarProperty Name="FinalPriceOverrideType" ColumnName="FinalPriceOverrideType" />
+                <ScalarProperty Name="CutCostPerPieceOverride" ColumnName="CutCostPerPieceOverride" />
+                <ScalarProperty Name="CutCostPerPiece" ColumnName="CutCostPerPiece" />
+                <ScalarProperty Name="RequestedProductCode" ColumnName="RequestedProductCode" />
+                <ScalarProperty Name="QuickQuoteItemRegret" ColumnName="QuickQuoteItemRegret" />
+                <ScalarProperty Name="QuickQuoteItemQuantityType" ColumnName="QuickQuoteItemQuantityType" />
+                <ScalarProperty Name="QuickQuoteItemQuantity" ColumnName="QuickQuoteItemQuantity" />
+                <ScalarProperty Name="QuickQuoteItemFinishedProductCode" ColumnName="QuickQuoteItemFinishedProductCode" />
+                <ScalarProperty Name="QuickQuoteItemCost" ColumnName="QuickQuoteItemCost" />
+                <ScalarProperty Name="QuickQuoteItemLabel" ColumnName="QuickQuoteItemLabel" />
+                <ScalarProperty Name="IsQuickQuoteItem" ColumnName="IsQuickQuoteItem" />
+                <ScalarProperty Name="QuoteSource" ColumnName="QuoteSource" />
+                <ScalarProperty Name="IsLost" ColumnName="IsLost" />
+                <ScalarProperty Name="LostProductCode" ColumnName="LostProductCode" />
+                <ScalarProperty Name="LostReason" ColumnName="LostReason" />
+                <ScalarProperty Name="SalesPersonNotes" ColumnName="SalesPersonNotes" />
+                <ScalarProperty Name="CustomerNotes" ColumnName="CustomerNotes" />
+                <ScalarProperty Name="LeadTime" ColumnName="LeadTime" />
+                <ScalarProperty Name="PoNumber" ColumnName="PoNumber" />
+                <ScalarProperty Name="PartNumber" ColumnName="PartNumber" />
+                <ScalarProperty Name="PartSpecification" ColumnName="PartSpecification" />
+                <ScalarProperty Name="OemType" ColumnName="OemType" />
+                <ScalarProperty Name="MarginOverride" ColumnName="MarginOverride" />
+                <ScalarProperty Name="Margin" ColumnName="Margin" />
+                <ScalarProperty Name="TestPiecesTotalPrice" ColumnName="TestPiecesTotalPrice" />
+                <ScalarProperty Name="TestPieceInches" ColumnName="TestPieceInches" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="PricePerFootOverride" ColumnName="PricePerFootOverride" />
+                <ScalarProperty Name="PricePerFoot" ColumnName="PricePerFoot" />
+                <ScalarProperty Name="PricePerKilogramOverride" ColumnName="PricePerKilogramOverride" />
+                <ScalarProperty Name="PricePerKilogram" ColumnName="PricePerKilogram" />
+                <ScalarProperty Name="PricePerInchOverride" ColumnName="PricePerInchOverride" />
+                <ScalarProperty Name="PricePerInch" ColumnName="PricePerInch" />
+                <ScalarProperty Name="PricePerPoundOverride" ColumnName="PricePerPoundOverride" />
+                <ScalarProperty Name="PricePerPound" ColumnName="PricePerPound" />
+                <ScalarProperty Name="MaterialTotalPriceOverride" ColumnName="MaterialTotalPriceOverride" />
+                <ScalarProperty Name="MaterialTotalPrice" ColumnName="MaterialTotalPrice" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="ProductionPriceTotal" ColumnName="ProductionPriceTotal" />
+                <ScalarProperty Name="ProductionCostTotal" ColumnName="ProductionCostTotal" />
+                <ScalarProperty Name="TotalCutCost" ColumnName="TotalCutCost" />
+                <ScalarProperty Name="KerfTotalPrice" ColumnName="KerfTotalPrice" />
+                <ScalarProperty Name="KerfTotalCost" ColumnName="KerfTotalCost" />
+                <ScalarProperty Name="TheoWeight" ColumnName="TheoWeight" />
+                <ScalarProperty Name="IsCostMadeup" ColumnName="IsCostMadeup" />
+                <ScalarProperty Name="TotalInches" ColumnName="TotalInches" />
+                <ScalarProperty Name="TotalFeet" ColumnName="TotalFeet" />
+                <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+                <ScalarProperty Name="TotalKilograms" ColumnName="TotalKilograms" />
+                <ScalarProperty Name="TotalPounds" ColumnName="TotalPounds" />
+                <ScalarProperty Name="Pieces" ColumnName="Pieces" />
+                <ScalarProperty Name="CostPerPiece" ColumnName="CostPerPiece" />
+                <ScalarProperty Name="CostPerKg" ColumnName="CostPerKg" />
+                <ScalarProperty Name="CostPerPound" ColumnName="CostPerPound" />
+                <ScalarProperty Name="CostPerInch" ColumnName="CostPerInch" />
+                <ScalarProperty Name="FinishProductCondition" ColumnName="FinishProductCondition" />
+                <ScalarProperty Name="FinishMetalCategory" ColumnName="FinishMetalCategory" />
+                <ScalarProperty Name="FinishStockGrade" ColumnName="FinishStockGrade" />
+                <ScalarProperty Name="FinishProductType" ColumnName="FinishProductType" />
+                <ScalarProperty Name="FinishProductCode" ColumnName="FinishProductCode" />
+                <ScalarProperty Name="FinishInsideDiameter" ColumnName="FinishInsideDiameter" />
+                <ScalarProperty Name="FinishOuterDiameter" ColumnName="FinishOuterDiameter" />
+                <ScalarProperty Name="FinishProductId" ColumnName="FinishProductId" />
+                <ScalarProperty Name="FinishProductCoid" ColumnName="FinishProductCoid" />
+                <ScalarProperty Name="TagNumber" ColumnName="TagNumber" />
+                <ScalarProperty Name="StartingProductCondition" ColumnName="StartingProductCondition" />
+                <ScalarProperty Name="StartingMetalCategory" ColumnName="StartingMetalCategory" />
+                <ScalarProperty Name="StartingStockGrade" ColumnName="StartingStockGrade" />
+                <ScalarProperty Name="StartingProductType" ColumnName="StartingProductType" />
+                <ScalarProperty Name="StartingProductCode" ColumnName="StartingProductCode" />
+                <ScalarProperty Name="StartingInsideDiameter" ColumnName="StartingInsideDiameter" />
+                <ScalarProperty Name="StartingOuterDiameter" ColumnName="StartingOuterDiameter" />
+                <ScalarProperty Name="StartingProductId" ColumnName="StartingProductId" />
+                <ScalarProperty Name="StartingProductCoid" ColumnName="StartingProductCoid" />
+                <ScalarProperty Name="QuoteItemId" ColumnName="QuoteItemId" />
+                <ScalarProperty Name="QuoteId" ColumnName="QuoteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vulcan_CrmQuoteItem_ProductionCost">
+            <EntityTypeMapping TypeName="ODSModel.Vulcan_CrmQuoteItem_ProductionCost">
+              <MappingFragment StoreEntitySet="Vulcan_CrmQuoteItem_ProductionCost">
+                <ScalarProperty Name="BaseTotalProductionCost" ColumnName="BaseTotalProductionCost" />
+                <ScalarProperty Name="BaseTotalInternalCost" ColumnName="BaseTotalInternalCost" />
+                <ScalarProperty Name="BaseProductionCost" ColumnName="BaseProductionCost" />
+                <ScalarProperty Name="BaseMinimumCost" ColumnName="BaseMinimumCost" />
+                <ScalarProperty Name="BaseInternalCost" ColumnName="BaseInternalCost" />
+                <ScalarProperty Name="BaseCurrency" ColumnName="BaseCurrency" />
+                <ScalarProperty Name="ImportDateTimeUTC" ColumnName="ImportDateTimeUTC" />
+                <ScalarProperty Name="TotalProductionCost" ColumnName="TotalProductionCost" />
+                <ScalarProperty Name="TotalInternalCost" ColumnName="TotalInternalCost" />
+                <ScalarProperty Name="TotalPieces" ColumnName="TotalPieces" />
+                <ScalarProperty Name="TotalInches" ColumnName="TotalInches" />
+                <ScalarProperty Name="TotalPounds" ColumnName="TotalPounds" />
+                <ScalarProperty Name="MinimumCost" ColumnName="MinimumCost" />
+                <ScalarProperty Name="ProductionCost" ColumnName="ProductionCost" />
+                <ScalarProperty Name="InternalCost" ColumnName="InternalCost" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="PerType" ColumnName="PerType" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="Coid" ColumnName="Coid" />
+                <ScalarProperty Name="QuoteItemId" ColumnName="QuoteItemId" />
+                <ScalarProperty Name="QuoteId" ColumnName="QuoteId" />
+                <ScalarProperty Name="QIId" ColumnName="QIId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vulcan_CrmQuoteItem_TestPieces">
+            <EntityTypeMapping TypeName="ODSModel.Vulcan_CrmQuoteItem_TestPieces">
+              <MappingFragment StoreEntitySet="Vulcan_CrmQuoteItem_TestPieces">
+                <ScalarProperty Name="ImportDateTimeUTC" ColumnName="ImportDateTimeUTC" />
+                <ScalarProperty Name="QuantityType" ColumnName="QuantityType" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Pieces" ColumnName="Pieces" />
+                <ScalarProperty Name="StartingProductCode" ColumnName="StartingProductCode" />
+                <ScalarProperty Name="TestName" ColumnName="TestName" />
+                <ScalarProperty Name="Coid" ColumnName="Coid" />
+                <ScalarProperty Name="QuoteItemId" ColumnName="QuoteItemId" />
+                <ScalarProperty Name="QuoteId" ColumnName="QuoteId" />
+                <ScalarProperty Name="QIId" ColumnName="QIId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vulcan_CrmQuote">
+            <EntityTypeMapping TypeName="ODSModel.Vulcan_CrmQuote">
+              <MappingFragment StoreEntitySet="Vulcan_CrmQuote">
+                <ScalarProperty Name="LostComments" ColumnName="LostComments" />
+                <ScalarProperty Name="ContactPhoneNumber" ColumnName="ContactPhoneNumber" />
+                <ScalarProperty Name="ContactEmailAddress" ColumnName="ContactEmailAddress" />
+                <ScalarProperty Name="ContactMiddleName" ColumnName="ContactMiddleName" />
+                <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+                <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+                <ScalarProperty Name="OrderClassificationDescription" ColumnName="OrderClassificationDescription" />
+                <ScalarProperty Name="OrderClassificationCode" ColumnName="OrderClassificationCode" />
+                <ScalarProperty Name="ExportRequestedBy" ColumnName="ExportRequestedBy" />
+                <ScalarProperty Name="Bid" ColumnName="Bid" />
+                <ScalarProperty Name="SalesGroupCode" ColumnName="SalesGroupCode" />
+                <ScalarProperty Name="QuoteLinkType" ColumnName="QuoteLinkType" />
+                <ScalarProperty Name="QuoteLinkId" ColumnName="QuoteLinkId" />
+                <ScalarProperty Name="ExpiredDateTimeUTC" ColumnName="ExpiredDateTimeUTC" />
+                <ScalarProperty Name="LostDateTimeUTC" ColumnName="LostDateTimeUTC" />
+                <ScalarProperty Name="ReportDateTimeUTC" ColumnName="ReportDateTimeUTC" />
+                <ScalarProperty Name="ImportDateTimeUTC" ColumnName="ImportDateTimeUTC" />
+                <ScalarProperty Name="ModifiedDateTimeUTC" ColumnName="ModifiedDateTimeUTC" />
+                <ScalarProperty Name="CreateDateTimeUTC" ColumnName="CreateDateTimeUTC" />
+                <ScalarProperty Name="WonDateTimeUTC" ColumnName="WonDateTimeUTC" />
+                <ScalarProperty Name="SubmitDateTimeUTC" ColumnName="SubmitDateTimeUTC" />
+                <ScalarProperty Name="RfqNumber" ColumnName="RfqNumber" />
+                <ScalarProperty Name="ValidityDays" ColumnName="ValidityDays" />
+                <ScalarProperty Name="FreightTerms" ColumnName="FreightTerms" />
+                <ScalarProperty Name="PaymentTerms" ColumnName="PaymentTerms" />
+                <ScalarProperty Name="LostReason" ColumnName="LostReason" />
+                <ScalarProperty Name="IsLost" ColumnName="IsLost" />
+                <ScalarProperty Name="SalesPerson" ColumnName="SalesPerson" />
+                <ScalarProperty Name="SalesPersonNotes" ColumnName="SalesPersonNotes" />
+                <ScalarProperty Name="CustomerNotes" ColumnName="CustomerNotes" />
+                <ScalarProperty Name="SalesOrderId" ColumnName="SalesOrderId" />
+                <ScalarProperty Name="ExportIMetalStatus" ColumnName="ExportIMetalStatus" />
+                <ScalarProperty Name="QuoteStatus" ColumnName="QuoteStatus" />
+                <ScalarProperty Name="IsProspect" ColumnName="IsProspect" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+                <ScalarProperty Name="ProspectName" ColumnName="ProspectName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="Coid" ColumnName="Coid" />
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="QuoteId" ColumnName="QuoteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

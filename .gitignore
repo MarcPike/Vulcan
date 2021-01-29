@@ -1,0 +1,20 @@
+bin/
+obj/
+/node_modules
+/wwwroot/node_modules
+/packages/
+!packages/repositories.config
+.vs
+/_LinqUpgradeReport_Files
+/_UpgradeReport_Files
+/Backup of Test Projects
+/BI.DAL.DataWarehouse
+/DAL.GoogleDrive
+/DAL.HRS.Test
+/DAL.IntegrationDb.Test
+/DAL.Osiris.Test
+/HRS.Http.Client
+/Vulcan.IMetal.Test
+
+
+

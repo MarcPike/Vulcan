@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2515DBB5-4FBE-45D6-9D42-6B7780DAC159}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL.Vulcan.Mongo.Base</RootNamespace>
+    <AssemblyName>DAL.Vulcan.Mongo.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.3.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.3.1\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.10.4\lib\net452\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.10.4\lib\net452\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.10.4\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.GridFS, Version=2.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.GridFS.2.9.1\lib\net452\MongoDB.Driver.GridFS.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.8.1.0\lib\net45\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clone\CloneJson.cs" />
+    <Compile Include="Context\BiContext.cs" />
+    <Compile Include="Context\CommonContext.cs" />
+    <Compile Include="Context\ContextBase.cs" />
+    <Compile Include="Context\HrsContext.cs" />
+    <Compile Include="Context\MongoDatabase.cs" />
+    <Compile Include="DateTimeUtils\DateTimeNullableSerializer.cs" />
+    <Compile Include="DateTimeUtils\DateTimeUtilities.cs" />
+    <Compile Include="DocClass\ApplicationLog.cs" />
+    <Compile Include="DocClass\BaseDocumentExtensions.cs" />
+    <Compile Include="DocClass\BaseHours.cs" />
+    <Compile Include="DocClass\ExternalDocumentHelper.cs" />
+    <Compile Include="DocClass\ExternalDocumentList.cs" />
+    <Compile Include="DocClass\Interface1.cs" />
+    <Compile Include="DocClass\UpdatePropertyReferences.cs" />
+    <Compile Include="DocClass\ValueCollection.cs" />
+    <Compile Include="Encryption\Encryption.cs" />
+    <Compile Include="Encryption\EncryptionKeys.cs" />
+    <Compile Include="Guid Conversions\GuidConversions.cs" />
+    <Compile Include="Logger\IVulcanLogger.cs" />
+    <Compile Include="Logger\VulcanLogger.cs" />
+    <Compile Include="Logger\VulcanLoggerConfig.cs" />
+    <Compile Include="Logger\VulcanLogLevel.cs" />
+    <Compile Include="Models\AuthenticationModel.cs" />
+    <Compile Include="Models\TBaseModel.cs" />
+    <Compile Include="ObjectDumper.cs" />
+    <Compile Include="Profiler\PerformanceProfiler.cs" />
+    <Compile Include="Queries\CommonMongoRawQueryHelper.cs" />
+    <Compile Include="Queries\MongoRawQueryHelper.cs" />
+    <Compile Include="Repository\CommonBase.cs" />
+    <Compile Include="Repository\PredicateBuilder.cs" />
+    <Compile Include="Solid\Maybe.cs" />
+    <Compile Include="Static Helper Classes\ObjectDumper.cs" />
+    <Compile Include="TimeKeeper\TimeKeeper.cs" />
+    <Compile Include="TimeKeeper\TimeWatch.cs" />
+    <Compile Include="TimeKeeper\TimeWatchState.cs" />
+    <Compile Include="ValueBucket\ValueBucket.cs" />
+    <Compile Include="Context\DatabaseCredentialsFactory.cs" />
+    <Compile Include="Context\Environment.cs" />
+    <Compile Include="Context\EnvironmentSettings.cs" />
+    <Compile Include="Context\Log4NetMongoEvents.cs" />
+    <Compile Include="Context\SecurityType.cs" />
+    <Compile Include="Context\VulcanContext.cs" />
+    <Compile Include="DocClass\BaseDocument.cs" />
+    <Compile Include="DocClass\BaseValueObject.cs" />
+    <Compile Include="DocClass\DocVersion.cs" />
+    <Compile Include="StateMachine\MachineState.cs" />
+    <Compile Include="StateMachine\MachineStateLog.cs" />
+    <Compile Include="StateMachine\MachineStateType.cs" />
+    <Compile Include="StateMachine\StateMachine.cs" />
+    <Compile Include="DocClass\DocumentRef.cs" />
+    <Compile Include="DocClass\GuidList.cs" />
+    <Compile Include="DocClass\IObjectWithGuidForId.cs" />
+    <Compile Include="DocClass\Link.cs" />
+    <Compile Include="DocClass\LinkResolver.cs" />
+    <Compile Include="DocClass\LinkSynchronizer.cs" />
+    <Compile Include="DocClass\ListManager.cs" />
+    <Compile Include="StateMachine\MachineStatus.cs" />
+    <Compile Include="DocClass\ObjectWithTags.cs" />
+    <Compile Include="DocClass\ReferenceList.cs" />
+    <Compile Include="DocClass\ReferenceObject.cs" />
+    <Compile Include="StateMachine\StateAction.cs" />
+    <Compile Include="DocClass\TagPropertyChangedEventArgs.cs" />
+    <Compile Include="EventWatcher\MongoEventWatcher.cs" />
+    <Compile Include="EventWatcher\Watcher.cs" />
+    <Compile Include="EventWatcher\WatcherDataOperation.cs" />
+    <Compile Include="FileAttachment\FileAttachmentsVulcan.cs" />
+    <Compile Include="FileAttachment\FileAttachmentType.cs" />
+    <Compile Include="FileAttachment\Mime.cs" />
+    <Compile Include="Filters\BaseFilter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Validators\BaseValidator.cs" />
+    <Compile Include="Validators\ValidationError.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Documentation\Vulcan.Mongo.Database.HowTo.docx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL.EMail\BLL.EMail.csproj">
+      <Project>{0e298c51-3de3-451a-9fed-b212c6727672}</Project>
+      <Name>BLL.EMail</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+</Project>

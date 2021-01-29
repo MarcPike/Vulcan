@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.2.3" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.4" />
+    <PackageReference Include="MongoDB.Driver.GridFS" Version="2.11.4" />
+    <PackageReference Include="NewRelic.Agent" Version="8.36.0" />
+    <PackageReference Include="NPOI" Version="2.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="4.7.0" />
+    <PackageReference Include="Topshelf" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL.EMail.Core\BLL.EMail.Core.csproj" />
+    <ProjectReference Include="..\DAL.iMetal.Core\DAL.iMetal.Core.csproj" />
+    <ProjectReference Include="..\DAL.Marketing.Core\DAL.Marketing.Core.csproj" />
+    <ProjectReference Include="..\DAL.Osiris\DAL.Osiris.csproj" />
+    <ProjectReference Include="..\DAL.QNG.Reader\DAL.QNG.Reader.csproj" />
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Base.Core\DAL.Vulcan.Mongo.Base.Core.csproj" />
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Core\DAL.Vulcan.Mongo.Core.csproj" />
+    <ProjectReference Include="..\DAL.WindowsAuthentication.MongoDb\DAL.WindowsAuthentication.MongoDb.csproj" />
+    <ProjectReference Include="..\RPT.HtmlTemplateLibrary.Core\RPT.HtmlTemplateLibrary.Core.csproj" />
+    <ProjectReference Include="..\Vulcan.iMetal.Quote.Export\Vulcan.iMetal.Quote.Export.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\licenses.licx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

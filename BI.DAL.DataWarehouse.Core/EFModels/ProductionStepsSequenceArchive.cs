@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace BI.DAL.DataWarehouse.Core.Models
+{
+    public partial class ProductionStepsSequenceArchive
+    {
+        public string Coid { get; set; }
+        public int Id { get; set; }
+        public int? LastStepId { get; set; }
+        public DateTime? Cdate { get; set; }
+        public int? CuserId { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? Mdate { get; set; }
+        public int? MuserId { get; set; }
+        public string ModifiedBy { get; set; }
+        public int? BranchId { get; set; }
+        public string BranchCode { get; set; }
+        public int? Number { get; set; }
+        public string ProductionStepReference { get; set; }
+        public int? ProductionAllocationId { get; set; }
+        public int? ProcessGroupId { get; set; }
+        public int? ProcessGroupNumber { get; set; }
+        public string ProcessGroupReference { get; set; }
+        public int? ConsumedProductSpecificationId { get; set; }
+        public decimal? ConsumedQuantity { get; set; }
+        public int? ConsumedPieces { get; set; }
+        public decimal? ConsumedWeight { get; set; }
+        public decimal? ProducedWeight { get; set; }
+        public decimal? ScrapWeight { get; set; }
+        public decimal? LostWeight { get; set; }
+        public decimal? RejectedWeight { get; set; }
+        public int? RequiredProductSpecificationId { get; set; }
+        public int? ProcessId { get; set; }
+        public string ProcessCode { get; set; }
+        public string ProcessDescription { get; set; }
+        public int? PreviousStepId { get; set; }
+        public int? NextStepId { get; set; }
+        public int? ReplacementStepId { get; set; }
+        public DateTime? DueDate { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? CompletionDate { get; set; }
+        public int? OutworkPurchaseItemId { get; set; }
+        public string OutworkPoreferenceNumber { get; set; }
+        public string OutworkPobranch { get; set; }
+        public int? OutworkPonumber { get; set; }
+        public int? OutworkPoitemNumber { get; set; }
+        public string OutworkPosupplierName { get; set; }
+        public DateTime? OutworkPodueDate { get; set; }
+        public int? EstimatedRunMinutesPerQuantity { get; set; }
+        public int? EstimatedRunMinutesPerQuantityUnitId { get; set; }
+        public int? EstimatedSetupMinutesPerQuantity { get; set; }
+        public int? EstimatedSetupMinutesPerQuantityUnitId { get; set; }
+        public int? ProductLevelAllocationId { get; set; }
+        public string AllocationType { get; set; }
+        public int? SalesItemId { get; set; }
+        public int? StepLevel { get; set; }
+        public decimal? SequenceNumber { get; set; }
+        public int? SalesHeaderId { get; set; }
+        public int? Sonumber { get; set; }
+        public int? SoitemNumber { get; set; }
+        public int? SalesItemStatusId { get; set; }
+        public string SalesItemStatusDescription { get; set; }
+        public int? SalesItemInternalStatusId { get; set; }
+        public string SalesItemInternalStatusDescription { get; set; }
+        public int? SalesHeaderTypeId { get; set; }
+        public string SalesHeaderTypeDescription { get; set; }
+        public DateTime? SalesItemDueDate { get; set; }
+        public DateTime? SalesItemCompletedDate { get; set; }
+        public DateTime? ProductionScheduleDate { get; set; }
+        public int? ProductionScheduleShift { get; set; }
+        public int? WorkCentreId { get; set; }
+        public string WorkCentreCode { get; set; }
+        public string WorkCentreDescription { get; set; }
+        public DateTime? PreviousStepCompletionDate { get; set; }
+        public DateTime? NextStepDueDate { get; set; }
+        public int? ProcessGroupState { get; set; }
+        public string ProcessGroupStateDescription { get; set; }
+        public string ProcessGroupStatusCode { get; set; }
+        public string ProcessGroupStatusDescription { get; set; }
+        public int? ProductionScheduleItemId { get; set; }
+        public int? CostingTotalsId { get; set; }
+        public int? EstimatedSetupTime { get; set; }
+        public int? EstimatedRunTime { get; set; }
+        public int? ActualSetupTime { get; set; }
+        public int? ActualRunTime { get; set; }
+        public decimal? SetupCost { get; set; }
+        public int? SetupCostUnitId { get; set; }
+        public decimal? SetupValue { get; set; }
+        public decimal? RunCost { get; set; }
+        public int? RunCostUnitId { get; set; }
+        public decimal? RunValue { get; set; }
+        public decimal? OutworkValue { get; set; }
+        public string RecoveryType { get; set; }
+        public int? IsCurrentStep { get; set; }
+        public bool? IsCurrentScheduledStep { get; set; }
+        public int? ProductionStepDaysAtStatus { get; set; }
+        public DateTime? EtlcreateDate { get; set; }
+        public DateTime? EtlupdateDate { get; set; }
+    }
+}

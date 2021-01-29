@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D465173-0A25-4AB7-AF74-F932568C4BBB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DAL.Vulcan.NUnit.Tests</RootNamespace>
+    <AssemblyName>DAL.Vulcan.NUnit.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveUp.Net.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6cceae6a4844c51b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Dns, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=6fc67824e0089991, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Dns.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Groupware, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=db51b95d57ebfe25, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Groupware.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Imap4, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=9d424b1770e92b68, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Imap4.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Mail, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=851b9e39ef2572fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Nntp, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=01416978360a49a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Nntp.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.OpenPGP, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=0e094b86584219e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.OpenPGP.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Pop3, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=962567372c07b9fe, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Pop3.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Smtp, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=366752d00f09ae34, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.Smtp.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.WhoIs, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=6b9afb81c1de5ed4, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.NET.2.0.1\lib\ActiveUp.Net.WhoIs.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.91.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.91.0\lib\net452\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.3.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.3.1\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="dotMemory.Unit, Version=111.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.dotMemoryUnit.3.1.20200127.214830\lib\net35\dotMemory.Unit.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.3.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.3\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember.Signed, Version=1.0.0.9, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.Signed.1.1.0\lib\net40\FastMember.Signed.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices.Auth, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.10.4\lib\net452\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.10.4\lib\net452\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.10.4\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.GridFS, Version=2.9.1.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionTests\ActionTesting.cs" />
+    <Compile Include="ActionTests\AddRemoveActionTests.cs" />
+    <Compile Include="ActionTests\CleanupActions.cs" />
+    <Compile Include="ActionTests\RemoveDeadNotifications.cs" />
+    <Compile Include="ApplicationLogView\ApplicationLogDumper.cs" />
+    <Compile Include="AutoMapperReferenceObject\AutoMapperTestForReferenceObject.cs" />
+    <Compile Include="Builders\CrmUserBuilder.cs" />
+    <Compile Include="Builders\ProductWinLossAnalysisBuilderTest.cs" />
+    <Compile Include="Builders\TeamBuilder.cs" />
+    <Compile Include="C Sharp 7 Features\Discards.cs" />
+    <Compile Include="C Sharp 7 Features\Tuples.cs" />
+    <Compile Include="C Sharp Tests\PropertiesExperiments.cs" />
+    <Compile Include="Company Groups\CompanyGroupLoader.cs" />
+    <Compile Include="Company Groups\LoadMissingCompaniesForAllGroups.cs" />
+    <Compile Include="CompanyDefaults\CompanyDefaultsTesting.cs" />
+    <Compile Include="CompanyDefaults\RemoveDuplicates.cs" />
+    <Compile Include="CompanyDefaults\SetCompanyDefaultForCanada.cs" />
+    <Compile Include="Company\AddMissingCompaniesForEurope.cs" />
+    <Compile Include="Company\BuildAllianceRelationships.cs" />
+    <Compile Include="Company\CompanyDefaultCurrencyIssue.cs" />
+    <Compile Include="Company\CompanyFind.cs" />
+    <Compile Include="Company\CompanyLookup.cs" />
+    <Compile Include="Company\FindCompany.cs" />
+    <Compile Include="Company\ImportCompanies.cs" />
+    <Compile Include="Company\LoadContacts.cs" />
+    <Compile Include="Company\ModifyCompanyDefaultsForEurope.cs" />
+    <Compile Include="Company\QuotesWithManaulShippingAddress.cs" />
+    <Compile Include="Company\RefreshTeamCompanies.cs" />
+    <Compile Include="Company\UpdateAllCompaniesWithNewRequiredFields.cs" />
+    <Compile Include="Company\UpdateOrderClassifications.cs" />
+    <Compile Include="Compare StockItems to Cache\StockItemComparer.cs" />
+    <Compile Include="Competitors\LoadCompetitors.cs" />
+    <Compile Include="Contacts\CompanyContactTreeTesting.cs" />
+    <Compile Include="Contacts\RemoveInvalidCompanyContactReferences.cs" />
+    <Compile Include="ContactTreeCleanup\CleanupDeadContactsInProduction.cs" />
+    <Compile Include="CreditAnalysis\CreditAnalysisTests.cs" />
+    <Compile Include="CrmUser\CrmTest.cs" />
+    <Compile Include="CustomerActivity\GetCustomerActivity.cs" />
+    <Compile Include="DatabaseChanges\ConvertLinksToReferenceList.cs" />
+    <Compile Include="DatabaseUtils\BuildIndexes.cs" />
+    <Compile Include="DatabaseUtils\Prepare Database\QA\ConfigureDatabase.cs" />
+    <Compile Include="Date Time\DateTimeTests.cs" />
+    <Compile Include="Document Linking\DocumentLinkTests.cs" />
+    <Compile Include="DownloadCompanyContacts\DownloadAllContactInfo.cs" />
+    <Compile Include="Email Tests\RemoveAllEmailExceptionLog.cs" />
+    <Compile Include="Email Tests\ScanEmail.cs" />
+    <Compile Include="ExcelTemplates\ExcelTemplateTesting.cs" />
+    <Compile Include="ExchangeRates\ExchangeRateTesting.cs" />
+    <Compile Include="File Attachments\FileAttachmentTests.cs" />
+    <Compile Include="FreightTerms\FreightTermTests.cs" />
+    <Compile Include="General\GeneralTests.cs" />
+    <Compile Include="GetRidOfAC\UpdateBasedOnTeam.cs" />
+    <Compile Include="Helper Unit Tests\HelperUserUnitTest.cs" />
+    <Compile Include="HtmlTemplateLoader\LoadHtmlTemplates.cs" />
+    <Compile Include="LocationConfigure\LocationSettings.cs" />
+    <Compile Include="Locations\CorrectNorwayDeefaultCurrency.cs" />
+    <Compile Include="Locations\LoadLocations.cs" />
+    <Compile Include="Locations\LocationTests.cs" />
+    <Compile Include="Locations\SyncLocations.cs" />
+    <Compile Include="Logging\LogTesting.cs" />
+    <Compile Include="LostReasons\LossReasonCleanup.cs" />
+    <Compile Include="LostReasons\PopulateList.cs" />
+    <Compile Include="MachinedParts\BasicTesting.cs" />
+    <Compile Include="Marketing\UpdateProductionStrategicAccountsFromDev.cs" />
+    <Compile Include="MathTest\PageCountTest.cs" />
+    <Compile Include="Model Changes\AddValidityDays.cs" />
+    <Compile Include="Model Changes\ConvertQuickQuoteItemsToNewModel.cs" />
+    <Compile Include="Model Changes\FixReportDate.cs" />
+    <Compile Include="Model Changes\LoadSalesGroups.cs" />
+    <Compile Include="Model Changes\RemoveQuoteItemRefUselessProperties.cs" />
+    <Compile Include="Model Changes\RemoveStatusFromTeamCompanyRef.cs" />
+    <Compile Include="Mongo Event Watcher\MongoEventWatcherTest.cs" />
+    <Compile Include="NotificationsTesting\FakePublisher.cs" />
+    <Compile Include="NotificationsTesting\NotificationTester.cs" />
+    <Compile Include="Number Format Tests\NumericFormatTesting.cs" />
+    <Compile Include="ObjectDumper.cs" />
+    <Compile Include="OemList\GetOemList.cs" />
+    <Compile Include="OemList\LoadOemType.cs" />
+    <Compile Include="OemList\OemUpdateTester.cs" />
+    <Compile Include="OemType Analysis\ValuesByOem.cs" />
+    <Compile Include="PartNumberQueries\PartNumberSearch.cs" />
+    <Compile Include="PersonTests\GeneralRoleTests.cs" />
+    <Compile Include="PersonTests\PersonContactsAndUserTestingcs.cs" />
+    <Compile Include="PhoneBook\PhoneBookTest.cs" />
+    <Compile Include="ProductAnalysis\ProductAnalysisBuilderExecute.cs" />
+    <Compile Include="ProductBuckets\BasicTests.cs" />
+    <Compile Include="ProductionCostList\AddOfficeToDocument.cs" />
+    <Compile Include="ProductionCostList\CopyProductionCostList.cs" />
+    <Compile Include="ProductionCostList\FindHeatTreatQuoteWithFewestItems.cs" />
+    <Compile Include="ProductionCostList\GrabProductionListFromQuote.cs" />
+    <Compile Include="ProductionCostList\RecoverMissingLouisianaProductionCostLists.cs" />
+    <Compile Include="ProductMaster\TestProductMaster.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QNG Export\AddQngExportLogRow.cs" />
+    <Compile Include="QueueSchedule\QueueTesting.cs" />
+    <Compile Include="Quote Pricing\QuotePriceTesting.cs" />
+    <Compile Include="Quote Tests\CajunQuotes.cs" />
+    <Compile Include="Quote Tests\ExamineQuoteItems.cs" />
+    <Compile Include="Quote Tests\ExamineTeamQuoteError.cs" />
+    <Compile Include="Quote Tests\IsidroDemo.cs" />
+    <Compile Include="Quote Tests\QuoteAnalyzer.cs" />
+    <Compile Include="Quote Tests\QuoteBuildingTest.cs" />
+    <Compile Include="Quote Tests\QuoteInspector.cs" />
+    <Compile Include="Quote Tests\QuotePipelineTest.cs" />
+    <Compile Include="Quote Tests\QuotesWithPoNumberGreatThan30Characters.cs" />
+    <Compile Include="QuoteLinks\AddQuoteLinkType.cs" />
+    <Compile Include="QuoteLinks\SearchQuoteLinks.cs" />
+    <Compile Include="QuotesAcrossCoid\FindQuotesThatHaveDifferentCoidStartingMaterial.cs" />
+    <Compile Include="QuotesInWrongTeam\FindQuotesInWrongTeam.cs" />
+    <Compile Include="ReferenceList Tests\ReferenceListBugFix.cs" />
+    <Compile Include="RemoveBadFileAttachment\ForBrenda.cs" />
+    <Compile Include="RemoveNotesFromPerson\RemoteNotes.cs" />
+    <Compile Include="RemoveQuotes\RemoveQuotes.cs" />
+    <Compile Include="RemoveStringTest\RemoveImageFromEmailTest.cs" />
+    <Compile Include="Rename Field Tests\LoadInitialTestData.cs" />
+    <Compile Include="Rename Field Tests\RemoveAllTestData.cs" />
+    <Compile Include="Rename Field Tests\RenameFieldTesting.cs" />
+    <Compile Include="Rename Field Tests\RenameUsingBuilder.cs" />
+    <Compile Include="ReportDate\FixReportDate.cs" />
+    <Compile Include="RequestLogging\RequestLogTests.cs" />
+    <Compile Include="ReRuniMetalExports\UpdateExportStatusPending.cs" />
+    <Compile Include="RfqExternal\WordMatchingTest.cs" />
+    <Compile Include="SalesGroups\SalesGroupUpdates.cs" />
+    <Compile Include="Security\SecurityDefinitionTest.cs" />
+    <Compile Include="Security\VulcanInitialize.Security.cs" />
+    <Compile Include="ServerStats\GetServerStatus.cs" />
+    <Compile Include="StateMachineTests\CokeMachineTest.cs" />
+    <Compile Include="StateMachineTests\QuoteTest.cs" />
+    <Compile Include="StateMachineTests\TrafficSystemTest.cs" />
+    <Compile Include="StrategicAccounts\StrategicAccountsTesting.cs" />
+    <Compile Include="Task Testing\TaskUnitTests.cs" />
+    <Compile Include="Team Contacts\TeamContacts.cs" />
+    <Compile Include="Team Tests\AddNorwaySalesDueToBug.cs" />
+    <Compile Include="Team Tests\AssignTeamToQuotesAndPopulateReportDate.cs" />
+    <Compile Include="Team Tests\MergeTeams.cs" />
+    <Compile Include="Team Tests\RemoveDubaiAndSingaporeTeams.cs" />
+    <Compile Include="Team Tests\TeamCompanyTesting.cs" />
+    <Compile Include="Team Tests\TeamTest.cs" />
+    <Compile Include="Team Tests\TeamTotals.cs" />
+    <Compile Include="TestStaticMemberInheritance\RunMe.cs" />
+    <Compile Include="UserAudit\DumpUserAudit.cs" />
+    <Compile Include="Users\AddTestUsers.cs" />
+    <Compile Include="Users\FixUserLocationProblem.cs" />
+    <Compile Include="Users\ReCreateUserRoles.cs" />
+    <Compile Include="Users\RefreshLdapUsers.cs" />
+    <Compile Include="Users\RemoveCompaniesFromViewConfig.cs" />
+    <Compile Include="Users\UserNameTest.cs" />
+    <Compile Include="Users\UserReferenceTests.cs" />
+    <Compile Include="ValueBucket\BucketTest.cs" />
+    <Compile Include="Web Emulations\QuoteBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL.Marketing\DAL.Marketing.csproj">
+      <Project>{EA75B2FB-3D8B-422B-B389-3D9C70D36E3A}</Project>
+      <Name>DAL.Marketing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Base\DAL.Vulcan.Mongo.Base.csproj">
+      <Project>{2515dbb5-4fbe-45d6-9d42-6b7780dac159}</Project>
+      <Name>DAL.Vulcan.Mongo.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.Vulcan.Mongo\DAL.Vulcan.Mongo.csproj">
+      <Project>{54915ef3-87fd-47ca-bae7-49046979c425}</Project>
+      <Name>DAL.Vulcan.Mongo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.WindowsAuthentication.MongoDb\DAL.WindowsAuthentication.MongoDb.csproj">
+      <Project>{e3d69237-c1f8-44dc-9a80-4f73aeae81ca}</Project>
+      <Name>DAL.WindowsAuthentication.MongoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vulcan.IMetal\Cache\Vulcan.IMetal\Vulcan.IMetal.csproj">
+      <Project>{6885e22a-592a-4b03-b4d0-26b270b3a084}</Project>
+      <Name>Vulcan.IMetal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="File Attachments\Test Images\IMG_20170111_093937349.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Calling WebApi\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
+</Project>

@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+option csharp_namespace = "Svc.Vulcan.iMetal.gRPC";
+
+package StockItems;
+
+import "google/protobuf/duration.proto"; 
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service StockItems {
+	rpc GetAvailableStockItemsRequest (StockItemsRequest) returns (StockItemsReply);
+}
+
+message StockItemsRequest {
+	string coid = 1;
+	int32 productId = 2;
+	string productCode = 3;
+	int32 stockItemId = 4;
+	string tagNumber = 5;
+	string heatNumber = 6;
+}
+
+message StockItemResult {
+	string coid = 1;
+	int64 productId = 2;
+	int64 stockItemId = 3;
+	google.protobuf.Timestamp createDate = 4;
+	string tagNumber = 5;
+	string heatNumber = 6;
+	string metalCategory = 7;
+	string metalType = 8;
+	string stockType = 9;
+	string notes = 10;
+	string location = 11;
+	string warehouseCode = 12;
+	string warehouseName = 13;
+	string warehouseShortName = 14;
+	string productCode = 15;
+	string stockGrade = 16;
+	string productCondition = 17;
+	string productCategory = 18;
+	string baseCurrency = 19;
+	string productSize = 20;
+	string millCode = 21;
+	string millName = 22;
+	string productControlCode = 23;
+	bool controlPieces = 24;
+	double volumeDensity = 25;
+	double dim1StaticDimension = 26;
+	double dim2StaticDimension = 27;
+	double dim3StaticDimenstion = 28;
+	double width = 29;
+	double length = 30;
+	double insideDiameter = 31;
+	double outerDiameter = 32;
+	double density = 33;
+	string stockHoldReason = 34;
+	string stockHoldUser = 35;
+	int32 physicalPieces = 36;
+	int32 allocatedPieces = 37;
+	int32 availablePieces = 38;
+	string piecesUnit = 39;
+	double physicalQuantity = 40;
+	double allocatedQuantity = 41;
+	double availableQuantity = 42;
+	string quantityUnit = 43;
+	double physicalLength = 44;
+	double allocatedLength = 45;
+	double availableLength = 46;
+	string lengthUnit = 47;
+	double physicalWeight = 48;
+	double physicalWeightLbs = 49;
+	double physicalWeightKgs = 50;
+	double allocatedWeight = 51;
+	double allocatedWeightLbs = 52;
+	double allocatedWeightKgs = 53;
+	double availableWeight = 54;
+	double availableWeightLbs = 55;
+	double availableWeightKgs = 56;
+	double materialCostTotal = 57;
+	double productionCostTotal = 58;
+	double transportCostTotal = 59;
+	double surchargeCostTotal = 60;
+	double miscellaneousCostTotal = 70;
+	double totalCost = 71;
+	double availableInches = 72;
+	double costPerInch = 73;
+	double costPerWeight = 74;
+	double costPerQty = 75;
+	string stratificationRank = 76;
+	double costPerLb = 77;
+	double costPerKg = 78;
+	double productDensity = 79;
+	google.protobuf.Timestamp receivedDate = 80;
+	bool isMachinedPart = 81;
+	bool isZeroWeightService = 82;
+	double pieceCost = 83;
+	double theoWeight = 84;
+	string productType = 85;
+	double factorForLbs = 86;
+	double factorForKgs = 87;
+}
+
+message StockItemsReply {
+  repeated StockItemResult stockItemResults = 1;
+  int32 rowCount = 2;
+  google.protobuf.Duration elapsed = 3;
+  string errorMessage = 4;
+}

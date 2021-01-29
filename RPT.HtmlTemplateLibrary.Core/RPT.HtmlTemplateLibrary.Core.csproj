@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.11.4" />
+    <PackageReference Include="OpenHtmlToPdf" Version="1.12.0" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="20.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Base.Core\DAL.Vulcan.Mongo.Base.Core.csproj" />
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Core\DAL.Vulcan.Mongo.Core.csproj" />
+    <ProjectReference Include="..\Vulcan.IMetal\Cache\Vulcan.IMetal\Vulcan.IMetal.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Vulcan.MssService.Client": {
+      "commandName": "Project",
+      "commandLineArgs": "10.5.20.31 8192 11"
+    }
+  }
+}

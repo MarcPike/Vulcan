@@ -1,0 +1,1125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D21C9749-DFB7-4E2B-9116-61D963A51BD8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL.HRS.SqlServer</RootNamespace>
+    <AssemblyName>DAL.HRS.SqlServer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BenefitsBuilder.cs" />
+    <Compile Include="CompensationBuilder.cs" />
+    <Compile Include="EmployeeBasicInfoHrs.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="EncryptionKeys.cs" />
+    <Compile Include="ExportPhotos\ExportEmployeePhotos.cs" />
+    <Compile Include="Model\AccrualDefinition.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccrualPolicy.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccrualPolicyNumberOfDaysType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccrualProfile.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccrualProfileAccrualProfiles_AccrualPolicyAccrualPolicies.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccrualSchedule.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ActiveForKronos_WIP.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AffectedBodyParts.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AuditDataItemPersistent.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AuditedObjectWeakReference.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BaseHoursType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBSReportData.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_Department.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_DepartmentSubCategory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_EmployeeType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_InfluenceOnBehaviorType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_Observation.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_ObservationItem.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_ObservationItemObservationItems_BBS_InfluenceOnBehaviorTypeInfluencesOnBehavior.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_ObservationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_Observer.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_PrecautionType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_TaskType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BBS_TaskTypeSubCategory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BeneficiaryDesignationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BeneficiaryPercentageType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitCostType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitCoverageType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitDependent.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitDependentHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitDependentRelationshipType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitEnrollment.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitEnrollmentHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitEnrollmentStatusChangeType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitOptionType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitPlanType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitPlanTypeBenefitPlanTypes_BenefitCoverageTypeBenefitCoverageTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitPlanTypeBenefitPlanTypes_BenefitOptionTypeBenefitOptionTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Benefits.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BenefitSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BodyContact.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BodyContactType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BodyParts.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Bonus.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BonusScheme.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BonusSchemeType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BonusType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Branch.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BusinessRegion.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChangeInfo.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Company.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Compensation.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CompensationHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CompensationHistorySupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CompensationSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CompensationSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CompletionStatusType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ContactWith.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ContactWithType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhProduct.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhProducts_DisposalMethods.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhProducts_FirstAidMeasures.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhProducts_HazardTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhProducts_ProductUsageTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhProducts_RouteOfExposureTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhProducts_StorageMethods.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhRiskAssessment.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhRiskAssessments_HealthSurveillanceTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoshhRiskAssessments_PersonsAtRisk.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CountryCodes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CurrencyType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CustomReportData.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Date_w.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Department.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DisciplinaryActionType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Discipline.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DisciplineHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DisciplineSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DisciplineSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DisposalMethod.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DrugTest.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DrugTestResult.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DrugTestType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EducationCertification.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EducationCertificationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EducationDegree.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EducationSupportingDocuments.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EEO_Code.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmailReminderServiceKVP.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmergencyContacts.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Employee.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmployeePhoneNumbers.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmployeeSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmployeeSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmploymentVerification.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmploymentVerificationDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectAspectCode.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectAspectType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectCriteriaScore.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectCriteriaScoreSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectCriteriaScoreSupportingDocumentLink.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectCriteriaScore_Location.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectCriteriaType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectOccurrenceOpportunityType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectReview.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectScore.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalAspectScoreHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactEvent.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactEventType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactIncident.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactIncidentSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactIncidentSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactInvestigatedBy.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactJobFactor.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactJobFactorType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactLackOfControl.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactLackOfControlType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactNatureOfEvent.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactNatureOfEventType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactPersonalFactor.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactPersonalFactorType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactRootCause.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactRootCauseType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactSeverityType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactTypeType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnvironmentalImpactWitness.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EquipmentInvolved.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EquipmentInvolvedCode.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EquipmentInvolvedType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Ethnicity.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FileData.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FirstAidMeasure.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FirstAidTreatment.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Gender.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GhsClassification.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GhsClassificationGhsClassifications_CoshhProductProducts.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GhsClassificationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GradeRatingType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HazardType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HealthSurveillanceType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Heartbeat.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HRReportData.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HrsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HrsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HrsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HSEReportData.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HSE_Observation.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HSE_ObservationAction.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HSE_ObservationClass.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HSE_ObservationStatus.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HSE_ObservationSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HSE_ObservationSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HSE_ObservationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InactiveEmps7yearPlus.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Incident.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IncidentNearMissType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IncidentSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IncidentSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IncidentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IncreaseType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InvestigatedBy.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\JobFactors.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\JobFactorType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\kmExport.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpiDefinition.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpiHistoryItem.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpiInstance.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpiScorecard.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpiScorecardScorecards_KpiInstanceIndicators.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KronosClockType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KronosDepartment.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KronosLaborLevel.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KronosPayLevel.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KronosPayRule.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KronosPayRuleHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LackOfControls.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LackOfControlType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Leave.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LeaveHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LeaveHistorySupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LeaveHistorySupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LeaveType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LeaveType2.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LmsType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Location.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Manufacturer.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ManufacturerPhoneNumber.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaritalStatus.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalExam.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalExamType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalInfo.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalInfoSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalInfoSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalLeave.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalLeaveType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalTreatment.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalTreatmentAdministeredType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalWorkStatus.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedicalWorkStatusType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MedLeave.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelAspect.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelDifference.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelDifferenceAspect.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelDiffs.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelDiffsBase.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelUserDiffs.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModuleInfo.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MyFileData.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Nationality.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NatureOfInjury.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NatureOfInjuryType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NatureOfViolationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OtherCompensation.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OtherCompensationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OtherMedicalInfo.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PayFrequencyType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PayGradeHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PayGradeType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PayPeriod.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PayPeriodSchedule.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PayRate.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PayrollRegion.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Performance.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PerformanceEvaluationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PerformanceHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PerformanceReviewType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PerformanceSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PerformanceSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PersonalFactors.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PersonalFactorType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PersonsAtRiskType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhoneType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PlannedActivity.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Position.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PositionShiftType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PositionStatusType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PositionSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PositionSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PositionType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PositionUnionType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PositionWorkersCompensationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PrecautionIgnored.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PremiumCompensation.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PremiumCompensationType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PremiumCompensationValueType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductUsageType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RatingOutcome.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RatingOutcomeType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ReasonCodes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Region.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegionRegions_BenefitCoverageTypeBenefitCoverageTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncident.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentInvestigator.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentSeverityType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentStatus.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentWitness.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentWitnessSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryIncidentWitnessSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegulatoryType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RehireStatus.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ReportData.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RequiredActivity.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RequiredActivitySupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RequiredActivitySupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RequiredActivityType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskControl.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskControlAdditionalHazardControls_CoshhRiskAssessmentRiskAssessmentsWhereThisIsAdditionalHazardControl.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskControlCurrentControls_CoshhRiskAssessmentRiskAssessmentsWhereThisIsCurrentControl.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskControlType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskRating.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskToHealth.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskToHealthHealthRisks_CoshhRiskAssessmentRiskAssessments.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RiskToHealthType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RootCause.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RootCauseType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RouteOfExposureType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Security_UserBranchAccess.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SeverityType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ShiftType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SpellCheckerDictionary.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SpellCheckerUserDictionary.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\State_Province_Codes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Status.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\StorageMethod.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubstanceContactType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TargetPercentageType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TerminationCodes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TerminationExplanation.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeTracking.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeTracking2.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeTracking2SupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeTracking2SupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeTracking2TimeTrackings_AccrualPolicyAccrualPolicies.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeTrackingSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeTrackingSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeTrackingTimeTrackings_AccrualScheduleAccrualSchedules.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TimeZone.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TitleType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Training.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingAttendee.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingCourse.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingCourseType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingCourseVenueType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingCourse_Locations.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingEventSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingEventSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingGroupClassification.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingHoursType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingSupportingDocument.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainingSupportingDocumentType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UK_StatusTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\US_StatusTypes.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WebPortal_EmailRecipients.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Witness.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WorkArea.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WorkStatusHistory.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WorkStatusHistoryReasonForChangeType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XPObjectType.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XpoInstanceKey.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XpoRunningWorkflowInstanceInfo.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XpoStartWorkflowRequest.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XpoTrackingRecord.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XpoUserActivityVersion.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XpoWorkflowDefinition.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XpoWorkflowInstance.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XpoWorkflowInstanceControlCommandRequest.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\XPWeakReference.cs">
+      <DependentUpon>HrsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectDumper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Model\HrsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HrsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\HrsModel.edmx.diagram">
+      <DependentUpon>HrsModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\HrsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HrsModel.edmx</DependentUpon>
+      <LastGenOutput>HrsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\HrsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HrsModel.edmx</DependentUpon>
+      <LastGenOutput>HrsModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>

@@ -1,0 +1,90 @@
+// Standard Message Definitions.
+syntax = "proto3";
+option java_multiple_files = true;
+package MSSService;
+option csharp_namespace = "Vulcan.MssService.Protos";
+
+/*
+ * Standard Request message, used in all other methods.
+ *
+ * The User ID field must be populated with a valid ID from the personnel table
+ * in order for the gRPC service to record it when creating or amending records, and to use
+ * when looking up group or user preferences.
+ *
+ * The Version field is used when updating records in iMetal and will be mandatory in some methods.
+ * Where appropriate, it will be compared with the version of the record being updated to ensure
+ * that it hasn't been changed since the remote system read it in.
+*/
+message Request
+{
+    int32 userId = 1;       // Record ID of the user, taken from the personnel table.
+    int32 version = 2;      // Version of individual record that is being modified, not a system-wide version number.  Used for stale data checks.
+}
+
+/*
+ * Defines the delivery method and destination for documents sent via iMetalServer.
+*/
+message DocumentDistributionDetails
+{
+    DocumentDistributionMethod method = 1;
+
+    oneof documentDestination
+    {
+        // Email address used when sending via email.
+        string emailAddress = 2;
+        // Fax number used when sending via fax.
+        string faxNumber = 3;
+        // Printer ID (printers table) when printing a document.
+        int32 printerId = 4;
+    }
+}
+
+/*
+ * Defines standard iMetalServer delivery methods that are used across iMetal.
+*/
+enum DocumentDistributionMethod
+{
+    DISTRUBUTION_DEFAULT = 0;    // Use the default method defined in iMetalServer.
+    DISTRIBUTION_EMAIL = 1;      // Send the document to an email address.
+    DISTRIBUTION_PRINT = 2;      // Send the document to a printer.
+    DISTRIBUTION_FAX = 3;        // Fax the document to a fax number.
+}
+
+/*
+ * The DimensionValues message will be used by various gRPC messages to pass dimension details as parameters.
+ *
+ * It is important to note that the meaning of each dimension value and unit is dynamic based on the product involved,
+ * and is not defined as part of this message.
+ *
+ * For example:
+ * SHEET - Dim1 = Gauge (mm), Dim2 = Width(mm), Dim3 = Length(mm)
+ * BAR   - Dim1 = Length(ft), Dim2 = OD(inches)
+ *
+*/
+message DimensionValues
+{
+    // There can be up to five different dimensions against an iMetal product.
+    repeated Dimensions dimension = 1;
+}
+
+/*
+ * An individual Dimension definition.
+*/
+message Dimensions
+{
+    string dimension = 1;                   // Decimal (99999.9999)
+    string dimensionNegativeTolerance = 2;  // Decimal (99999.9999)
+    string dimensionPositiveTolerance = 3;  // Decimal (99999.9999)
+}
+
+/*
+ * Cost group codes, used in sales charges and costs.
+*/
+enum CostGroupCodes
+{
+    COSTGROUP_MATERIAL = 0;
+    COSTGROUP_TRANSPORT = 1;
+    COSTGROUP_PRODUCTION = 2;
+    COSTGROUP_MISCELLANEOUS = 3;
+    COSTGROUP_SURCHARGE = 4;
+}

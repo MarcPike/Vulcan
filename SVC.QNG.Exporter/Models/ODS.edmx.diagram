@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="00c56c79fbf443c89420c4ea00137d93" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="ODSModel.Vulcan_CrmQuoteItem" Width="2.375" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="ODSModel.Vulcan_CrmQuoteItem_ProductionCost" Width="3.25" PointX="5.375" PointY="9.375" />
+        <EntityTypeShape EntityType="ODSModel.Vulcan_CrmQuoteItem_TestPieces" Width="2.875" PointX="5.875" PointY="5.25" />
+        <AssociationConnector Association="ODSModel.FK_Vulcan_CrmQuoteItem_ProductionCost_Vulcan_CrmQuoteItem_ProductionCost" />
+        <AssociationConnector Association="ODSModel.FK_Vulcan_CrmQuoteItem_TestPieces_Vulcan_CrmQuoteItem" />
+        <EntityTypeShape EntityType="ODSModel.Vulcan_CrmQuote" Width="4.375" PointX="16.375" PointY="11.875" />
+        <AssociationConnector Association="ODSModel.FK_Vulcan_CrmQuoteItem_Vulcan_CrmQuote" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

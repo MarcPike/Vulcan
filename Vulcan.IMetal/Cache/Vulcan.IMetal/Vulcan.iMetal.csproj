@@ -1,0 +1,975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\..\..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6885E22A-592A-4B03-B4D0-26B270B3A084}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vulcan.IMetal</RootNamespace>
+    <AssemblyName>Vulcan.IMetal</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.2488.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.Linq, Version=4.9.2033.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.PostgreSql, Version=7.17.1696.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.PostgreSql.Entity.EF4, Version=7.17.1696.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.PostgreSql.Linq, Version=4.9.2033.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Diagnostics.PerformanceCounter.4.5.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\IProductMasterCache.cs" />
+    <Compile Include="Cache\IPurchaseOrderItemsCache.cs" />
+    <Compile Include="Cache\ProductMasterCache.cs" />
+    <Compile Include="Cache\PurchaseOrderItemsCache.cs" />
+    <Compile Include="Cache\PurchaseOrderItemsCacheInfo.cs" />
+    <Compile Include="Cache\StockItemsCache.cs" />
+    <Compile Include="Cache\IStockItemsCache.cs" />
+    <Compile Include="Cache\StockItemsCacheInfo.cs" />
+    <Compile Include="Cache\StockItemsCondensed.cs" />
+    <Compile Include="Context\CompanyModel.Address.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Address.Generated.cs">
+      <DependentUpon>CompanyModel.Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Branch.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Branch.Generated.cs">
+      <DependentUpon>CompanyModel.Branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.BranchLocation.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.BranchLocation.Generated.cs">
+      <DependentUpon>CompanyModel.BranchLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Category.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Category.Generated.cs">
+      <DependentUpon>CompanyModel.Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CategoryGroup.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CategoryGroup.Generated.cs">
+      <DependentUpon>CompanyModel.CategoryGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CertificationRequirement.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CertificationRequirement.Generated.cs">
+      <DependentUpon>CompanyModel.CertificationRequirement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Company.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Company.Generated.cs">
+      <DependentUpon>CompanyModel.Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyContext.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyCreditRule.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyCreditRule.Generated.cs">
+      <DependentUpon>CompanyModel.CompanyCreditRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyNoteTemplate.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyNoteTemplate.Generated.cs">
+      <DependentUpon>CompanyModel.CompanyNoteTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyStatusCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyStatusCode.Generated.cs">
+      <DependentUpon>CompanyModel.CompanyStatusCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanySubAddress.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanySubAddress.Generated.cs">
+      <DependentUpon>CompanyModel.CompanySubAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyTotal.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyTotal.Generated.cs">
+      <DependentUpon>CompanyModel.CompanyTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyTypeCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CompanyTypeCode.Generated.cs">
+      <DependentUpon>CompanyModel.CompanyTypeCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Contact.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Contact.Generated.cs">
+      <DependentUpon>CompanyModel.Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.ContactFrequencyCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.ContactFrequencyCode.Generated.cs">
+      <DependentUpon>CompanyModel.ContactFrequencyCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.ContactStatusCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.ContactStatusCode.Generated.cs">
+      <DependentUpon>CompanyModel.ContactStatusCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.ContactTitleCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.ContactTitleCode.Generated.cs">
+      <DependentUpon>CompanyModel.ContactTitleCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.ContactTypeCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.ContactTypeCode.Generated.cs">
+      <DependentUpon>CompanyModel.ContactTypeCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CountryCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CountryCode.Generated.cs">
+      <DependentUpon>CompanyModel.CountryCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CurrencyCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CurrencyCode.Generated.cs">
+      <DependentUpon>CompanyModel.CurrencyCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CustomerAnalysisCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.CustomerAnalysisCode.Generated.cs">
+      <DependentUpon>CompanyModel.CustomerAnalysisCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.OrderClassification.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.OrderClassification.Generated.cs">
+      <DependentUpon>CompanyModel.OrderClassification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesGroup.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesGroup.Generated.cs">
+      <DependentUpon>CompanyModel.SalesGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesGroupType.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesGroupType.Generated.cs">
+      <DependentUpon>CompanyModel.SalesGroupType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesHeader.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesHeader.Generated.cs">
+      <DependentUpon>CompanyModel.SalesHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesItem.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesItem.Generated.cs">
+      <DependentUpon>CompanyModel.SalesItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesStatusCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesStatusCode.Generated.cs">
+      <DependentUpon>CompanyModel.SalesStatusCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesTotal.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesTotal.Generated.cs">
+      <DependentUpon>CompanyModel.SalesTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesType.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.SalesType.Generated.cs">
+      <DependentUpon>CompanyModel.SalesType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Term.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.Term.Generated.cs">
+      <DependentUpon>CompanyModel.Term.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.TransportTypeCode.cs">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CompanyModel.TransportTypeCode.Generated.cs">
+      <DependentUpon>CompanyModel.TransportTypeCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\ContextFactory.cs" />
+    <Compile Include="Context\DataContext1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataContext1.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\GeneralInfo.CountryCode.cs">
+      <DependentUpon>GeneralInfo.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\GeneralInfo.CountryCode.Generated.cs">
+      <DependentUpon>GeneralInfo.CountryCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\GeneralInfo.GeneralInfoContext.cs">
+      <DependentUpon>GeneralInfo.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\GeneralInfo.SalesGroup.cs">
+      <DependentUpon>GeneralInfo.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\GeneralInfo.SalesGroup.Generated.cs">
+      <DependentUpon>GeneralInfo.SalesGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Address.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Address.Generated.cs">
+      <DependentUpon>OrdersModel.Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Branch.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Branch.Generated.cs">
+      <DependentUpon>OrdersModel.Branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Company.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Company.Generated.cs">
+      <DependentUpon>OrdersModel.Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.CompanySubAddress.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.CompanySubAddress.Generated.cs">
+      <DependentUpon>OrdersModel.CompanySubAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Contact.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Contact.Generated.cs">
+      <DependentUpon>OrdersModel.Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.CostGroupCode.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.CostGroupCode.Generated.cs">
+      <DependentUpon>OrdersModel.CostGroupCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.CostItem.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.CostItem.Generated.cs">
+      <DependentUpon>OrdersModel.CostItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.CurrencyCode.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.CurrencyCode.Generated.cs">
+      <DependentUpon>OrdersModel.CurrencyCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.DimensionValue.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.DimensionValue.Generated.cs">
+      <DependentUpon>OrdersModel.DimensionValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.EnquiryLostReason.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.EnquiryLostReason.Generated.cs">
+      <DependentUpon>OrdersModel.EnquiryLostReason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.OrdersDataContext.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Personnel.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Personnel.Generated.cs">
+      <DependentUpon>OrdersModel.Personnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Product.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Product.Generated.cs">
+      <DependentUpon>OrdersModel.Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductCategory.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductCategory.Generated.cs">
+      <DependentUpon>OrdersModel.ProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductClass.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductClass.Generated.cs">
+      <DependentUpon>OrdersModel.ProductClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductControl.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductControl.Generated.cs">
+      <DependentUpon>OrdersModel.ProductControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductLevelAllocation.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductLevelAllocation.Generated.cs">
+      <DependentUpon>OrdersModel.ProductLevelAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductSubGroup.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.ProductSubGroup.Generated.cs">
+      <DependentUpon>OrdersModel.ProductSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesCharge.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesCharge.Generated.cs">
+      <DependentUpon>OrdersModel.SalesCharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesChargeType.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesChargeType.Generated.cs">
+      <DependentUpon>OrdersModel.SalesChargeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesGroup.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesGroup.Generated.cs">
+      <DependentUpon>OrdersModel.SalesGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesHeader.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesHeader.Generated.cs">
+      <DependentUpon>OrdersModel.SalesHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesItem.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesItem.Generated.cs">
+      <DependentUpon>OrdersModel.SalesItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesStatusCode.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesStatusCode.Generated.cs">
+      <DependentUpon>OrdersModel.SalesStatusCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesTotal.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesTotal.Generated.cs">
+      <DependentUpon>OrdersModel.SalesTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesType.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.SalesType.Generated.cs">
+      <DependentUpon>OrdersModel.SalesType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.TransportTypeCode.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.TransportTypeCode.Generated.cs">
+      <DependentUpon>OrdersModel.TransportTypeCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.UnitsOfMeasure.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.UnitsOfMeasure.Generated.cs">
+      <DependentUpon>OrdersModel.UnitsOfMeasure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Warehouse.cs">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrdersModel.Warehouse.Generated.cs">
+      <DependentUpon>OrdersModel.Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Address.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Address.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Buyer.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Buyer.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.Buyer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Company.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Company.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.CompanySubAddress.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.CompanySubAddress.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.CompanySubAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.CountryCode.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.CountryCode.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.CountryCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.DimensionValue.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.DimensionValue.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.DimensionValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.InboundAllocation.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.InboundAllocation.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.InboundAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Mill.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Mill.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.Mill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PartNumberSpecification.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PartNumberSpecification.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.PartNumberSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Product.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Product.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.ProductCategory.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.ProductCategory.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.ProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.ProductControl.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.ProductControl.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.ProductControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseCategoryCode.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseCategoryCode.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.PurchaseCategoryCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseOrderHeader.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseOrderHeader.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.PurchaseOrderHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseOrderItem.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseOrderItem.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.PurchaseOrderItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseOrdersContext.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseOrderTotal.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseOrderTotal.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.PurchaseOrderTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseStatusCode.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.PurchaseStatusCode.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.PurchaseStatusCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.StockAnalysisCode.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.StockAnalysisCode.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.StockAnalysisCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.StockCast.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.StockCast.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.StockCast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.StockDimensionType.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.StockDimensionType.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.StockDimensionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.StockGrade.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.StockGrade.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.StockGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.UnitsOfMeasure.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.UnitsOfMeasure.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.UnitsOfMeasure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Warehouse.cs">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PurchaseOrdersModel.Warehouse.Generated.cs">
+      <DependentUpon>PurchaseOrdersModel.Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.CurrencyCode.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.CurrencyCode.Generated.cs">
+      <DependentUpon>StockItemsModel.CurrencyCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.Mill.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.Mill.Generated.cs">
+      <DependentUpon>StockItemsModel.Mill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.NoteTemplate.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.NoteTemplate.Generated.cs">
+      <DependentUpon>StockItemsModel.NoteTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.Personnel.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.Personnel.Generated.cs">
+      <DependentUpon>StockItemsModel.Personnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.Product.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.Product.Generated.cs">
+      <DependentUpon>StockItemsModel.Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.ProductBalance.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.ProductBalance.Generated.cs">
+      <DependentUpon>StockItemsModel.ProductBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.ProductCategory.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.ProductCategory.Generated.cs">
+      <DependentUpon>StockItemsModel.ProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.ProductControl.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.ProductControl.Generated.cs">
+      <DependentUpon>StockItemsModel.ProductControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockAnalysisCode.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockAnalysisCode.Generated.cs">
+      <DependentUpon>StockItemsModel.StockAnalysisCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockCast.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockCast.Generated.cs">
+      <DependentUpon>StockItemsModel.StockCast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockDimensionType.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockDimensionType.Generated.cs">
+      <DependentUpon>StockItemsModel.StockDimensionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockGrade.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockGrade.Generated.cs">
+      <DependentUpon>StockItemsModel.StockGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockHoldReason.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockHoldReason.Generated.cs">
+      <DependentUpon>StockItemsModel.StockHoldReason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockItem.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockItem.Generated.cs">
+      <DependentUpon>StockItemsModel.StockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.StockItemsContext.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.UnitsOfMeasure.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.UnitsOfMeasure.Generated.cs">
+      <DependentUpon>StockItemsModel.UnitsOfMeasure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.Warehouse.cs">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\StockItemsModel.Warehouse.Generated.cs">
+      <DependentUpon>StockItemsModel.Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\BaseHelper.cs" />
+    <Compile Include="Helpers\CompanyModelHelper.cs" />
+    <Compile Include="Helpers\HelperCompanyPaymentTerms.cs" />
+    <Compile Include="Helpers\HelperCurrencyForIMetal.cs" />
+    <Compile Include="Helpers\IHelperCompanyPaymentTerms.cs" />
+    <Compile Include="Helpers\IHelperCurrencyForIMetal.cs" />
+    <Compile Include="Helpers\InventoryModelHelper.cs" />
+    <Compile Include="Helpers\PaymentTermModel.cs" />
+    <Compile Include="Helpers\SalesHeadersModelHelper.cs" />
+    <Compile Include="Helpers\SalesItemsModelHelper.cs" />
+    <Compile Include="Helpers\UomHelper.cs" />
+    <Compile Include="Models\ChargeCostModel.cs" />
+    <Compile Include="Models\CompanyAddressModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CompanyCreditRuleModel.cs" />
+    <Compile Include="Models\CompanyModel.cs" />
+    <Compile Include="Models\DimensionsModel.cs" />
+    <Compile Include="Models\ExchangeRate.cs" />
+    <Compile Include="Models\InventoryModel.cs" />
+    <Compile Include="Models\ItemChargeModel.cs" />
+    <Compile Include="Models\ItemCostModel.cs" />
+    <Compile Include="Models\ItemMarginModel.cs" />
+    <Compile Include="Queries\Companies\iMetalCompany.cs" />
+    <Compile Include="Queries\Companies\iMetalCompanyCreditRuleResult.cs" />
+    <Compile Include="Queries\Companies\iMetalCompanyCreditTotalResults.cs" />
+    <Compile Include="Queries\Companies\iMetalCompanyCurrencyCode.cs" />
+    <Compile Include="Queries\Companies\iMetalFreightTerm.cs" />
+    <Compile Include="Queries\Companies\iMetalInvoice.cs" />
+    <Compile Include="Queries\Companies\iMetalPaymentTerm.cs" />
+    <Compile Include="Queries\Companies\iMetalTotalOpenCompletedAndLargestResult.cs" />
+    <Compile Include="Queries\GeneralInfo\CountryCodeModel.cs" />
+    <Compile Include="Queries\GeneralInfo\SalesGroupQuery.cs" />
+    <Compile Include="Queries\Orders\FilterCompanyCode.cs" />
+    <Compile Include="Queries\Orders\FilterDueDate.cs" />
+    <Compile Include="Queries\Orders\FilterOrderNumber.cs" />
+    <Compile Include="Queries\Orders\FilterOrderTypeCode.cs" />
+    <Compile Include="Queries\Orders\FilterSaleDate.cs" />
+    <Compile Include="Queries\Orders\OrderDetailsAdvancedQuery.cs" />
+    <Compile Include="Queries\Orders\OrderDetailsProjection.cs" />
+    <Compile Include="Queries\Orders\OrderItemsProjection.cs" />
+    <Compile Include="Queries\Orders\OrdersAdvancedQuery.cs" />
+    <Compile Include="Queries\Orders\QueryOrders.cs" />
+    <Compile Include="Queries\ProductBalances\BalanceMeasurement.cs" />
+    <Compile Include="Queries\ProductBalances\ProductBalancesAdvancedQuery.cs" />
+    <Compile Include="Queries\ProductCodes\ProductMasterAdvancedQuery.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\PurchaseOrderItemsAdvancedQuery.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\PurchaseOrderItemUnit.cs" />
+    <Compile Include="Queries\StockItems\StockItemsAdvancedQuery.cs" />
+    <Compile Include="Queries\Warehouses\WarehousesAdvancedQuery.cs" />
+    <Compile Include="Results\OrderResult.cs" />
+    <Compile Include="Models\SalesHeadersModel.cs" />
+    <Compile Include="Models\SalesItemsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Companies\CustomersCode.cs" />
+    <Compile Include="Queries\Companies\CustomersName.cs" />
+    <Compile Include="Queries\Companies\CustomersShortName.cs" />
+    <Compile Include="Queries\Companies\CustomersStatus.cs" />
+    <Compile Include="Queries\Companies\CustomersStatusDescription.cs" />
+    <Compile Include="Queries\Companies\CustomersTypeCode.cs" />
+    <Compile Include="Queries\Companies\CustomersTypeCodeDescription.cs" />
+    <Compile Include="Queries\Companies\QueryCompany.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterAvailableLength.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterAvailablePieces.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterAvailableWeight.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterCategoryCode.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterCategoryCodeDescription.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterCreateDate.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterDensity.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterDueDate.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterInsideDiameter.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterLength.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterMaterialType.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterMaterialTypeDescription.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterMetalCategory.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterMetalType.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterOutsideDiameter.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterProductCategory.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterProductCode.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterProductCondition.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterProductDescription.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterProductGrade.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterProductSize.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterStockType.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterThick.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\QueryPurchaseOrderItems.cs" />
+    <Compile Include="Queries\PurchaseOrderItems\FilterWidth.cs" />
+    <Compile Include="Queries\StockItems\QueryStockItems.cs" />
+    <Compile Include="Queries\StockItems\FilterAvailableLength.cs" />
+    <Compile Include="Queries\StockItems\FilterAvailablePieces.cs" />
+    <Compile Include="Queries\StockItems\FilterAvailableWeight.cs" />
+    <Compile Include="Queries\StockItems\FilterCreateDate.cs" />
+    <Compile Include="Queries\StockItems\FilterDensity.cs" />
+    <Compile Include="Queries\StockItems\FilterHeatNumber.cs" />
+    <Compile Include="Queries\StockItems\FilterInsideDiameter.cs" />
+    <Compile Include="Queries\StockItems\FilterLength.cs" />
+    <Compile Include="Queries\StockItems\FilterLocation.cs" />
+    <Compile Include="Queries\StockItems\FilterMaterialType.cs" />
+    <Compile Include="Queries\StockItems\FilterMaterialTypeDescription.cs" />
+    <Compile Include="Queries\StockItems\FilterMetalCategory.cs" />
+    <Compile Include="Queries\StockItems\FilterMetalType.cs" />
+    <Compile Include="Queries\StockItems\FilterMill.cs" />
+    <Compile Include="Queries\StockItems\FilterNotes.cs" />
+    <Compile Include="Queries\StockItems\FilterOutsideDiameter.cs" />
+    <Compile Include="Queries\StockItems\FilterProductCategory.cs" />
+    <Compile Include="Queries\StockItems\FilterProductCode.cs" />
+    <Compile Include="Queries\StockItems\FilterProductCondition.cs" />
+    <Compile Include="Queries\StockItems\FilterProductGrade.cs" />
+    <Compile Include="Queries\StockItems\FilterProductSize.cs" />
+    <Compile Include="Queries\StockItems\FilterStockType.cs" />
+    <Compile Include="Queries\StockItems\FilterTagNumber.cs" />
+    <Compile Include="Queries\StockItems\FilterThick.cs" />
+    <Compile Include="Queries\StockItems\FilterWarehouseCode.cs" />
+    <Compile Include="Queries\StockItems\FilterWarehouseName.cs" />
+    <Compile Include="Queries\StockItems\FilterWidth.cs" />
+    <Compile Include="Results\CompanySearchResult.cs" />
+    <Compile Include="Results\PurchaseOrderItemResult.cs" />
+    <Compile Include="Results\StockItemResult.cs" />
+    <Compile Include="Tests\GeneralInfoTests\CountryCodeTest.cs" />
+    <Compile Include="Tests\GeneralInfoTests\ExchangeRateTests.cs" />
+    <Compile Include="Tests\GeneralInfoTests\SalesGroupsTest.cs" />
+    <Compile Include="Tests\NonStockItems\TestNonStockItems.cs" />
+    <Compile Include="Tests\ObjectDumper.cs" />
+    <Compile Include="Tests\QueryCompanyTest\QueryCompanyTesting.cs" />
+    <Compile Include="Tests\QueryOrdersTest\QueryOrdersTest.cs" />
+    <Compile Include="Tests\QueryProductBalanceTest\ProductBalancesAdvancedQueryTest.cs" />
+    <Compile Include="Tests\QueryProductCode\QueryProductCodeTest.cs" />
+    <Compile Include="Tests\QueryPurchaseOrderTest\FastQueryTesting.cs" />
+    <Compile Include="Tests\QueryPurchaseOrderTest\QueryPurchaseOrderTesting.cs" />
+    <Compile Include="Tests\QueryStockItemsTest\AdvancedQueryTesting.cs" />
+    <Compile Include="Tests\QueryStockItemsTest\QueryStockItemTesting.cs" />
+    <Compile Include="ViewFilterObjects\EnhancedRangeFilterBase.cs" />
+    <Compile Include="ViewFilterObjects\EnhancedStringFilterBase.cs" />
+    <Compile Include="ViewFilterObjects\EnumValue.cs" />
+    <Compile Include="ViewFilterObjects\FilterBase.cs" />
+    <Compile Include="ViewFilterObjects\RangeFilterBase.cs" />
+    <Compile Include="ViewFilterObjects\StringFilterBase.cs" />
+    <Compile Include="ViewFilterObjects\StringFilterType.cs" />
+    <Compile Include="ViewFilterObjects\QueryBase.cs" />
+    <Compile Include="ViewModelObjects\BaseFilterViewComponent.cs" />
+    <Compile Include="ViewModelObjects\RangeFilterViewComponent.cs" />
+    <Compile Include="ViewModelObjects\StringFilterViewComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Context\CompanyModel.Diagram1.view">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\CompanyModel.edps">
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\CompanyModel.info">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\CompanyModel.lqml">
+      <Generator>DevartLinqToSqlGenerator</Generator>
+      <LastGenOutput>CompanyModel.info</LastGenOutput>
+    </None>
+    <None Include="Context\DataContext1.Diagram1.view">
+      <DependentUpon>DataContext1.lqml</DependentUpon>
+    </None>
+    <None Include="Context\DataContext1.edps">
+      <DependentUpon>DataContext1.lqml</DependentUpon>
+    </None>
+    <None Include="Context\DataContext1.lqml">
+      <Generator>DevartLinqToSqlGenerator</Generator>
+      <LastGenOutput>DataContext1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Context\GeneralInfo.Diagram1.view">
+      <DependentUpon>GeneralInfo.lqml</DependentUpon>
+    </None>
+    <None Include="Context\GeneralInfo.edps">
+      <DependentUpon>GeneralInfo.lqml</DependentUpon>
+    </None>
+    <None Include="Context\GeneralInfo.info">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeneralInfo.lqml</DependentUpon>
+    </None>
+    <None Include="Context\GeneralInfo.lqml">
+      <Generator>DevartLinqToSqlGenerator</Generator>
+      <LastGenOutput>GeneralInfo.info</LastGenOutput>
+    </None>
+    <None Include="Context\OrdersModel.Diagram1.view">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\OrdersModel.edps">
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\OrdersModel.info">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdersModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\OrdersModel.lqml">
+      <Generator>DevartLinqToSqlGenerator</Generator>
+      <LastGenOutput>OrdersModel.info</LastGenOutput>
+    </None>
+    <None Include="Context\PurchaseOrdersModel.Diagram1.view">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\PurchaseOrdersModel.edps">
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\PurchaseOrdersModel.info">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrdersModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\PurchaseOrdersModel.lqml">
+      <Generator>DevartLinqToSqlGenerator</Generator>
+      <LastGenOutput>PurchaseOrdersModel.info</LastGenOutput>
+    </None>
+    <None Include="Context\StockItemsModel.Diagram1.view">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\StockItemsModel.edps">
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\StockItemsModel.info">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockItemsModel.lqml</DependentUpon>
+    </None>
+    <None Include="Context\StockItemsModel.lqml">
+      <Generator>DevartLinqToSqlGenerator</Generator>
+      <LastGenOutput>StockItemsModel.info</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Context\Partial\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BLL.EMail\BLL.EMail.csproj">
+      <Project>{0e298c51-3de3-451a-9fed-b212c6727672}</Project>
+      <Name>BLL.EMail</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+  </Target>
+</Project>

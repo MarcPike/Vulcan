@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="licenses.licx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="licenses.licx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Devart.Data.PostgreSql" Version="7.18.1739" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Base.Core\DAL.Vulcan.Mongo.Base.Core.csproj" />
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Core\DAL.Vulcan.Mongo.Core.csproj" />
+    <ProjectReference Include="..\Vulcan.IMetal\Cache\Vulcan.IMetal\Vulcan.IMetal.csproj" />
+  </ItemGroup>
+
+</Project>

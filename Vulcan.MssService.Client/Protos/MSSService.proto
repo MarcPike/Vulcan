@@ -1,0 +1,238 @@
+// MSS Service definition.
+syntax = "proto3";
+option java_multiple_files = true;
+package MSSService;
+option csharp_namespace = "Vulcan.MssService.Protos";
+
+import "Protos/StandardDefinitions.proto";
+import "Protos/status.proto";
+
+/*
+ * The MSS service is used for all methods relating to the Material Specifications System.
+*/
+service MSSService
+{
+    rpc inventoryVerification(InventoryVerificationRequest) returns (InventoryVerificationResponse) {}
+}
+
+/*
+ * Parameter used when requesting a verification.
+ *
+*/
+message InventoryVerificationRequest
+{
+    Request request = 1;            // Only the userId is required in this request.
+
+    int32 serviceConnectionId = 2;  // Mandatory service connection id (service_connection_data).
+
+    InventoryVerificationSelectionParameters selections = 3;
+    InventoryVerificationSpecificationParameters specifications = 4;
+    InventoryVerificationResultFilterParameters resultFilters = 5;
+}
+
+message InventoryVerificationSelectionParameters
+{
+    // If a stock item id is specified, then the other selection parameters will be ignored.
+    int32 stockItemId = 1;          // Optional record id (stock_items) of stock item to be verified.
+
+    // If a part number is specified, the query will use the Group, Size and Grade from the part
+    // when searching for inventory.
+    int32 partNumberId = 2;         // Optional part number id (part_number_specifications).
+
+    int32 productId = 3;            // Optional product id (products).
+    string group = 4;               // Optional group code - Searches using Category Code.
+    string sizeFrom = 5;            // Optional size From - Searches using Dimension 2 and Dimension 3.
+    string sizeTo = 6;              // Optional size To - Searches using Dimension 2 and Dimension 3.
+    string grade = 7;               // Optional grade code - Searches using Specification Value 2.
+
+    int32 millId = 8;               // Optional mill id (mills) when searching by mill and cast.
+    string castNumber = 9;          // Optional cast number.
+
+    bool includeReserved = 10;       // If TRUE, then fully allocated stock items are included.
+
+    string lengthMinimum = 11;      // Optional Minimum stock item length.
+    string lengthMaximum = 12;      // Optional Maximum stock item length.
+    string weightMinimum = 13;      // Optional Minimum stock item weight.
+    string weightMaximum = 14;      // Optional Maximum stock item weight.
+
+    string warehouseCode = 15;      // Optional stock warehouse code
+}
+
+message InventoryVerificationSpecificationParameters
+{
+    // The sales item id will be used to find a Working Specification to use for verification.
+    // If no working spec is found, the manual specifications will be used instead.
+    int32 salesItemId = 1;          // Sales item id.
+
+    // The following parameters define any manually requested specification codes if a working spec is
+    // not found.
+    int32 baseSpecificationId = 2;
+    int32 partSpecificationId = 3;
+    int32 additionalSpecification1Id = 4;
+    int32 additionalSpecification2Id = 5;
+    int32 additionalSpecification3Id = 6;
+    int32 additionalSpecification4Id = 7;
+}
+
+message InventoryVerificationResultFilterParameters
+{
+    // This selection controls which Stock Items to include based on the test result.
+    enum StockTestStatus
+    {
+        TEST_BOTH = 0;
+        TEST_PASS = 1;
+        TEST_FAIL = 2;
+    }
+    StockTestStatus stockTestStatus = 1;
+
+    // This selection controls which results to include against each stock item, based on the test result.
+    enum TestResultStatus
+    {
+        RESULT_BOTH = 0;
+        RESULT_FAIL = 1;
+    }
+    TestResultStatus testResultStatus = 2;
+
+    // This selection defines which verifications to run for each stock item.
+    enum InventoryVerification
+    {
+        AN       = 0;
+        AN_HT    = 1;
+        AN_HT_TE = 2;
+        AN_TE    = 3;
+        HT_TE    = 4;
+    }
+    InventoryVerification inventoryVerification = 3;
+}
+
+// *** Response Message Definitions ***
+message InventoryVerificationResponse
+{
+	Status status = 1;
+
+    repeated InventoryVerificationStockLine stockLine = 2;
+}
+
+/*
+ * Defines a set of results for an individual stock item.
+*/
+message InventoryVerificationStockLine
+{
+    string branchCode = 1;
+    string stockNumber = 2;
+    string warehouseCode = 3;
+    string millCode = 4;
+    string castNumber = 5;
+
+    string group = 6;
+    string size = 7;
+    string grade = 8;
+
+    int32 availablePieces = 9;
+    string availableQuantity = 10;
+    string availableWeight = 11;
+
+    string location = 12;
+    string width = 13;
+    string length = 14;
+    string gauge = 15;
+
+    string masterNumber = 16;
+    string masterWarehouse = 17;
+    string masterPOBranch = 18;
+    string masterPONumber = 19;
+    string masterPOItem = 20;
+
+    string testNumber = 21;
+    string treatmentReference = 22;
+    string forgeReduction = 23;
+
+    string specTestHeaderNumber = 24;
+    string specTestHeaderNumberRef = 25;
+
+    // Simple notes line showing details about a stock item.
+    InventoryVerificationHeaderLine notesLine = 26;
+
+    // Specification details.
+    InventoryVerificationSpecificationsLine specificationsLine = 27;
+
+    // Set of test headers.
+    repeated InventoryVerificationHeaderLine testHeaders = 28;
+}
+
+// The specification codes used for verifying a stock item.
+message InventoryVerificationSpecificationsLine
+{
+    string workingSpecification = 1;
+    string baseSpecification = 2;
+    string partSpecification = 3;
+    string additionalSpecification1 = 4;
+    string additionalSpecification2 = 5;
+    string additionalSpecification3 = 6;
+    string additionalSpecification4 = 7;
+}
+
+message InventoryVerificationHeaderLine
+{
+    // The line type.
+    InventoryVerificationTestLineType testLineType = 1;
+
+    // Textual description of header line.
+    string title = 2;
+
+    // Set of results against this header.
+    repeated InventoryVerificationResultLine resultLine = 3;
+
+    // Set of headers against this header.
+    repeated InventoryVerificationHeaderLine headerLine = 4;
+}
+
+message InventoryVerificationResultLine
+{
+    // The result.
+    InventoryVerificationResult result = 1;
+
+    string resultMessage = 2;
+
+    // This message is self-referential to allow multiple nested sets of result messages.
+    repeated InventoryVerificationResultLine resultLine = 3;
+
+    // Set of headers against this header.
+    repeated InventoryVerificationHeaderLine headerLine = 4;
+}
+
+/*
+ * Defines each of the test results.
+*/
+enum InventoryVerificationResult
+{
+    PASS = 0;
+    FAIL = 1;
+    FAILHOWCO = 2;
+    FORINFORMATIONONLY = 3;
+}
+
+/*
+ * Defines each type of test line that can appear in the results.
+*/
+enum InventoryVerificationTestLineType
+{
+    MATERIAL = 0;
+    PRODUCT = 1;
+    HEAT = 2;
+    TEST = 3;
+    HARDNESSQTC = 4;
+    HARDNESSMAT = 5;
+    HARDNESSINDENT = 6;
+    TENSILES = 7;
+    CVN = 8;
+    MACROS = 9;
+    MICROS = 10;
+    G48A = 11;
+    G28A = 12;
+    AUSTENITE = 13;
+    NDE = 14;
+    STRESS = 15;
+    FT = 16;
+    NOTE = 17;
+}

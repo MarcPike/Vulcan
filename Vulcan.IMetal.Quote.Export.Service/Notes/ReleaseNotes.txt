@@ -1,0 +1,6 @@
+﻿1. Change Program.cs to EnvironmentSettings.CurrentEnvironment = DAL.Vulcan.Mongo.Base.Context.Environment.QualityControl;
+2. Ensure App.Config has correct connection string
+3. Make sure we are building for Release
+
+// NO LONGER NECESSARY 3. Change QuoteExportWorker qcMode line 27 to correct value
+// NO LONGER NECESSARY 4. Change DAL.Vulcan.Mongo\PublishSignalR\PublishSignalREvents.cs to correct environment

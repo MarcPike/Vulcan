@@ -1,0 +1,237 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/CodeStyle/Naming/CSharpAutoNaming/IsNotificationDisabled/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=Method/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=Parameters/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=Locals/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=TypesAndNamespaces/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=PrivateInstanceFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="_" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=PrivateStaticReadonly/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb"&gt;&lt;ExtraRule Prefix="Company" Suffix="" Style="AaBb" /&gt;&lt;/Policy&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=Property/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=PrivateStaticFields/@EntryIndexedValue">&lt;Policy Inspect="False" Prefix="_" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=Constants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB"&gt;&lt;ExtraRule Prefix="" Suffix="" Style="AaBb" /&gt;&lt;/Policy&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=Interfaces/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="I" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=TypeParameters/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="T" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=EnumMember/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=LocalFunctions/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb"&gt;&lt;ExtraRule Prefix="Update" Suffix="" Style="AaBb" /&gt;&lt;/Policy&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=PublicFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=Event/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="On" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/AutoDetectedNamingRules/=PrivateConstants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:Boolean x:Key="/Default/CodeStyle/Naming/CSharpNaming/ApplyAutoDetectedRules/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/Naming/CSharpAutoNaming/IsNamingAutoDetectionCompleted/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="D:\Code\Vulcan.CRM\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:Boolean x:Key="/Default/Environment/Hierarchy/EntityFrameworkOptions/IsAlreadyNotifiedAboutEntityFramework/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=124e7b4a_002D1a34_002D4d66_002Daba4_002D491eaffece7f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CompanyQueryTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.CompanyQueryTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=14a7dca2_002D0918_002D4af5_002D8a4a_002Dca2487da5b37/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="PaymentTermsTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::6885E22A-592A-4B03-B4D0-26B270B3A084::.NETFramework,Version=v4.6.1::Vulcan.IMetal.Tests.QueryCompanyTest.QueryCompanyTesting.PaymentTermsTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.ProductMastersQueryTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1965f3dc_002D3981_002D4559_002Daa57_002D0b62c7a5c796/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RemoveAllMachinedParts" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8D8A95FA-F323-44A0-8BD5-D53134910B8E::.NETCoreApp,Version=v3.1::DAL.Vulcan.Mongo.Core.Test.NunitTests.RemoveAllMachinedPartItems.RemoveMachinedParts.RemoveAllMachinedParts&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1cdcf470_002D90e5_002D47e6_002Dac7f_002D7400b5d2d949/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IncomingQueryTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.IncomingQueryTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.CompanyQueryTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2D465173-0A25-4AB7-AF74-F932568C4BBB::.NETFramework,Version=v4.6.1::DAL.Vulcan.NUnit.Tests.Company.RefreshTeamCompanies.FixCompanyNames&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=26cf52ad_002D2394_002D4afc_002Db443_002D28329598f4a1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FindEmployeeVerificationWithDismissed" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.Dashboard_Test.DashboardTesting.FindEmployeeVerificationWithDismissed&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3fae6047_002D0b47_002D4d6b_002D91b3_002D6d28969a2ee2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="StockItemsQueryTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.StockItemsQueryTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=591ca8b6_002D349c_002D40bc_002D8549_002Dc0084813c591/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RemoveAllMachinedParts #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8D8A95FA-F323-44A0-8BD5-D53134910B8E::.NETCoreApp,Version=v3.1::DAL.Vulcan.Mongo.Core.Test.NunitTests.RemoveAllMachinedPartItems.RemoveMachinedParts.RemoveAllMachinedParts&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7b84ec1d_002Db447_002D458f_002D9822_002D998a72b0299e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ProductMastersQueryTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.ProductMastersQueryTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a0ac6f3e_002D2185_002D4549_002D80b9_002D610d5d2b7fe8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CompanyTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.CompanyTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.CompanyQueryTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::6885E22A-592A-4B03-B4D0-26B270B3A084::.NETFramework,Version=v4.6.1::Vulcan.IMetal.Tests.QueryCompanyTest.QueryCompanyTesting.BasicTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2D465173-0A25-4AB7-AF74-F932568C4BBB::.NETFramework,Version=v4.6.1::DAL.Vulcan.NUnit.Tests.Quote_Tests.ExamineQuoteItems.LookAtQuoteItems&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.ProductMastersQueryTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2D465173-0A25-4AB7-AF74-F932568C4BBB::.NETFramework,Version=v4.6.1::DAL.Vulcan.NUnit.Tests.ContactTreeCleanup.CleanupDeadContactsInProduction.IdentityTreeDataInvalid&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F76617E6-8F4E-4392-8DD7-07B4E9F25830::.NETFramework,Version=v4.7.2::HRS.Web.Client.CSharp.Test.HrsDynamicFetcherExamples.GetTrainingInfo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=acc79715_002Db15d_002D457e_002D999a_002D101241140348/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CompanyTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.CompanyTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b38643bd_002Dbbf0_002D489d_002D8d12_002Dab2eb3a64ba2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetTrainingInfoForQng" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperExternalApi_Tests.HelperExternalApiTests.GetTrainingInfoForQng&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bf214422_002D5196_002D4391_002Db168_002D04e46495855e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ProductMastersQueryProductCategories" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.ProductMastersQueryProductCategories&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2D465173-0A25-4AB7-AF74-F932568C4BBB::.NETFramework,Version=v4.6.1::DAL.Vulcan.NUnit.Tests.Company.RefreshTeamCompanies.FixCompanyNames&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c80d147c_002D53a3_002D45aa_002D9a28_002D25169e7a439b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CompanyTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.CompanyTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d92092f4_002Dc7a3_002D4444_002D8e36_002D41e44c202c25/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetModuleNames" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperSecurity_Tests.HelperSecurityTests.GetModuleNames&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=decf1319_002Dc058_002D4af4_002D9093_002D2bea31f1d1fe/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="StockItemsQueryTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.StockItemsQueryTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::6885E22A-592A-4B03-B4D0-26B270B3A084::.NETFramework,Version=v4.6.1::Vulcan.IMetal.Test.QueryStockItemsTest.AdvancedQueryTesting.GetAllInventory&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2D465173-0A25-4AB7-AF74-F932568C4BBB::.NETFramework,Version=v4.6.1::DAL.Vulcan.NUnit.Tests.Compare_StockItems_to_Cache.StockItemComparer.ExecuteTake10&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F76617E6-8F4E-4392-8DD7-07B4E9F25830::.NETFramework,Version=v4.7.2::HRS.Web.Client.CSharp.Test.HrsDynamicFetcherExamples.GetTrainingInfo&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.LookForTag&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HrsUserList.GetHrsUserList.Execute&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperExternalApi_Tests.HelperExternalApiTests.GetTrainingInfoForQng&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperSecurity_Tests.HelperSecurityTests.GetRoleNames&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperSecurity_Tests.HelperSecurityTests.GetModulesForHrVI&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperTraining_Tests.HelperTrainingTests.GetTrainingEventsGrid&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperSecurity_Tests.HelperSecurityTests.GetModulesForRole&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fbfada6f_002D462e_002D4c29_002D8428_002D3aaf9ec72c91/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CallSomeCountTask" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.Dashboard_Test.DashboardTesting.CallSomeCountTask&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ff06375e_002Dae51_002D4dd1_002D9ce3_002D669aaa5dacfc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="StockItemsQueryTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.StockItemsQueryTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperTraining_Tests.HelperTrainingTests.GetTrainingEventsWithTrainingHours&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F76617E6-8F4E-4392-8DD7-07B4E9F25830::.NETFramework,Version=v4.7.2::HRS.Web.Client.CSharp.Test.HrsDynamicFetcherExamples.GetTrainingInfo&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperExternalApi_Tests.HelperExternalApiTests.GetTrainingInfoForQng&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::04A30A8D-78AD-4CAE-B118-455B1587C7F1::.NETCoreApp,Version=v3.1::DAL.iMetal.Core.Test.Tests.QueryTests.QueryTesting.QuickStringInterpolationTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperPerformance.HelperPerformanceTesting.GridTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperSecurity_Tests.HelperSecurityTests.GetRolesThatHaveDashboards&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::6885E22A-592A-4B03-B4D0-26B270B3A084::.NETFramework,Version=v4.6.1::Vulcan.IMetal.Tests.QueryCompanyTest.QueryCompanyTesting.BasicTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::2D465173-0A25-4AB7-AF74-F932568C4BBB::.NETFramework,Version=v4.6.1::DAL.Vulcan.NUnit.Tests.Company.RefreshTeamCompanies.FixCompanyNames&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperSecurity_Tests.HelperSecurityTests.GetModuleNames&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F76617E6-8F4E-4392-8DD7-07B4E9F25830::.NETFramework,Version=v4.7.2::HRS.Web.Client.CSharp.Test.HrsDynamicFetcherExamples.GetHseIncidentsByVarDataField&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperFile_Tests.HelperFileTesting.GetUniqueDocumentTypesForIncidentReportingScreen&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperFile_Tests.HelperFileTesting.GetIncidentReportingScreenDocsThatShouldBeMoved&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperExternalApi_Tests.HelperExternalApiTests.GetEmployeeBasicDateForQng&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F76617E6-8F4E-4392-8DD7-07B4E9F25830::.NETFramework,Version=v4.7.2::HRS.Web.Client.CSharp.Test.HrsDynamicFetcherExamples.GetEmployeeDetailsForQng&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperExternalApi_Tests.HelperExternalApiTests.RawTestTerminationDate&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.HelperExternalApi_Tests.HelperExternalApiTests.GetCompensationForQng&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.Dashboard_Test.DashboardTesting.HrsDashboard&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.Dashboard_Test.DashboardTesting.FindEmployeeVerificationWithDismissed&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.Dashboard_Test.DashboardTesting.SomeCountTask&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7A598BBA-F38A-4A61-9356-39ECE1A0529A::.NETFramework,Version=v4.6.1::DAL.HRS.Mongo.Tests.Dashboard_Test.DashboardTesting.CallSomeCountTask&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark1/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark1/Coords/@EntryValue">(Doc Ln 77 Col 0)</s:String>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark1/FileId/@EntryValue">7A598BBA-F38A-4A61-9356-39ECE1A0529A/d:Tests/d:HelperFile Tests/f:HelperFileTesting.cs</s:String>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark1/Owner/@EntryValue">NumberedBookmarkManager</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<s:Boolean x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark2/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark2/Coords/@EntryValue">(Doc Ln 458 Col 1)</s:String>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark2/FileId/@EntryValue">A9BF9DCC-3A16-4678-9153-D7CF02720680/d:ImportHrs/f:UpsertEmployeesFromHrsToMongo.cs</s:String>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark2/Owner/@EntryValue">NumberedBookmarkManager</s:String>
+	
+	
+	
+	
+	
+	
+	
+	</wpf:ResourceDictionary>

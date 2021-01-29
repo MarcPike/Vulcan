@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A598BBA-F38A-4A61-9356-39ECE1A0529A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL.HRS.Mongo</RootNamespace>
+    <AssemblyName>DAL.HRS.Mongo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.3.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.3.1\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.10.4\lib\net452\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.10.4\lib\net452\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.10.4\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.GridFS, Version=2.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.GridFS.2.9.1\lib\net452\MongoDB.Driver.GridFS.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Novell.Directory.Ldap, Version=2.2.1.0, Culture=neutral">
+      <HintPath>..\packages\Novell.Directory.Ldap.2.2.1\lib\Novell.Directory.Ldap.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocClass\AuditTrails\EmployeeAuditTrail.cs" />
+    <Compile Include="DocClass\Compensation\TargetPercentage.cs" />
+    <Compile Include="DocClass\Employee\EmployeeDrugTest.cs" />
+    <Compile Include="DocClass\Employee\EmployeeMedicalInfo.cs" />
+    <Compile Include="DocClass\Employee\HrRepresentative.cs" />
+    <Compile Include="DocClass\Employee\MedicalLeave.cs" />
+    <Compile Include="DocClass\Employee\EmployeeMedicalLeaveHistory.cs" />
+    <Compile Include="DocClass\Employee\EmployeeOtherMedicalInfo.cs" />
+    <Compile Include="DocClass\Hse\BbsDepartmentSubCategoryRef.cs" />
+    <Compile Include="DocClass\Hse\BbsInfluenceBehaviorType.cs" />
+    <Compile Include="DocClass\Hse\BbsObservationItem.cs" />
+    <Compile Include="DocClass\Hse\BbsObserver.cs" />
+    <Compile Include="DocClass\Hse\BbsPrecautionTypeLocation.cs" />
+    <Compile Include="DocClass\Hse\BbsTaskSubCategory.cs" />
+    <Compile Include="DocClass\Hse\BbsTaskSubCategoryRef.cs" />
+    <Compile Include="DocClass\Legal\RegulatoryIncidentWitness.cs" />
+    <Compile Include="DocClass\Legal\RegulatoryIncidentInvestigator.cs" />
+    <Compile Include="DocClass\Legal\RegulatoryIncident.cs" />
+    <Compile Include="DocClass\SecurityRole\FileOperations.cs" />
+    <Compile Include="DocClass\Training\Certification.cs" />
+    <Compile Include="DocClass\Dashboard\DashboardItemRef.cs" />
+    <Compile Include="DocClass\Dashboard\DashboardItemType.cs" />
+    <Compile Include="DocClass\Dashboard\DashboardEmployeeVerificationDocument.cs" />
+    <Compile Include="DocClass\Dashboard\DashboardItem.cs" />
+    <Compile Include="DocClass\FileOperations\SupportingDocumentRef.cs" />
+    <Compile Include="DocClass\Hse\AffectedBodyPart.cs" />
+    <Compile Include="DocClass\Hse\AffectedBodyPartsList.cs" />
+    <Compile Include="DocClass\Hse\BaseHseInfoType.cs" />
+    <Compile Include="DocClass\Hse\BbsDepartment.cs" />
+    <Compile Include="DocClass\Hse\BbsDepartmentRef.cs" />
+    <Compile Include="DocClass\Hse\BbsDepartmentSubCategory.cs" />
+    <Compile Include="DocClass\Hse\BbsObservation.cs" />
+    <Compile Include="DocClass\Hse\BbsPrecaution.cs" />
+    <Compile Include="DocClass\Hse\BbsTask.cs" />
+    <Compile Include="DocClass\Hse\BbsTaskRef.cs" />
+    <Compile Include="DocClass\Config\Configuration.cs" />
+    <Compile Include="DocClass\Config\UserConfiguration.cs" />
+    <Compile Include="DocClass\Employee\JobTitle.cs" />
+    <Compile Include="DocClass\Employee\JobTitleRef.cs" />
+    <Compile Include="DocClass\FileOperations\FileAttachmentsHrs.cs" />
+    <Compile Include="DocClass\FileOperations\Mime.cs" />
+    <Compile Include="DocClass\Hrs User\HrsUserSecurity.cs" />
+    <Compile Include="DocClass\Hrs User\HseUserSecurity.cs" />
+    <Compile Include="DocClass\Hse\AspectCode.cs" />
+    <Compile Include="DocClass\Hse\AspectScore.cs" />
+    <Compile Include="DocClass\Hse\AspectScoreHistory.cs" />
+    <Compile Include="DocClass\Hse\AssignedWorkAreas.cs" />
+    <Compile Include="DocClass\Hse\BodyContact.cs" />
+    <Compile Include="DocClass\Hse\ChangeHistory.cs" />
+    <Compile Include="DocClass\Hse\ContactWith.cs" />
+    <Compile Include="DocClass\Hse\CoshhDisposalMethodRef.cs" />
+    <Compile Include="DocClass\Hse\CoshhDisposalMethod.cs" />
+    <Compile Include="DocClass\Hse\CoshhFirstAidMeasure.cs" />
+    <Compile Include="DocClass\Hse\CoshhHazardTypeRef.cs" />
+    <Compile Include="DocClass\Hse\CoshhHazardTypes.cs" />
+    <Compile Include="DocClass\Hse\CoshhProduct.cs" />
+    <Compile Include="DocClass\Hse\CoshhProductGhsClassification.cs" />
+    <Compile Include="DocClass\Hse\CoshhProductManufacturer.cs" />
+    <Compile Include="DocClass\Hse\CoshhProductManufacturerRef.cs" />
+    <Compile Include="DocClass\Hse\CoshhProductUsage.cs" />
+    <Compile Include="DocClass\Hse\CoshhProductUsageRef.cs" />
+    <Compile Include="DocClass\Hse\CoshhRiskAssessment.cs" />
+    <Compile Include="DocClass\Hse\CoshhStorageMethod.cs" />
+    <Compile Include="DocClass\Hse\CoshhStorageMethodRef.cs" />
+    <Compile Include="DocClass\Hse\CriteriaType.cs" />
+    <Compile Include="DocClass\Hse\DrugTest.cs" />
+    <Compile Include="DocClass\Hse\DrugTestMedicalInfo.cs" />
+    <Compile Include="DocClass\Hse\DrugTestRef.cs" />
+    <Compile Include="DocClass\Hse\EmployeeIncident.cs" />
+    <Compile Include="DocClass\Hse\EnvAspectCriteriaScore.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactEvent.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactImpactType.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactIncident.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactIncidentInvestigator.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactIncidentWitness.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactJobFactor.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactLackOfControl.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactNatureOfEvent.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactPersonalFactor.cs" />
+    <Compile Include="DocClass\Hse\EnvImpactRootCause.cs" />
+    <Compile Include="DocClass\Hse\EquipmentInvolved.cs" />
+    <Compile Include="DocClass\Hse\GbsClassification.cs" />
+    <Compile Include="DocClass\Hse\GbsClassificationRef.cs" />
+    <Compile Include="DocClass\Hse\HseObservation.cs" />
+    <Compile Include="DocClass\Hse\HseObservationAction.cs" />
+    <Compile Include="DocClass\Hse\HseObservationNotifications.cs" />
+    <Compile Include="DocClass\Hse\HseObservationSuggestion.cs" />
+    <Compile Include="DocClass\Hse\IIQ.cs" />
+    <Compile Include="DocClass\Hse\IncidentLeave.cs" />
+    <Compile Include="DocClass\Hse\Investigation.cs" />
+    <Compile Include="DocClass\Hse\JobFactor.cs" />
+    <Compile Include="DocClass\Hse\LackOfControl.cs" />
+    <Compile Include="DocClass\Hse\MedicalLeave.cs" />
+    <Compile Include="DocClass\Hse\MedicalTreatment.cs" />
+    <Compile Include="DocClass\Hse\MedicalWorkStatus.cs" />
+    <Compile Include="DocClass\Hse\NatureOfInjury.cs" />
+    <Compile Include="DocClass\Hse\PersonalFactor.cs" />
+    <Compile Include="DocClass\Hse\Review.cs" />
+    <Compile Include="DocClass\Hse\RootCause.cs" />
+    <Compile Include="DocClass\Hse\Witness.cs" />
+    <Compile Include="DocClass\MedicalExams\EmployeeMedicalExam.cs" />
+    <Compile Include="DocClass\Properties\PropertyBuilder.cs" />
+    <Compile Include="DocClass\Properties\PropertyType.cs" />
+    <Compile Include="DocClass\Properties\PropertyValue.cs" />
+    <Compile Include="DocClass\Properties\PropertyValueRef.cs" />
+    <Compile Include="DocClass\Training\CertificationRef.cs" />
+    <Compile Include="DocClass\Training\RequiredActivity.cs" />
+    <Compile Include="DocClass\Training\RequiredActivityGenerator.cs" />
+    <Compile Include="DocClass\Training\RequiredActivityQuery.cs" />
+    <Compile Include="DocClass\Training\RequiredActivityRef.cs" />
+    <Compile Include="DocClass\Training\RequiredActivityStatus.cs" />
+    <Compile Include="DocClass\Training\RequiredActivityType.cs" />
+    <Compile Include="DocClass\Training\TrainingCourseDeActivateLog.cs" />
+    <Compile Include="DocClass\Training\TrainingCourseRef.cs" />
+    <Compile Include="DocClass\Training\TrainingEvent.cs" />
+    <Compile Include="DocClass\Training\TrainingAttendee.cs" />
+    <Compile Include="DocClass\Training\TrainingCourse.cs" />
+    <Compile Include="DocClass\Training\TrainingHours.cs" />
+    <Compile Include="DocClass\Training\TrainingInitialCourse.cs" />
+    <Compile Include="DocClass\Training\TrainingEventRef.cs" />
+    <Compile Include="DocClass\Training\TrainingScheduledCourse.cs" />
+    <Compile Include="DocClass\Versioning\CreateVersions.cs" />
+    <Compile Include="DocClass\Versioning\VersionHistory.cs" />
+    <Compile Include="Helpers\ActiveDirectoryBasedSecurity.cs" />
+    <Compile Include="Helpers\BaseDashboard.cs" />
+    <Compile Include="Helpers\EmployeeDirectReportsFilterGenerator.cs" />
+    <Compile Include="Helpers\EmployeeLocationsFilterGenerator.cs" />
+    <Compile Include="Helpers\ExecutiveDashboardResults.cs" />
+    <Compile Include="Models\ExpiringEventModel.cs" />
+    <Compile Include="Helpers\HelperBenefits.cs" />
+    <Compile Include="Helpers\HelperDashboard.cs" />
+    <Compile Include="Helpers\HelperEmployeeIncidents.cs" />
+    <Compile Include="Helpers\HelperEntity.cs" />
+    <Compile Include="Helpers\HelperExternalApi.cs" />
+    <Compile Include="Helpers\HelperHse.cs" />
+    <Compile Include="Helpers\HelperIntegrations.cs" />
+    <Compile Include="Helpers\HelperLegal.cs" />
+    <Compile Include="Helpers\HelperMedicalInfo.cs" />
+    <Compile Include="Helpers\HelperRequiredActivity.cs" />
+    <Compile Include="Helpers\HelperTraining.cs" />
+    <Compile Include="Helpers\HelperVersionHistory.cs" />
+    <Compile Include="Helpers\HrsDashboardResults.cs" />
+    <Compile Include="Helpers\HrsLocationChanger.cs" />
+    <Compile Include="Helpers\HseDashboardResults.cs" />
+    <Compile Include="Helpers\IHelperBenefits.cs" />
+    <Compile Include="Helpers\IHelperDashboard.cs" />
+    <Compile Include="Helpers\IHelperEmployeeIncidents.cs" />
+    <Compile Include="Helpers\IHelperExternalApi.cs" />
+    <Compile Include="Helpers\IHelperHse.cs" />
+    <Compile Include="Helpers\IHelperIntegrations.cs" />
+    <Compile Include="Helpers\IHelperLegal.cs" />
+    <Compile Include="Helpers\IHelperMedicalInfo.cs" />
+    <Compile Include="Helpers\IHelperRequiredActivity.cs" />
+    <Compile Include="Helpers\IHelperTraining.cs" />
+    <Compile Include="Helpers\IHelperVersionHistory.cs" />
+    <Compile Include="Helpers\MergeProperty.cs" />
+    <Compile Include="Helpers\SecurityRoleHelper.cs" />
+    <Compile Include="Models\BbsDepartmentModel.cs" />
+    <Compile Include="Models\BbsObservationGridModel.cs" />
+    <Compile Include="Models\BbsObservationModel.cs" />
+    <Compile Include="Models\BbsObserverModel.cs" />
+    <Compile Include="Models\BbsTaskModel.cs" />
+    <Compile Include="Models\EmployeeAuditTrailFlatModel.cs" />
+    <Compile Include="Models\EmployeeAuditTrailHistoryModel.cs" />
+    <Compile Include="Models\BaseListModel.cs" />
+    <Compile Include="Models\EmployeeAuditTrailModel.cs" />
+    <Compile Include="Models\EmployeeDrugTestModel.cs" />
+    <Compile Include="Models\EmployeeMedicalLeaveModel.cs" />
+    <Compile Include="Models\EmployeeMedicalLeaveHistoryModel.cs" />
+    <Compile Include="Models\EmployeeOtherMedicalInfoModel.cs" />
+    <Compile Include="DocClass\IHavePropertyValues.cs" />
+    <Compile Include="Models\GlobalHeadcountModel.cs" />
+    <Compile Include="Models\HalogenExportModel.cs" />
+    <Compile Include="Models\HrRepresentativeModel.cs" />
+    <Compile Include="Models\HrsUserGridModel.cs" />
+    <Compile Include="Models\IncidentSeverityModel.cs" />
+    <Compile Include="Models\IncidentsYearToYearModel.cs" />
+    <Compile Include="Models\MedicalLeaveHistoryGridModel.cs" />
+    <Compile Include="Models\QngEmployeeIncidentModel.cs" />
+    <Compile Include="Models\QngEmployeeIncidentVarDataModel.cs" />
+    <Compile Include="Models\JobTitleCourseCopyModel.cs" />
+    <Compile Include="Models\QngCompensationModel.cs" />
+    <Compile Include="Models\DashboardItemModel.cs" />
+    <Compile Include="Models\DrugTestModel.cs" />
+    <Compile Include="Models\EmployeeBasicInfoModel.cs" />
+    <Compile Include="Models\EmployeeIncidentGridModel.cs" />
+    <Compile Include="Models\EmployeeIncidentModel.cs" />
+    <Compile Include="Models\KronosExportModel.cs" />
+    <Compile Include="Models\MedicalExamGridModel.cs" />
+    <Compile Include="Models\EmployeeMedicalExamModel.cs" />
+    <Compile Include="Models\MedicalInfoGridModel.cs" />
+    <Compile Include="Models\MedicalInfoModel.cs" />
+    <Compile Include="Models\MedicalLeaveModel.cs" />
+    <Compile Include="Models\MedicalTreatmentModel.cs" />
+    <Compile Include="Models\MedicalWorkStatusModel.cs" />
+    <Compile Include="Models\NewHrsUserModel.cs" />
+    <Compile Include="Models\QngEmployeeBasicDataModel.cs" />
+    <Compile Include="Models\QngEmployeeIncidentModelOld.cs" />
+    <Compile Include="Models\QngTrainingInfoModel.cs" />
+    <Compile Include="Models\RegulatoryIncidentGridModel.cs" />
+    <Compile Include="Models\RequiredActivitiesQuery.cs" />
+    <Compile Include="Models\BaseGridModel.cs" />
+    <Compile Include="Models\BaseHoursModel.cs" />
+    <Compile Include="Models\BenefitsGridModel.cs" />
+    <Compile Include="Models\BenefitsModel.cs" />
+    <Compile Include="Models\BenefitDependentHistoryModel.cs" />
+    <Compile Include="Models\BenefitDependentModel.cs" />
+    <Compile Include="Models\BenefitEnrollmentHistoryModel.cs" />
+    <Compile Include="Models\BenefitEnrollmentModel.cs" />
+    <Compile Include="DocClass\Compensation\Bonus.cs" />
+    <Compile Include="DocClass\Compensation\BonusScheme.cs" />
+    <Compile Include="DocClass\Compensation\Compensation.cs" />
+    <Compile Include="DocClass\Compensation\CompensationHistory.cs" />
+    <Compile Include="DocClass\Discipline\Discipline.cs" />
+    <Compile Include="DocClass\Compensation\KronosPayRuleHistory.cs" />
+    <Compile Include="DocClass\Compensation\OtherCompensation.cs" />
+    <Compile Include="DocClass\Compensation\PayGradeHistory.cs" />
+    <Compile Include="DocClass\Compensation\PremiumComp.cs" />
+    <Compile Include="DocClass\Benefits\BenefitDependent.cs" />
+    <Compile Include="DocClass\Benefits\BenefitDependentHistory.cs" />
+    <Compile Include="DocClass\Benefits\BenefitEnrollment.cs" />
+    <Compile Include="DocClass\Benefits\BenefitEnrollmentHistory.cs" />
+    <Compile Include="DocClass\Benefits\Benefits.cs" />
+    <Compile Include="DocClass\Employee\PerformanceEvaluation.cs" />
+    <Compile Include="DocClass\Employee\Terminations.cs" />
+    <Compile Include="DocClass\Employee\WorkStatusHistory.cs" />
+    <Compile Include="DocClass\FileOperations\FileRef.cs" />
+    <Compile Include="DocClass\FileOperations\SupportingDocument.cs" />
+    <Compile Include="DocClass\Hrs User\HrsUserExtensions.cs" />
+    <Compile Include="DocClass\Hrs User\UserAppPermissions.cs" />
+    <Compile Include="DocClass\Performance\Performance.cs" />
+    <Compile Include="DocClass\Employee\EmployeeEmailAddress.cs" />
+    <Compile Include="DocClass\Employee\EmployeeRef.cs" />
+    <Compile Include="DocClass\Employee\EducationCertification.cs" />
+    <Compile Include="DocClass\Employee\EmergencyContacts.cs" />
+    <Compile Include="DocClass\Employee\Employee.cs" />
+    <Compile Include="DocClass\Employee\EmployeePhoneNumbers.cs" />
+    <Compile Include="DocClass\Employee\EmployeeVerification.cs" />
+    <Compile Include="DocClass\Employee\EmploymentVerification.cs" />
+    <Compile Include="DocClass\Hrs User\AppPermission.cs" />
+    <Compile Include="DocClass\Hrs User\AppPermissionRef.cs" />
+    <Compile Include="DocClass\Hrs User\HrsSecurityGroup.cs" />
+    <Compile Include="DocClass\Hrs User\HrsUser.cs" />
+    <Compile Include="DocClass\Hrs User\HrsUserRef.cs" />
+    <Compile Include="DocClass\Employee\IssuedEquipment.cs" />
+    <Compile Include="DocClass\Employee\ReqActivities.cs" />
+    <Compile Include="DocClass\SecurityRole\HrsModule.cs" />
+    <Compile Include="DocClass\SecurityRole\HrsUserRoleModuleLocations.cs" />
+    <Compile Include="Helpers\HelperCompensation.cs" />
+    <Compile Include="Helpers\HelperDiscipline.cs" />
+    <Compile Include="Helpers\HelperPerformance.cs" />
+    <Compile Include="Helpers\IHelperCompensation.cs" />
+    <Compile Include="Helpers\IHelperDiscipline.cs" />
+    <Compile Include="Helpers\IHelperPerformance.cs" />
+    <Compile Include="Index Builder\IndexBuilder.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\BonusModel.cs" />
+    <Compile Include="Models\BonusSchemeModel.cs" />
+    <Compile Include="Models\BonusYtdModel.cs" />
+    <Compile Include="Models\CompensationGridModel.cs" />
+    <Compile Include="Models\CompensationHistoryModel.cs" />
+    <Compile Include="Models\CompensationModel.cs" />
+    <Compile Include="Models\DisciplineGridModel.cs" />
+    <Compile Include="Models\DisciplineHistoryModel.cs" />
+    <Compile Include="Models\DisciplineModel.cs" />
+    <Compile Include="Models\EmployeeBasedModel.cs" />
+    <Compile Include="Models\EmployeeDetailsGridModel.cs" />
+    <Compile Include="Models\EmployeeEmailAddressModel.cs" />
+    <Compile Include="Models\EmployeeGridBaseData.cs" />
+    <Compile Include="Models\EmployeePhoneNumberModel.cs" />
+    <Compile Include="Models\EmployeeRolodex.cs" />
+    <Compile Include="Models\EmployeeTrainingEventGridModel.cs" />
+    <Compile Include="Models\EmployeeVerificationModel.cs" />
+    <Compile Include="Models\FileAttachmentModel.cs" />
+    <Compile Include="Models\HrsCompanyModel.cs" />
+    <Compile Include="Models\HrsSecurityModel.cs" />
+    <Compile Include="Models\HrsUserModuleLocationsModel.cs" />
+    <Compile Include="Models\HrsUserRoleModuleLocationsModel.cs" />
+    <Compile Include="DocClass\SecurityRole\InitializeSecurityRoles.cs" />
+    <Compile Include="DocClass\SecurityRole\SecurityRoleExtensions.cs" />
+    <Compile Include="DocClass\SecurityRole\SecurityRoleTypeRef.cs" />
+    <Compile Include="DocClass\SecurityRole\SystemModule.cs" />
+    <Compile Include="DocClass\SecurityRole\SecurityRole.cs" />
+    <Compile Include="DocClass\SecurityRole\SecurityRoleFactory.cs" />
+    <Compile Include="DocClass\SecurityRole\SystemModuleExtensions.cs" />
+    <Compile Include="DocClass\SecurityRole\SystemModuleFactory.cs" />
+    <Compile Include="DocClass\SecurityRole\SystemModuleType.cs" />
+    <Compile Include="DocClass\SecurityRole\SystemModuleTypeRef.cs" />
+    <Compile Include="DocClass\Security\HrsUserToken.cs" />
+    <Compile Include="DocClass\Security\HrsUserTokenConfig.cs" />
+    <Compile Include="DocClass\Employee\SupportingDocs.cs" />
+    <Compile Include="Helpers\HelperBase.cs" />
+    <Compile Include="Helpers\HelperEmployee.cs" />
+    <Compile Include="Helpers\HelperFile.cs" />
+    <Compile Include="Helpers\HelperLocation.cs" />
+    <Compile Include="Helpers\HelperPerson.cs" />
+    <Compile Include="Helpers\HelperProperties.cs" />
+    <Compile Include="Helpers\HelperSecurity.cs" />
+    <Compile Include="Helpers\HelperUser.cs" />
+    <Compile Include="Helpers\IHelperEmployee.cs" />
+    <Compile Include="Helpers\IHelperFile.cs" />
+    <Compile Include="Helpers\IHelperLocation.cs" />
+    <Compile Include="Helpers\IHelperPerson.cs" />
+    <Compile Include="Helpers\IHelperProperties.cs" />
+    <Compile Include="Helpers\IHelperSecurity.cs" />
+    <Compile Include="Helpers\IHelperUser.cs" />
+    <Compile Include="Helpers\IHelperLdap.cs" />
+    <Compile Include="Helpers\HelperLdapConstants.cs" />
+    <Compile Include="DocClass\SecurityRole\SecurityRoleType.cs" />
+    <Compile Include="Logger\IVulcanLogger.cs" />
+    <Compile Include="Logger\VulcanLogger.cs" />
+    <Compile Include="Logger\VulcanLoggerConfig.cs" />
+    <Compile Include="Logger\VulcanLogLevel.cs" />
+    <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\AppPermissionModel.cs" />
+    <Compile Include="Models\EmailAddressModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\HrsSecurityGroupModel.cs" />
+    <Compile Include="Models\HrsUserModel.cs" />
+    <Compile Include="Models\HseObservationActionModel.cs" />
+    <Compile Include="Models\HseObservationModel.cs" />
+    <Compile Include="Models\HseObservationSuggestionModel.cs" />
+    <Compile Include="Models\HseSecurityModel.cs" />
+    <Compile Include="Models\JobTitleModel.cs" />
+    <Compile Include="Models\KronosPayRuleHistoryModel.cs" />
+    <Compile Include="Models\LocationModel.cs" />
+    <Compile Include="Models\OtherCompensationModel.cs" />
+    <Compile Include="Models\PayGradeHistoryModel.cs" />
+    <Compile Include="Models\PerformanceGridModel.cs" />
+    <Compile Include="Models\PerformanceHistoryModel.cs" />
+    <Compile Include="Models\PerformanceModel.cs" />
+    <Compile Include="Models\PerformanceRateOutcomeModel.cs" />
+    <Compile Include="Models\PremiumCompensationModel.cs" />
+    <Compile Include="Models\PropertyModel.cs" />
+    <Compile Include="Models\PropertyValueModel.cs" />
+    <Compile Include="Models\RequiredActivityModel.cs" />
+    <Compile Include="Models\SupportingDocumentModel.cs" />
+    <Compile Include="Models\SystemModuleModel.cs" />
+    <Compile Include="Models\PersonModelBase.cs" />
+    <Compile Include="Models\PhoneNumberModel.cs" />
+    <Compile Include="Models\SecurityRoleModel.cs" />
+    <Compile Include="Models\TargetPercentagesModel.cs" />
+    <Compile Include="Models\TrainingCourseDeActivateListModel.cs" />
+    <Compile Include="Models\TrainingEventAttendee.cs" />
+    <Compile Include="Models\TrainingEventGridModel.cs" />
+    <Compile Include="Models\TrainingEventSmallModel.cs" />
+    <Compile Include="Models\TrainingEventSupportingDocumentNestedModel.cs" />
+    <Compile Include="Models\TrainingHoursModel.cs" />
+    <Compile Include="Models\TrainingInitialCourseModel.cs" />
+    <Compile Include="Models\VersionHistoryModel.cs" />
+    <Compile Include="Tests\AdditionalGovernmentIds\ConvertEmployeeVerifications.cs" />
+    <Compile Include="Tests\AuditTrail Testing\TestAuditTrail.cs" />
+    <Compile Include="Tests\CompensationUpload\ComnpensationUploadExample.cs" />
+    <Compile Include="Tests\CountryState Problem\ConvertCountryPropertyToCountryState.cs" />
+    <Compile Include="Tests\CountryState Problem\PopulateKronosManager.cs" />
+    <Compile Include="Tests\Dashboard Test\DashboardTesting.cs" />
+    <Compile Include="Tests\DateFix\DateEval.cs" />
+    <Compile Include="Tests\DirectReportsFix\FixAllDirectReports.cs" />
+    <Compile Include="Tests\Employee Tests\DirectReportsAndDescendants.cs" />
+    <Compile Include="Tests\Employee Tests\EmployeeGetLdapUser.cs" />
+    <Compile Include="Tests\EmployeeRolodex\TestRolodex.cs" />
+    <Compile Include="Models\TrainingAttendeeModel.cs" />
+    <Compile Include="Models\TrainingCourseModel.cs" />
+    <Compile Include="Models\TrainingEventModel.cs" />
+    <Compile Include="Models\TrainingScheduleCourse.cs" />
+    <Compile Include="Models\UserAppPermissionsModel.cs" />
+    <Compile Include="Models\UserConfigurationModel.cs" />
+    <Compile Include="Models\UserPersonModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AllRequiredActivities\TestGetAllRequiredActivities.cs" />
+    <Compile Include="Tests\Change Property Name\ChangeEligible.cs" />
+    <Compile Include="Tests\Conversion Queries\FindOtherCompensation.cs" />
+    <Compile Include="Tests\Database Updates\AnuTest.cs" />
+    <Compile Include="Tests\Database Updates\EmployeeRefUpdate.cs" />
+    <Compile Include="Tests\Employee Tests\EmployeeTesting.cs" />
+    <Compile Include="Tests\Employee Tests\GetAllEmployeesTesting.cs" />
+    <Compile Include="Tests\Encryption\EncryptionTest.cs" />
+    <Compile Include="Tests\FileOperations\FileOperationTests.cs" />
+    <Compile Include="Tests\FixEntityForEdgen\GetThemOutOfHowco.cs" />
+    <Compile Include="Tests\Fixes\FixCompensationHistory.cs" />
+    <Compile Include="Tests\Fixes\FixInvalidPayrollRegionRefs.cs" />
+    <Compile Include="Tests\Fixes\FixTrainingModuleName.cs" />
+    <Compile Include="Tests\Fixes\UpdateEmployeesToCorrectLocation.cs" />
+    <Compile Include="Tests\Fixes\UpdateHrsUsersToCorrectLocation.cs" />
+    <Compile Include="Tests\Fixes\UpdatePhoneNumbers.cs" />
+    <Compile Include="Tests\FixManagerForAllEmployees\FixAllEmployeeRefs.cs" />
+    <Compile Include="Tests\FixSecurityRoleTypeRefs\SecurityRoleTypeRefFix.cs" />
+    <Compile Include="Tests\Get User Tokens\GetUserTokenTest.cs" />
+    <Compile Include="Tests\HelperBenefits\HelperBenefitsTesting.cs" />
+    <Compile Include="Tests\HelperCompensation\HelperCompensationTests.cs" />
+    <Compile Include="Tests\HelperDashboardTests\HelperDashboardTest.cs" />
+    <Compile Include="Tests\HelperDiscipline\HelperDisciplineTesting.cs" />
+    <Compile Include="Tests\HelperEmployee Tests\HelperEmployeeTests.cs" />
+    <Compile Include="Tests\HelperEmployeeIncidents Test\HelperEmployeeIncidentTests.cs" />
+    <Compile Include="Tests\HelperExternalApi Tests\HelperExternalApiTests.cs" />
+    <Compile Include="Tests\HelperFile Tests\HelperFileTesting.cs" />
+    <Compile Include="Tests\HelperHse\HelperHseTests.cs" />
+    <Compile Include="Tests\HelperIntegration Tests\HelperIntegrationTesting.cs" />
+    <Compile Include="Tests\HelperMedicalInfo\HelperMedicalInfo Tests.cs" />
+    <Compile Include="Tests\HelperPerformance\HelperPerformanceTesting.cs" />
+    <Compile Include="Tests\HelperPropertiesTests\HelperPropertiesTesting.cs" />
+    <Compile Include="Tests\HelperSecurity Tests\HelperSecurityTests.cs" />
+    <Compile Include="Tests\HelperTraining Tests\HelperTrainingTests.cs" />
+    <Compile Include="Tests\HelperUser Tests\Test.cs" />
+    <Compile Include="Tests\HrsUserList\GetHrsUserList.cs" />
+    <Compile Include="Tests\Hse\EmployeeIncidentsTesting.cs" />
+    <Compile Include="Tests\LdapCompareTest\CompareLdap.cs" />
+    <Compile Include="Tests\Locations\ConvertToCommonLocation.cs" />
+    <Compile Include="Tests\Locations\GetLocations.cs" />
+    <Compile Include="Tests\Locations\TestConvertEmployeeLocationToGlobal.cs" />
+    <Compile Include="Tests\MergeProperties\MergePropertyExecutor.cs" />
+    <Compile Include="Tests\Model Tests\EmployeeBasicInfoModelTest.cs" />
+    <Compile Include="Tests\MongoRawQueryHelperTests\MongoQueryHelperTest.cs" />
+    <Compile Include="Tests\MoveRequiredActivityDocs\MoveFromRequiredActivityToEmployee.cs" />
+    <Compile Include="Tests\ObjectDumper.cs" />
+    <Compile Include="Tests\PayrollIdFix\FixManagersPayrollId.cs" />
+    <Compile Include="Tests\Performance Tests\Basics.cs" />
+    <Compile Include="Tests\Prepare Database\AddAllLdapUsers.cs" />
+    <Compile Include="Tests\Prepare Database\AddLocationsFirst.cs" />
+    <Compile Include="Tests\Prepare Database\AddProperties.cs" />
+    <Compile Include="Tests\Prepare Database\AddTestUserToLdapUsers.cs" />
+    <Compile Include="Tests\Prepare Database\ChangeUserRoles.cs" />
+    <Compile Include="Tests\Prepare Database\InitializeSecurityRoles.cs" />
+    <Compile Include="Tests\ProductDevRoleIssue\HrsIIIMProblem.cs" />
+    <Compile Include="Tests\Properties\CreateEdgenPropertyForEveryHowcoProperty.cs" />
+    <Compile Include="Tests\Properties\GetProperties.cs" />
+    <Compile Include="Tests\QueryTesting\Employee.cs" />
+    <Compile Include="Tests\Security Tests\RunSecurityTests.cs" />
+    <Compile Include="Tests\SetupHrsCompany\Configure.cs" />
+    <Compile Include="Tests\SynchProperties\SynchronizePropertiesAllEntities.cs" />
+    <Compile Include="Tests\SynchronizePropertyValues\FixEmployeeProperties.cs" />
+    <Compile Include="Tests\TargetPercentageFix\FixTargetPercentages.cs" />
+    <Compile Include="Tests\Training\PopulateCertification.cs" />
+    <Compile Include="Tests\Training\TrainingTests.cs" />
+    <Compile Include="Tests\Trim Employee Names\TrimNames.cs" />
+    <Compile Include="Tests\Update Location All Users\FixLocationForAllUsers.cs" />
+    <Compile Include="Tests\UpdateHrsUserCommonLDap\UpdateLdapInfoForAllHrsUsers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL.EMail\BLL.EMail.csproj">
+      <Project>{0e298c51-3de3-451a-9fed-b212c6727672}</Project>
+      <Name>BLL.EMail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.Common\DAL.Common.csproj">
+      <Project>{5d3831ce-2b50-4fb1-8e54-0fa499f515df}</Project>
+      <Name>DAL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.HRS.SqlServer\DAL.HRS.SqlServer.csproj">
+      <Project>{D21C9749-DFB7-4E2B-9116-61D963A51BD8}</Project>
+      <Name>DAL.HRS.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Base\DAL.Vulcan.Mongo.Base.csproj">
+      <Project>{2515dbb5-4fbe-45d6-9d42-6b7780dac159}</Project>
+      <Name>DAL.Vulcan.Mongo.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DocClass\Certifications\" />
+    <Folder Include="DocClass\Company\" />
+    <Folder Include="DocClass\Ldap\" />
+    <Folder Include="DocClass\Locations\" />
+    <Folder Include="Indexes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tests\Prepare Database\Notes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
+</Project>

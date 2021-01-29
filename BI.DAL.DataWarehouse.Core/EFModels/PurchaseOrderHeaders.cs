@@ -1,0 +1,99 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace BI.DAL.DataWarehouse.Core.Models
+{
+    public partial class PurchaseOrderHeaders
+    {
+        public string Coid { get; set; }
+        public int Id { get; set; }
+        public int? Version { get; set; }
+        public DateTime? Cdate { get; set; }
+        public DateTime? Mdate { get; set; }
+        public int? CuserId { get; set; }
+        public int? MuserId { get; set; }
+        public string Status { get; set; }
+        public int? BranchId { get; set; }
+        public int? Number { get; set; }
+        public int? SupplierId { get; set; }
+        public string SupplierNameOverride { get; set; }
+        public int? SupplierAddressId { get; set; }
+        public int? DeliverFromId { get; set; }
+        public string DeliverFromNameOverride { get; set; }
+        public int? DeliverFromAddressId { get; set; }
+        public string Salesperson { get; set; }
+        public int? BuyerId { get; set; }
+        public int? DeliveryBranchId { get; set; }
+        public int? DeliveryWarehouseId { get; set; }
+        public string DeliveryName { get; set; }
+        public int? DeliveryAddressId { get; set; }
+        public int? StatusId { get; set; }
+        public int? TypeId { get; set; }
+        public int? CategoryId { get; set; }
+        public DateTime? RaisedDate { get; set; }
+        public DateTime? DueDate { get; set; }
+        public DateTime? OriginalDueDate { get; set; }
+        public string ManualDate { get; set; }
+        public int? RollingWeek { get; set; }
+        public string RollingReference { get; set; }
+        public int? TransportTypeId { get; set; }
+        public string DeliveryPoint { get; set; }
+        public int? CarrierId { get; set; }
+        public decimal? CostRate { get; set; }
+        public int? CostRateUnitId { get; set; }
+        public decimal? CostAmount { get; set; }
+        public decimal? TransportExchangeRate { get; set; }
+        public string TransportExchangeRateType { get; set; }
+        public int? TransportExchangeRateTypeId { get; set; }
+        public bool? Acknowledged { get; set; }
+        public DateTime? AcknowledgedDate { get; set; }
+        public bool? Printed { get; set; }
+        public decimal? ExchangeRate { get; set; }
+        public string ExchangeRateType { get; set; }
+        public int? ExchangeRateTypeId { get; set; }
+        public int? TermsId { get; set; }
+        public int? CertificationsId { get; set; }
+        public string ExternalHeaderText { get; set; }
+        public string ExternalFooterText { get; set; }
+        public string InternalHeaderText { get; set; }
+        public string InternalFooterText { get; set; }
+        public DateTime? PrintedDate { get; set; }
+        public DateTime? CompletedDate { get; set; }
+        public string SupplierOrder { get; set; }
+        public int? PurchaseOrderTotalsId { get; set; }
+        public int? PurchaseEntryTotalsId { get; set; }
+        public bool? Locked { get; set; }
+        public int? TransportPurchaseOrderBranchId { get; set; }
+        public int? TransportPurchaseOrderHeaderId { get; set; }
+        public int? TransportPurchaseOrderItemId { get; set; }
+        public string TransportBillingRef { get; set; }
+        public string GoodsInwardsNotes { get; set; }
+        public DateTime? DespatchDate { get; set; }
+        public DateTime? FixDate { get; set; }
+        public bool? OutsideProcessing { get; set; }
+        public int? DeletionReasonId { get; set; }
+        public string DeletionReasonDescription { get; set; }
+        public string PurchaseType { get; set; }
+        public int? Contact1Id { get; set; }
+        public int? Contact2Id { get; set; }
+        public string Contact3Name { get; set; }
+        public string Contact4Name { get; set; }
+        public string SupplierReference { get; set; }
+        public string AcknowledgementNumber { get; set; }
+        public string ProgressionHeaderText { get; set; }
+        public string RequestType { get; set; }
+        public string DespatchNotes { get; set; }
+        public string GroupingKey { get; set; }
+        public string HeaderIndex { get; set; }
+        public string TransferType { get; set; }
+        public int? TransportPurchaseGroupId { get; set; }
+        public int? ImportBatchNumber { get; set; }
+        public string ImportSource { get; set; }
+        public int? ImportNumber { get; set; }
+        public DateTime? EtlcreateDate { get; set; }
+        public DateTime? EtlupdateDate { get; set; }
+        public int? ContactId { get; set; }
+        public bool? UseAtGoodsInwards { get; set; }
+        public int? VesselId { get; set; }
+    }
+}

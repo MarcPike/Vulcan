@@ -1,0 +1,11 @@
+﻿1. AddLocationsFirst
+2. AddAllLdapUsers
+3. AddTestUserToLdapUsers
+5. AddProperties
+     CreatePayrollRegion()
+6. DAL.HRS.Import
+   ImportHrs
+      UpsertEmployeesFromHrsToMongo
+4. InitializeSecurityRoles
+7. DAL.HRS.Import
+	ImportSupportingDocuments

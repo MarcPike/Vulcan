@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54915EF3-87FD-47CA-BAE7-49046979C425}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL.Vulcan.Mongo</RootNamespace>
+    <AssemblyName>DAL.Vulcan.Mongo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Linq, Version=4.9.2033.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="DnsClient, Version=1.3.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.3.1\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR.Core">
+      <HintPath>C:\Users\mpike\.nuget\packages\microsoft.aspnetcore.signalr.core\1.0.4\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices.Auth, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.10.4\lib\net452\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.10.4\lib\net452\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.10.4\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.GridFS, Version=2.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.GridFS.2.9.1\lib\net452\MongoDB.Driver.GridFS.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocClass\CompanyGroups\CompanyContactTreeNode.cs" />
+    <Compile Include="DocClass\CRM\CompanyContactTree.cs" />
+    <Compile Include="DocClass\CRM\CompanyContactTreeNode.cs" />
+    <Compile Include="DocClass\Croz\CrozDensity.cs" />
+    <Compile Include="DocClass\Croz\CrozGrade.cs" />
+    <Compile Include="DocClass\Croz\CrozGradeList.cs" />
+    <Compile Include="DocClass\Croz\CrozHeatTreatmentMinimumCost.cs" />
+    <Compile Include="DocClass\Croz\CrozMaterialCost.cs" />
+    <Compile Include="DocClass\Croz\CrozProductionCost.cs" />
+    <Compile Include="DocClass\Croz\CrozProductionCostList.cs" />
+    <Compile Include="DocClass\Croz\CrozTestingMinimumCost.cs" />
+    <Compile Include="DocClass\Croz\Models\CrozGradeListModel.cs" />
+    <Compile Include="DocClass\Croz\Models\CrozProductionCostListModel.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteOrderTotal.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteCompanyCode.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteCompanyName.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteContactName.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteCustomerNotes.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteDisplayCurrency.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteFreightTerms.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemTestPieces.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemCurrency.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemCustomerNotes.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemCustomerUom.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemFinishedProduct.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemLastModified.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemLeadTime.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemLineItemNumber.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemLineType.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemOemType.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemOrderUnit.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemPartNumber.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemPartSpecification.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemPieces.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemProductionSteps.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemQuantity.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemStartingProduct.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemTotal.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteItemUnitPrice.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteLastModified.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteOrderDate.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuotePaymentTerms.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuotePoNumber.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteProspectName.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteQuoteId.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteRevision.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteRfqNumber.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteSalesPerson.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteShipToAddress.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteShipToName.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteSubmitDate.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteSubmitTime.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteTotalWeightKilograms.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteTotalWeightPounds.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteValidity.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelQuoteValidityDate.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelTemplate.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelTemplateQuoteColumnBase.cs" />
+    <Compile Include="DocClass\ExcelTemplates\ExcelTemplateQuoteItemColumnBase.cs" />
+    <Compile Include="DocClass\ExcelTemplates\RegisterExcelClassMaps.cs" />
+    <Compile Include="DocClass\Quotes\CrozCalcData.cs" />
+    <Compile Include="DocClass\Quotes\CrozCalcItem.cs" />
+    <Compile Include="DocClass\StockItemCacheLog\StockItemCacheLogValue.cs" />
+    <Compile Include="Helpers\HelperCroz.cs" />
+    <Compile Include="Helpers\HelperExcelTemplate.cs" />
+    <Compile Include="Helpers\IHelperCroz.cs" />
+    <Compile Include="Helpers\IHelperExcelTemplate.cs" />
+    <Compile Include="Importers\UpdateTeamCompaniesThatWereModifiedDuringImport.cs" />
+    <Compile Include="MetalogicsCacheData\CacheSettings.cs" />
+    <Compile Include="MetalogicsCacheData\ProductMastersCache.cs" />
+    <Compile Include="MetalogicsCacheData\PurchaseOrderItemsCache.cs" />
+    <Compile Include="MetalogicsCacheData\StockItemsCache.cs" />
+    <Compile Include="Models\AnalysisSummaryModel.cs" />
+    <Compile Include="Models\CalculationValue.cs" />
+    <Compile Include="Models\CompanyCreditAnalysisModel.cs" />
+    <Compile Include="Models\CompanyCreditModel.cs" />
+    <Compile Include="Models\CrozCalcItemModel.cs" />
+    <Compile Include="Models\CrozResultModel.cs" />
+    <Compile Include="Models\ExcelTemplateModel.cs" />
+    <Compile Include="Models\IncomingAnalysisQueryModel.cs" />
+    <Compile Include="Models\ModifyProductionCostValueModel.cs" />
+    <Compile Include="Models\OsirisDocumentListForPortal.cs" />
+    <Compile Include="Models\OsirisDocumentListModel.cs" />
+    <Compile Include="Models\ProductAnalysisResultModel.cs" />
+    <Compile Include="Analysis\ProductWinLossData.cs" />
+    <Compile Include="Analysis\ProductWinLossAnalysisBuilder.cs" />
+    <Compile Include="Analysis\ProductWinLossHistory.cs" />
+    <Compile Include="Chat\Chat.cs" />
+    <Compile Include="Chat\ChatMessage.cs" />
+    <Compile Include="DateValues\DateValueItem.cs" />
+    <Compile Include="DateValues\DateValues.cs" />
+    <Compile Include="DocClass\Companies\CompanyDefaults.cs" />
+    <Compile Include="DocClass\Companies\CompanyDefaultsModel.cs" />
+    <Compile Include="DocClass\Companies\CompanyUpdateHistory.cs" />
+    <Compile Include="DocClass\Companies\LoadMissingCompaniesForAllGroups.cs" />
+    <Compile Include="DocClass\Companies\Prospect.cs" />
+    <Compile Include="DocClass\Companies\ProspectRef.cs" />
+    <Compile Include="DocClass\CompanyGroups\CompanyGroupUpdate.cs" />
+    <Compile Include="DocClass\Config\BaseConfiguration.cs" />
+    <Compile Include="DocClass\Config\CoidConfiguration.cs" />
+    <Compile Include="DocClass\Config\CompanyConfiguration.cs" />
+    <Compile Include="DocClass\Config\Configuration.cs" />
+    <Compile Include="DocClass\Config\LocationConfiguration.cs" />
+    <Compile Include="DocClass\Config\LocationResourceDefaultMargin.cs" />
+    <Compile Include="DocClass\Config\UserConfigurationManager.cs" />
+    <Compile Include="DocClass\Config\TeamConfiguration.cs" />
+    <Compile Include="DocClass\Config\UserConfiguration.cs" />
+    <Compile Include="DocClass\CRM\ActionSchedule.cs" />
+    <Compile Include="DocClass\CRM\CrmUser.cs" />
+    <Compile Include="DocClass\CRM\CrmUserInfo.cs" />
+    <Compile Include="DocClass\CRM\CrmUserLog.cs" />
+    <Compile Include="DocClass\CRM\CrmUserRef.cs" />
+    <Compile Include="DocClass\CRM\CrmUserType.cs" />
+    <Compile Include="DocClass\CRM\LostReasonUpdate.cs" />
+    <Compile Include="DocClass\CRM\ProspectSelection.cs" />
+    <Compile Include="DocClass\CRM\SalesGroup.cs" />
+    <Compile Include="DocClass\Email\EmailException.cs" />
+    <Compile Include="DocClass\ExternalLogin\ExternalLogin.cs" />
+    <Compile Include="DocClass\Messages\MessageMood.cs" />
+    <Compile Include="DocClass\Messages\UserTeamMessage.cs" />
+    <Compile Include="DocClass\Messages\UserTeamMessageModel.cs" />
+    <Compile Include="DocClass\Messages\UserTeamMessageObject.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilder.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForActionAddedToGoal.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForActionAssignedToMilestone.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForActionFailed.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForActionRemovedFromGoal.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForActionWasAdded.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForActionWasCompleted.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForActionWasModified.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForActionWasStarted.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForCompanyAddedToTeam.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForCompanyGroupAddedToTeam.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForCompanyGroupRemovedFromTeam.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForCompanyRemovedFromTeam.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForGoalWasAdded.cs" />
+    <Compile Include="DocClass\Notifications\Notification.cs" />
+    <Compile Include="DocClass\Notifications\NotificationActionType.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForGoalLost.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForMilestoneAddedToGoal.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForPersonAddedToAction.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForProspectAddedToTeam.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForProspectRemovedFromTeam.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForTeamNameChanged.cs" />
+    <Compile Include="DocClass\Notifications\NotificationObjectType.cs" />
+    <Compile Include="DocClass\Notifications\NotificationPublisher.cs" />
+    <Compile Include="DocClass\Notifications\NotificationRef.cs" />
+    <Compile Include="DocClass\Notifications\NotificationRouter.cs" />
+    <Compile Include="DocClass\Notifications\ISendNotificationRefreshToSignalR.cs" />
+    <Compile Include="DocClass\CRM\Action.cs" />
+    <Compile Include="DocClass\CRM\ActionType.cs" />
+    <Compile Include="DocClass\CRM\CompanySelection.cs" />
+    <Compile Include="DocClass\CRM\Contact.cs" />
+    <Compile Include="DocClass\CRM\ContactMeetingInvite.cs" />
+    <Compile Include="DocClass\CRM\ContactMeetingInviteRef.cs" />
+    <Compile Include="DocClass\CRM\ContactRef.cs" />
+    <Compile Include="DocClass\CRM\ActionRef.cs" />
+    <Compile Include="DocClass\CRM\TeamUserCompanyViewSelections.cs" />
+    <Compile Include="DocClass\Email\Email.cs" />
+    <Compile Include="DocClass\CRM\EmailAddress.cs" />
+    <Compile Include="DocClass\Email\EmailAttachmentImport.cs" />
+    <Compile Include="DocClass\Email\EmailLog.cs" />
+    <Compile Include="DocClass\Email\EmailConfig.cs" />
+    <Compile Include="DocClass\Email\EmailPublisherContact.cs" />
+    <Compile Include="DocClass\Email\EmailPublisherCrmUser.cs" />
+    <Compile Include="DocClass\Email\EmailRef.cs" />
+    <Compile Include="DocClass\Email\EmailScanner.cs" />
+    <Compile Include="DocClass\CRM\EmailType.cs" />
+    <Compile Include="DocClass\CRM\Goal.cs" />
+    <Compile Include="DocClass\CRM\GoalRef.cs" />
+    <Compile Include="DocClass\CRM\ICrmUser.cs" />
+    <Compile Include="DocClass\CRM\LossReason.cs" />
+    <Compile Include="DocClass\CRM\MeetingInvite.cs" />
+    <Compile Include="DocClass\CRM\MeetingInviteRef.cs" />
+    <Compile Include="DocClass\CRM\Milestone.cs" />
+    <Compile Include="DocClass\CRM\MilestoneStatus.cs" />
+    <Compile Include="DocClass\CRM\Note.cs" />
+    <Compile Include="DocClass\CRM\Person.cs" />
+    <Compile Include="DocClass\CRM\PhoneNumber.cs" />
+    <Compile Include="DocClass\CRM\PhoneType.cs" />
+    <Compile Include="DocClass\CRM\Pipeline.cs" />
+    <Compile Include="DocClass\CRM\StrategyRef.cs" />
+    <Compile Include="DocClass\CRM\Vendor.cs" />
+    <Compile Include="DocClass\CRM\VendorRef.cs" />
+    <Compile Include="DocClass\Fetchers\GoalFetcher.cs" />
+    <Compile Include="DocClass\Fetchers\GoalFetchResult.cs" />
+    <Compile Include="DocClass\Fetchers\TaskFetcher.cs" />
+    <Compile Include="DocClass\Fetchers\ActionFetchResult.cs" />
+    <Compile Include="DocClass\CRM\Strategy.cs" />
+    <Compile Include="DocClass\CRM\TeamChannel.cs" />
+    <Compile Include="DocClass\CRM\TeamMessage.cs" />
+    <Compile Include="DocClass\CRM\TeamRef.cs" />
+    <Compile Include="DocClass\CRM\ActionHistory.cs" />
+    <Compile Include="DocClass\CRM\ViewConfig.cs" />
+    <Compile Include="DocClass\CRM\ViewType.cs" />
+    <Compile Include="DocClass\Dashboards\BaseDashboard.cs" />
+    <Compile Include="DocClass\Dashboards\CoidCountry.cs" />
+    <Compile Include="DocClass\Dashboards\PortfolioBooked.cs" />
+    <Compile Include="DocClass\Dashboards\PortfolioInvoiced.cs" />
+    <Compile Include="DocClass\Ldap\LdapUser.cs" />
+    <Compile Include="DocClass\Locations\Address.cs" />
+    <Compile Include="DocClass\Locations\AddressType.cs" />
+    <Compile Include="DocClass\Locations\LocationRef.cs" />
+    <Compile Include="DocClass\Locations\MapLocation.cs" />
+    <Compile Include="DocClass\CRM\Team.cs" />
+    <Compile Include="DocClass\Messages\MessageGroup.cs" />
+    <Compile Include="DocClass\Messages\MessageObject.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForTeamCreated.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForUserAddedToTeam.cs" />
+    <Compile Include="DocClass\Notifications\NotificationBuilderForUserRemovedFromTeam.cs" />
+    <Compile Include="DocClass\QueueSchedule\EventFinder.cs" />
+    <Compile Include="DocClass\QueueSchedule\QueueError.cs" />
+    <Compile Include="DocClass\QueueSchedule\QueueSchedule.cs" />
+    <Compile Include="DocClass\QueueSchedule\ScheduledEvent.cs" />
+    <Compile Include="DocClass\QueueSchedule\ScheduledEventRef.cs" />
+    <Compile Include="DocClass\QueueSchedule\ScheduledEventType.cs" />
+    <Compile Include="DocClass\QueueSchedule\ScheduledEventWorkStatus.cs" />
+    <Compile Include="DocClass\Quotes\AndOrValue.cs" />
+    <Compile Include="DocClass\Quotes\CompanyRefreshFromSourceSystem.cs" />
+    <Compile Include="DocClass\Quotes\CompanyRemoveDuplicateAddresses.cs" />
+    <Compile Include="DocClass\Quotes\CompanyResolver.cs" />
+    <Compile Include="DocClass\Quotes\CompanySaveShippingAddress.cs" />
+    <Compile Include="DocClass\Quotes\CrmQuoteFolder.cs" />
+    <Compile Include="DocClass\Quotes\ExportAttempt.cs" />
+    <Compile Include="DocClass\Quotes\ExportStatus.cs" />
+    <Compile Include="DocClass\Quotes\ExternalHeaderCrmData.cs" />
+    <Compile Include="DocClass\Quotes\ExternalItemCrmData.cs" />
+    <Compile Include="DocClass\Quotes\FinalPriceOverride.cs" />
+    <Compile Include="DocClass\Quotes\FinalPriceOverrideType.cs" />
+    <Compile Include="DocClass\Quotes\FixQuoteCompanyDuplicateIssue.cs" />
+    <Compile Include="DocClass\Quotes\FreightTerms.cs" />
+    <Compile Include="DocClass\Quotes\ItemSummaryViewModel.cs" />
+    <Compile Include="DocClass\Quotes\MachinedPartCostPriceValue.cs" />
+    <Compile Include="DocClass\Quotes\MaterialCostValue.cs" />
+    <Compile Include="DocClass\Quotes\MaterialPriceValue.cs" />
+    <Compile Include="DocClass\Quotes\OemType.cs" />
+    <Compile Include="DocClass\Quotes\PaymentTerms.cs" />
+    <Compile Include="DocClass\Quotes\ProductBucketHelper.cs" />
+    <Compile Include="DocClass\Quotes\ProductBuckets.cs" />
+    <Compile Include="DocClass\Quotes\ProductionCostList.cs" />
+    <Compile Include="DocClass\Quotes\ProductionStepCalculator.cs" />
+    <Compile Include="DocClass\Quotes\ProductionStepHeatTreat.cs" />
+    <Compile Include="DocClass\Quotes\ProductionStepTest.cs" />
+    <Compile Include="DocClass\Quotes\ProductionTestList.cs" />
+    <Compile Include="DocClass\Quotes\PurchaseOrderItemCalculatedCost.cs" />
+    <Compile Include="DocClass\Quotes\MaterialPriceOverrideType.cs" />
+    <Compile Include="DocClass\Quotes\QuickQuoteData.cs" />
+    <Compile Include="DocClass\Quotes\QuickQuoteItem.cs" />
+    <Compile Include="DocClass\Quotes\QuickQuoteItemRef.cs" />
+    <Compile Include="DocClass\Quotes\QuoteLinkType.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQuery.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryCompanyOptions.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryCompanyScope.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryDateOptions.cs" />
+    <Compile Include="DocClass\Quotes\CrmQueryExecutionHistory.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryProductOptions.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryProductScope.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryQuoteOptions.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryRange.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryScope.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryTeamMemberOptions.cs" />
+    <Compile Include="DocClass\Quotes\QuoteQueryTeamMemberOptionsHelper.cs" />
+    <Compile Include="DocClass\Quotes\QuoteTestPiece.cs" />
+    <Compile Include="DocClass\Quotes\Revision.cs" />
+    <Compile Include="DocClass\Quotes\StockItemCalculatedCost.cs" />
+    <Compile Include="DocClass\Quotes\Competitor.cs" />
+    <Compile Include="DocClass\Quotes\CompetitorRef.cs" />
+    <Compile Include="DocClass\Quotes\CostOverride.cs" />
+    <Compile Include="DocClass\Quotes\CostValue.cs" />
+    <Compile Include="DocClass\Quotes\ItemResourceCost.cs" />
+    <Compile Include="DocClass\Quotes\KerfCost.cs" />
+    <Compile Include="DocClass\Quotes\KeyValues.cs" />
+    <Compile Include="DocClass\Quotes\CrmQuote.cs" />
+    <Compile Include="DocClass\Quotes\MadeUpCost.cs" />
+    <Compile Include="DocClass\Quotes\OverrideType.cs" />
+    <Compile Include="DocClass\Quotes\PerType.cs" />
+    <Compile Include="DocClass\Quotes\PiecesValue.cs" />
+    <Compile Include="DocClass\Quotes\ProductionStepCostBase.cs" />
+    <Compile Include="DocClass\Quotes\ProductMaster.cs" />
+    <Compile Include="DocClass\Quotes\QuoteCreator.cs" />
+    <Compile Include="DocClass\Quotes\QuoteCreatorCompany.cs" />
+    <Compile Include="DocClass\Quotes\QuoteCreatorProspect.cs" />
+    <Compile Include="DocClass\Quotes\QuotePriceGenerator.cs" />
+    <Compile Include="DocClass\Quotes\QuoteSource.cs" />
+    <Compile Include="Helpers\HelperBase.cs" />
+    <Compile Include="Helpers\HelperChat.cs" />
+    <Compile Include="Helpers\HelperExternalLogin.cs" />
+    <Compile Include="Helpers\HelperFile.cs" />
+    <Compile Include="Helpers\HelperPermissions.cs" />
+    <Compile Include="Helpers\HelperPortal.cs" />
+    <Compile Include="Helpers\HelperQuoteQuery.cs" />
+    <Compile Include="Helpers\HelperRfq.cs" />
+    <Compile Include="Helpers\HelperTeamPriceTier.cs" />
+    <Compile Include="Helpers\HelperVersionHistory.cs" />
+    <Compile Include="Helpers\IHelperChat.cs" />
+    <Compile Include="Helpers\IHelperExternalLogin.cs" />
+    <Compile Include="Helpers\IHelperFile.cs" />
+    <Compile Include="Helpers\IHelperPermissions.cs" />
+    <Compile Include="Helpers\IHelperPortal.cs" />
+    <Compile Include="Helpers\IHelperQuoteQuery.cs" />
+    <Compile Include="Helpers\IHelperRfq.cs" />
+    <Compile Include="Helpers\IHelperTeamPriceTier.cs" />
+    <Compile Include="Helpers\IHelperVersionHistory.cs" />
+    <Compile Include="Helpers\QuoteQueryCompanyOptionsHelper.cs" />
+    <Compile Include="Helpers\QuoteQueryProductOptionsHelper.cs" />
+    <Compile Include="HtmlTemplates\HtmlTemplate.cs" />
+    <Compile Include="Models\AnalysisDetailModel.cs" />
+    <Compile Include="Models\BasePriceDimensionModel.cs" />
+    <Compile Include="Models\BugFixModel.cs" />
+    <Compile Include="Models\CalculateQuotePriceModel.cs" />
+    <Compile Include="Models\ChartQuoteHistoryModel.cs" />
+    <Compile Include="Models\ChatModel.cs" />
+    <Compile Include="Models\CoidConfigurationModel.cs" />
+    <Compile Include="Models\CompanyConfigurationModel.cs" />
+    <Compile Include="Models\CompanyProspectAnalysisModel.cs" />
+    <Compile Include="Models\CostOverrideTypeModel.cs" />
+    <Compile Include="Models\CostValueModel.cs" />
+    <Compile Include="Models\CreateNewMadeUpCostModel.cs" />
+    <Compile Include="Models\CreateNewQuoteTest.cs" />
+    <Compile Include="Models\CreateUserTeamMessageModel.cs" />
+    <Compile Include="Models\CrmUserLogSummaryModel.cs" />
+    <Compile Include="Models\CrozQuoteModel.cs" />
+    <Compile Include="Models\CustomerActivityView.cs" />
+    <Compile Include="Models\CustomerUom.cs" />
+    <Compile Include="Models\ExternalLoginModel.cs" />
+    <Compile Include="Models\FeatureModel.cs" />
+    <Compile Include="Models\FileAttachmentModel.cs" />
+    <Compile Include="Models\ImportCompanyLogModel.cs" />
+    <Compile Include="Models\IncomingAnalysisDataModel.cs" />
+    <Compile Include="Models\IncomingAnalysisDetailsModel.cs" />
+    <Compile Include="Models\IncomingAnalysisResultModel.cs" />
+    <Compile Include="Models\LocationConfigurationModel.cs" />
+    <Compile Include="Models\LostQuoteModel.cs" />
+    <Compile Include="Models\LostReasonModel.cs" />
+    <Compile Include="Models\MaterialPriceHistory.cs" />
+    <Compile Include="Models\MaterialPriceHistoryStatus.cs" />
+    <Compile Include="Models\MaterialPriceHistoryValue.cs" />
+    <Compile Include="Models\OemUpdateModel.cs" />
+    <Compile Include="Models\PermissionModel.cs" />
+    <Compile Include="Models\PipelineStatus.cs" />
+    <Compile Include="Models\NewPortalInvitationModel.cs" />
+    <Compile Include="Models\ProductAnalysisQueryModel.cs" />
+    <Compile Include="Models\ProductBucketModel.cs" />
+    <Compile Include="Models\ProductCustomerWinLossAnalysisModel.cs" />
+    <Compile Include="Models\ProductionCostListModel.cs" />
+    <Compile Include="Models\HtmlTemplateModel.cs" />
+    <Compile Include="Models\IncomingPurchaseOrderItemCostModel.cs" />
+    <Compile Include="Models\MadeUpCostModel.cs" />
+    <Compile Include="Models\ProductionStepCostModel.cs" />
+    <Compile Include="Models\ProductionTestListModel.cs" />
+    <Compile Include="Models\QuickQuoteItemModel.cs" />
+    <Compile Include="Models\QuoteCopyModel.cs" />
+    <Compile Include="Models\QuoteDataForQuoteHistory.cs" />
+    <Compile Include="Models\QuoteMachinedPartModel.cs" />
+    <Compile Include="Models\QuoteMiniItemModel.cs" />
+    <Compile Include="Models\QuoteMiniModel.cs" />
+    <Compile Include="Models\QuotePartNumberAndStockItemModel.cs" />
+    <Compile Include="Models\QuotePipelineModel.cs" />
+    <Compile Include="DocClass\Quotes\QuoteRef.cs" />
+    <Compile Include="DocClass\Quotes\CrmQuoteItem.cs" />
+    <Compile Include="DocClass\Quotes\CrmQuoteItemRef.cs" />
+    <Compile Include="DocClass\Quotes\ResourceType.cs" />
+    <Compile Include="DocClass\Security\Application.cs" />
+    <Compile Include="DocClass\Security\ApplicationRole.cs" />
+    <Compile Include="DocClass\Security\AppTask.cs" />
+    <Compile Include="DocClass\Security\Login.cs" />
+    <Compile Include="DocClass\Security\Role.cs" />
+    <Compile Include="DocClass\Security\RoleMember.cs" />
+    <Compile Include="DocClass\Security\SecurityManager.cs" />
+    <Compile Include="DocClass\Security\UserPermission.cs" />
+    <Compile Include="DocClass\CompanyGroups\CompanyGroup.cs" />
+    <Compile Include="DocClass\CompanyGroups\CompanyGroupRef.cs" />
+    <Compile Include="DocClass\CompanyGroups\CompanyTreeNode.cs" />
+    <Compile Include="DocClass\Companies\CompanyRef.cs" />
+    <Compile Include="DocClass\Companies\Company.cs" />
+    <Compile Include="DocClass\Currency\CurrencyType.cs" />
+    <Compile Include="DocClass\Locations\Location.cs" />
+    <Compile Include="DocClass\Ldap\UserRef.cs" />
+    <Compile Include="Finders\ActionSearch.cs" />
+    <Compile Include="Finders\ActionSearchLevel.cs" />
+    <Compile Include="Helpers\HelperNotifications.cs" />
+    <Compile Include="Helpers\HelperApplication.cs" />
+    <Compile Include="Helpers\HelperCompany.cs" />
+    <Compile Include="Helpers\HelperContact.cs" />
+    <Compile Include="Helpers\HelperDomain.cs" />
+    <Compile Include="Helpers\HelperEmail.cs" />
+    <Compile Include="Helpers\HelperGoal.cs" />
+    <Compile Include="Helpers\HelperLocation.cs" />
+    <Compile Include="Helpers\HelperPerson.cs" />
+    <Compile Include="Helpers\HelperAction.cs" />
+    <Compile Include="Helpers\HelperProspect.cs" />
+    <Compile Include="Helpers\HelperQuote.cs" />
+    <Compile Include="Helpers\HelperReminder.cs" />
+    <Compile Include="Helpers\HelperTeam.cs" />
+    <Compile Include="Helpers\HelperUser.cs" />
+    <Compile Include="Helpers\HelperUserViewConfig.cs" />
+    <Compile Include="Helpers\IHelperCompany.cs" />
+    <Compile Include="Helpers\IHelperNotifications.cs" />
+    <Compile Include="Helpers\IHelperApplication.cs" />
+    <Compile Include="Helpers\IHelperContact.cs" />
+    <Compile Include="Helpers\IHelperDomain.cs" />
+    <Compile Include="Helpers\IHelperEmail.cs" />
+    <Compile Include="Helpers\IHelperGoal.cs" />
+    <Compile Include="Helpers\IHelperLocation.cs" />
+    <Compile Include="Helpers\IHelperPerson.cs" />
+    <Compile Include="Helpers\IHelperAction.cs" />
+    <Compile Include="Helpers\IHelperProspect.cs" />
+    <Compile Include="Helpers\IHelperQuote.cs" />
+    <Compile Include="Helpers\IHelperReminder.cs" />
+    <Compile Include="Helpers\IHelperTeam.cs" />
+    <Compile Include="Helpers\IHelperTeamHub.cs" />
+    <Compile Include="Helpers\IHelperUser.cs" />
+    <Compile Include="Helpers\IHelperUserViewConfig.cs" />
+    <Compile Include="Importers\CompanyImporter.cs" />
+    <Compile Include="Indexes\IndexBuilder.cs" />
+    <Compile Include="Models\ActionModel.cs" />
+    <Compile Include="Models\ActionScheduleModel.cs" />
+    <Compile Include="DocClass\Quotes\AdditionalCost.cs" />
+    <Compile Include="DocClass\Quotes\BaseCost.cs" />
+    <Compile Include="DocClass\Quotes\BlendedCost.cs" />
+    <Compile Include="Models\CrmUserModel.cs" />
+    <Compile Include="DocClass\CRM\CrmUserToken.cs" />
+    <Compile Include="Extensions\DecimalExtensions.cs" />
+    <Compile Include="Models\ItemResourceCostModel.cs" />
+    <Compile Include="Models\NotificationModel.cs" />
+    <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\ContactPersonModel.cs" />
+    <Compile Include="Models\EmailAddressModel.cs" />
+    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\GoalModel.cs" />
+    <Compile Include="Extensions\NumericUtils.cs" />
+    <Compile Include="Models\PersonModelBase.cs" />
+    <Compile Include="Models\PhoneNumberModel.cs" />
+    <Compile Include="Models\ProspectModel.cs" />
+    <Compile Include="DocClass\Quotes\QuoteCalculations.cs" />
+    <Compile Include="Models\QuoteItemModel.cs" />
+    <Compile Include="Models\QuoteModel.cs" />
+    <Compile Include="DocClass\Quotes\QuotePrice.cs" />
+    <Compile Include="DocClass\Quotes\QuoteTotal.cs" />
+    <Compile Include="Models\QuotePriceModel.cs" />
+    <Compile Include="Models\QuotePurchaseOrderItemModel.cs" />
+    <Compile Include="Models\QuoteQueryModel.cs" />
+    <Compile Include="Models\QuoteRevisionModel.cs" />
+    <Compile Include="Models\QuoteStockItemModel.cs" />
+    <Compile Include="Models\QuoteTeamMoveOptions.cs" />
+    <Compile Include="Models\ReminderActionModel.cs" />
+    <Compile Include="Models\RfqTeamConfigModel.cs" />
+    <Compile Include="Models\SalesGroupModel.cs" />
+    <Compile Include="Models\SendGroupMessageModel.cs" />
+    <Compile Include="Models\SendTeamMessageModel.cs" />
+    <Compile Include="Models\SendUserTeamMessageModel.cs" />
+    <Compile Include="Models\StockItemsQueryModel.cs" />
+    <Compile Include="Models\TeamConfigurationModel.cs" />
+    <Compile Include="Models\TeamModel.cs" />
+    <Compile Include="Models\TeamPriceTierModel.cs" />
+    <Compile Include="Models\TeamUserCompanyViewSelectionsModel.cs" />
+    <Compile Include="Models\TestModel.cs" />
+    <Compile Include="Models\TierPriceDefinitionModel.cs" />
+    <Compile Include="Models\TokenError.cs" />
+    <Compile Include="Models\TokenResult.cs" />
+    <Compile Include="Models\UserConfigurationModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UserPersonModel.cs" />
+    <Compile Include="Models\VersionHistoryModel.cs" />
+    <Compile Include="Models\ViewConfigModel.cs" />
+    <Compile Include="Models\WeightDiscountModel.cs" />
+    <Compile Include="Models\WonQuoteItemModel.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
+    <Compile Include="Permissions\Permission.cs" />
+    <Compile Include="Portal\PortalInvitation.cs" />
+    <Compile Include="Portal\PortalInvitationStatus.cs" />
+    <Compile Include="Portal\PortalPasswordReset.cs" />
+    <Compile Include="Portal\PortalPasswordResetStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PublishSignalR\PublishSignalREvents.cs" />
+    <Compile Include="QNG\QngExportLog.cs" />
+    <Compile Include="QNG\QngExportSettings.cs" />
+    <Compile Include="QNG\QngExportStatus.cs" />
+    <Compile Include="Queries\QuotesPipelineQuery.cs" />
+    <Compile Include="Queries\QuotePipelineItemsProjection.cs" />
+    <Compile Include="Queries\QuotePipelineProjection.cs" />
+    <Compile Include="Quotes\LengthMeasure.cs" />
+    <Compile Include="Quotes\OrderQuantity.cs" />
+    <Compile Include="Quotes\RequiredQuantity.cs" />
+    <Compile Include="Quotes\WeightMeasure.cs" />
+    <Compile Include="Reports\ReportCompanyQuoteHistory.cs" />
+    <Compile Include="Reports\ReportCompanyQuoteHistoryDataLoader.cs" />
+    <Compile Include="Reports\ReportCompanyQuoteHistoryDetail.cs" />
+    <Compile Include="Models\RfqCustomerModel.cs" />
+    <Compile Include="RequestForQuoteExternal\RfqExternal.cs" />
+    <Compile Include="RequestForQuoteExternal\RfqTeamConfig.cs" />
+    <Compile Include="Models\RfqExternalModel.cs" />
+    <Compile Include="RequestForQuoteExternal\RfqExternalStatus.cs" />
+    <Compile Include="RequestLogging\RequestLog.cs" />
+    <Compile Include="Team Settings\BasePriceDimension.cs" />
+    <Compile Include="Team Settings\ProductWeightTierPrice.cs" />
+    <Compile Include="Team Settings\TeamPriceTier.cs" />
+    <Compile Include="Team Settings\TierPriceDefinition.cs" />
+    <Compile Include="Team Settings\TierWeightPrices.cs" />
+    <Compile Include="Team Settings\WeightDiscount.cs" />
+    <Compile Include="Team Settings\WeightType.cs" />
+    <Compile Include="Test\PhoneBook.cs" />
+    <Compile Include="UnitConversions\BaseUnitOfMeasure.cs" />
+    <Compile Include="UnitConversions\DefineLengths.cs" />
+    <Compile Include="UnitConversions\DefineWeights.cs" />
+    <Compile Include="UnitConversions\Exceptions\DuplicateUomException.cs" />
+    <Compile Include="UnitConversions\Exceptions\OnlyOneBaseUnitCanHaveFactorEqualToOne.cs" />
+    <Compile Include="UnitConversions\Exceptions\UnknownUnitOfMeasureException.cs" />
+    <Compile Include="UnitConversions\Exceptions\WrongUomTypeConversionException.cs" />
+    <Compile Include="UnitConversions\ILoadUnitOfMeasures.cs" />
+    <Compile Include="UnitConversions\UnitOfMeasures.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Lengths\Centimeter.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Lengths\Foot.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Lengths\Inch.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Lengths\Meter.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Lengths\Millimeter.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Lengths\Yard.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Weights\Gram.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Weights\KiloGram.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Weights\Pounds.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Weights\ShortTon.cs" />
+    <Compile Include="UnitConversions\UOM Objects\Weights\Tonnes.cs" />
+    <Compile Include="UnitConversions\UomManager.cs" />
+    <Compile Include="UnitConversions\UomType.cs" />
+    <Compile Include="Version History\VersionHistory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DocClass\SalesPerson\" />
+    <Folder Include="DocClass\StrategicAccounts\" />
+    <Folder Include="RfqExternal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL.EMail\BLL.EMail.csproj">
+      <Project>{0e298c51-3de3-451a-9fed-b212c6727672}</Project>
+      <Name>BLL.EMail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.IntegrationDb\DAL.IntegrationDb.csproj">
+      <Project>{f5a92b90-c610-4d12-8ebc-3e5663a9c3d7}</Project>
+      <Name>DAL.IntegrationDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.Vulcan.Mongo.Base\DAL.Vulcan.Mongo.Base.csproj">
+      <Project>{2515dbb5-4fbe-45d6-9d42-6b7780dac159}</Project>
+      <Name>DAL.Vulcan.Mongo.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vulcan.IMetal\Cache\Vulcan.IMetal\Vulcan.IMetal.csproj">
+      <Project>{6885e22a-592a-4b03-b4d0-26b270b3a084}</Project>
+      <Name>Vulcan.IMetal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

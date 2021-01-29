@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDeveloper Version="6.3.710.0">
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" AppConnectionStringName="LiveEmetalDataContextConnectionString" ConnectionStringInAppConfig="True" RegenareteConnectionStringInAppConfig="True" TargetFramework="Net45" DetectTPTInheritance="False">
+    <Generation>
+      <GeneratedFiles>
+        <File Name="CompanyModel.CompanyContext.cs" />
+        <File Name="CompanyModel.ContactFrequencyCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.ContactFrequencyCode.Generated.cs" />
+        <File Name="CompanyModel.Company.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.Company.Generated.cs" />
+        <File Name="CompanyModel.ContactTypeCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.ContactTypeCode.Generated.cs" />
+        <File Name="CompanyModel.ContactTitleCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.ContactTitleCode.Generated.cs" />
+        <File Name="CompanyModel.CurrencyCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CurrencyCode.Generated.cs" />
+        <File Name="CompanyModel.BranchLocation.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.BranchLocation.Generated.cs" />
+        <File Name="CompanyModel.CategoryGroup.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CategoryGroup.Generated.cs" />
+        <File Name="CompanyModel.CountryCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CountryCode.Generated.cs" />
+        <File Name="CompanyModel.Contact.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.Contact.Generated.cs" />
+        <File Name="CompanyModel.Branch.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.Branch.Generated.cs" />
+        <File Name="CompanyModel.ContactStatusCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.ContactStatusCode.Generated.cs" />
+        <File Name="CompanyModel.Address.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.Address.Generated.cs" />
+        <File Name="CompanyModel.CustomerAnalysisCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CustomerAnalysisCode.Generated.cs" />
+        <File Name="CompanyModel.CompanyStatusCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CompanyStatusCode.Generated.cs" />
+        <File Name="CompanyModel.CompanyNoteTemplate.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CompanyNoteTemplate.Generated.cs" />
+        <File Name="CompanyModel.CompanyTypeCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CompanyTypeCode.Generated.cs" />
+        <File Name="CompanyModel.CompanySubAddress.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CompanySubAddress.Generated.cs" />
+        <File Name="CompanyModel.Category.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.Category.Generated.cs" />
+        <File Name="CompanyModel.CompanyTotal.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CompanyTotal.Generated.cs" />
+        <File Name="CompanyModel.CertificationRequirement.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.CertificationRequirement.Generated.cs" />
+        <File Name="CompanyModel.Term.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.Term.Generated.cs" />
+        <File Name="CompanyModel.TransportTypeCode.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.TransportTypeCode.Generated.cs" />
+        <File Name="CompanyModel.SalesGroup.cs" OverwriteMode="None" />
+        <File Name="CompanyModel.SalesGroup.Generated.cs" />
+      </GeneratedFiles>
+    </Generation>
+    <DatabaseFirstNamingRules>
+      <EntitySet PluralizationName="Singularize" />
+      <Class UseSchemaAsPrefix="False" PluralizeCollectionNavigationPropertyName="False" AddConstraintColumnsToNavigationPropertyName="False" RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
+      <Property RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
+    </DatabaseFirstNamingRules>
+    <ModelFirst StorageSynchronizationEnabled="False" TargetSchema="public">
+      <TargetServer Server="PostgreSQL" ServerVersion="9.2" />
+      <ModelFirstNamingRules>
+        <Table RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Pluralize" />
+        <Column RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+      </ModelFirstNamingRules>
+    </ModelFirst>
+    <Diagrams>
+      <Diagram Name="Diagram1" DefaultDiagram="True" />
+    </Diagrams>
+    <Templates>
+      <Template Name="LinqConnect" Description="Use this template to generate a strongly-typed DataContext class and persistence-aware classes." Enabled="True" PredefinedTemplateName="LinqConnect C#">
+        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.3.710.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <ValidationFramework>None</ValidationFramework>
+        </ed:Property>
+        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.3.710.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <ValidationErrorMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </ed:Property>
+        <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="ModelNameAsFilesPrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.710.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.3.710.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="GeneratePartialClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="ImplementCloneable" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="UseCompiledQueryCache" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="GenerateDummyComments" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+      </Template>
+    </Templates>
+    <AttributeAssemblies />
+    <UpdateFromDatabaseExcludes>
+      <Exclude Name="id" Table="public.addresses" Type="Column" />
+      <Exclude Name="version" Table="public.addresses" Type="Column" />
+      <Exclude Name="cdate" Table="public.addresses" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.addresses" Type="Column" />
+      <Exclude Name="mdate" Table="public.addresses" Type="Column" />
+      <Exclude Name="muser_id" Table="public.addresses" Type="Column" />
+      <Exclude Name="status" Table="public.addresses" Type="Column" />
+      <Exclude Name="address" Table="public.addresses" Type="Column" />
+      <Exclude Name="town" Table="public.addresses" Type="Column" />
+      <Exclude Name="county" Table="public.addresses" Type="Column" />
+      <Exclude Name="postcode" Table="public.addresses" Type="Column" />
+      <Exclude Name="country_id" Table="public.addresses" Type="Column" />
+      <Exclude Name="transport_area_id" Table="public.addresses" Type="Column" />
+      <Exclude Name="addresses_pkey" Table="public.addresses" Type="Constraint" />
+      <Exclude Name="addresses_country_id_fkey" Table="public.addresses" Type="Constraint" />
+      <Exclude Name="addresses_transport_area_id_fkey" Table="public.addresses" Type="Constraint" />
+      <Exclude Name="id" Table="public.contacts" Type="Column" />
+      <Exclude Name="version" Table="public.contacts" Type="Column" />
+      <Exclude Name="cdate" Table="public.contacts" Type="Column" />
+      <Exclude Name="mdate" Table="public.contacts" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="muser_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="status" Table="public.contacts" Type="Column" />
+      <Exclude Name="nickname" Table="public.contacts" Type="Column" />
+      <Exclude Name="forename" Table="public.contacts" Type="Column" />
+      <Exclude Name="surname" Table="public.contacts" Type="Column" />
+      <Exclude Name="position" Table="public.contacts" Type="Column" />
+      <Exclude Name="title_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="branch_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="personnel_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="relationship_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="company_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="type_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="territory_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="telephone" Table="public.contacts" Type="Column" />
+      <Exclude Name="fast_dial" Table="public.contacts" Type="Column" />
+      <Exclude Name="mobile" Table="public.contacts" Type="Column" />
+      <Exclude Name="fax" Table="public.contacts" Type="Column" />
+      <Exclude Name="email" Table="public.contacts" Type="Column" />
+      <Exclude Name="web_address" Table="public.contacts" Type="Column" />
+      <Exclude Name="contact_frequency" Table="public.contacts" Type="Column" />
+      <Exclude Name="last_contact_date" Table="public.contacts" Type="Column" />
+      <Exclude Name="accept_mail" Table="public.contacts" Type="Column" />
+      <Exclude Name="accept_email" Table="public.contacts" Type="Column" />
+      <Exclude Name="accept_fax" Table="public.contacts" Type="Column" />
+      <Exclude Name="accept_calls" Table="public.contacts" Type="Column" />
+      <Exclude Name="accept_visits" Table="public.contacts" Type="Column" />
+      <Exclude Name="general_note" Table="public.contacts" Type="Column" />
+      <Exclude Name="products_note" Table="public.contacts" Type="Column" />
+      <Exclude Name="personal_note" Table="public.contacts" Type="Column" />
+      <Exclude Name="interests_note" Table="public.contacts" Type="Column" />
+      <Exclude Name="employment_note" Table="public.contacts" Type="Column" />
+      <Exclude Name="categories" Table="public.contacts" Type="Column" />
+      <Exclude Name="idxfti" Table="public.contacts" Type="Column" />
+      <Exclude Name="status_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="address_id" Table="public.contacts" Type="Column" />
+      <Exclude Name="contacts_id_pkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_address_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_branch_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_company_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_contact_frequency_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_personnel_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_relationship_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_status_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_territory_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_title_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_type_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="id" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="version" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="cdate" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="mdate" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="muser_id" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="status" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="code" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="description" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="external_cost" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="internal_cost" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="external_charge" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="inclusive_charge" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="type" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="plan_transport" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="sales_service_product_id" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="purchase_group_id" Table="public.transport_type_codes" Type="Column" />
+      <Exclude Name="transport_type_codes_pkey" Table="public.transport_type_codes" Type="Constraint" />
+      <Exclude Name="transport_type_codes_purchase_group_id_fkey" Table="public.transport_type_codes" Type="Constraint" />
+      <Exclude Name="transport_type_codes_sales_service_product_id_fkey" Table="public.transport_type_codes" Type="Constraint" />
+      <Exclude Name="addresses_transport_area_id_fkey" Table="public.addresses" Type="Constraint" />
+      <Exclude Name="branches_claim_warehouse_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_corporate_entity_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_custown_warehouse_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_cutting_group_costing_defaults_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_default_buyer_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_default_cert_printer_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_finished_warehouse_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_inbound_allocation_manager_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_offcut_warehouse_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_quarantine_warehouse_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_scrap_warehouse_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_stock_warehouse_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="branches_wip_warehouse_id_fkey" Table="public.branches" Type="Constraint" />
+      <Exclude Name="company_sub_addresses_consignment_warehouse_id_fkey" Table="public.company_sub_addresses" Type="Constraint" />
+      <Exclude Name="company_sub_addresses_territory_id_fkey" Table="public.company_sub_addresses" Type="Constraint" />
+      <Exclude Name="company_sub_addresses_default_commercial_terms_id_fkey" Table="public.company_sub_addresses" Type="Constraint" />
+      <Exclude Name="idxfti" Table="public.contacts" Type="Column" />
+      <Exclude Name="contacts_personnel_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_relationship_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="contacts_territory_id_fkey" Table="public.contacts" Type="Constraint" />
+      <Exclude Name="transport_type_codes_purchase_group_id_fkey" Table="public.transport_type_codes" Type="Constraint" />
+      <Exclude Name="transport_type_codes_sales_service_product_id_fkey" Table="public.transport_type_codes" Type="Constraint" />
+    </UpdateFromDatabaseExcludes>
+  </ModelSettings>
+</EntityDeveloper>

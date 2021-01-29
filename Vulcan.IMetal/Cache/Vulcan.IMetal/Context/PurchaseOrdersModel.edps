@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDeveloper Version="6.1.333.0">
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" AppConnectionStringName="LiveEmetalDataContextConnectionString" ConnectionStringInAppConfig="True" RegenareteConnectionStringInAppConfig="True" TargetFramework="Net45" DetectTPTInheritance="False">
+    <Generation>
+      <GeneratedFiles>
+        <File Name="PurchaseOrdersModel.PurchaseOrdersContext.cs" />
+        <File Name="PurchaseOrdersModel.InboundAllocation.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.InboundAllocation.Generated.cs" />
+        <File Name="PurchaseOrdersModel.StockGrade.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.StockGrade.Generated.cs" />
+        <File Name="PurchaseOrdersModel.Company.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.Company.Generated.cs" />
+        <File Name="PurchaseOrdersModel.ProductControl.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.ProductControl.Generated.cs" />
+        <File Name="PurchaseOrdersModel.PartNumberSpecification.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.PartNumberSpecification.Generated.cs" />
+        <File Name="PurchaseOrdersModel.PurchaseOrderHeader.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.PurchaseOrderHeader.Generated.cs" />
+        <File Name="PurchaseOrdersModel.ProductCategory.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.ProductCategory.Generated.cs" />
+        <File Name="PurchaseOrdersModel.StockDimensionType.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.StockDimensionType.Generated.cs" />
+        <File Name="PurchaseOrdersModel.UnitsOfMeasure.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.UnitsOfMeasure.Generated.cs" />
+        <File Name="PurchaseOrdersModel.StockCast.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.StockCast.Generated.cs" />
+        <File Name="PurchaseOrdersModel.Warehouse.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.Warehouse.Generated.cs" />
+        <File Name="PurchaseOrdersModel.PurchaseOrderItem.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.PurchaseOrderItem.Generated.cs" />
+        <File Name="PurchaseOrdersModel.StockAnalysisCode.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.StockAnalysisCode.Generated.cs" />
+        <File Name="PurchaseOrdersModel.Product.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.Product.Generated.cs" />
+        <File Name="PurchaseOrdersModel.Mill.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.Mill.Generated.cs" />
+        <File Name="PurchaseOrdersModel.PurchaseStatusCode.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.PurchaseStatusCode.Generated.cs" />
+        <File Name="PurchaseOrdersModel.PurchaseCategoryCode.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.PurchaseCategoryCode.Generated.cs" />
+        <File Name="PurchaseOrdersModel.DimensionValue.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.DimensionValue.Generated.cs" />
+        <File Name="PurchaseOrdersModel.PurchaseOrderTotal.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.PurchaseOrderTotal.Generated.cs" />
+        <File Name="PurchaseOrdersModel.Address.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.Address.Generated.cs" />
+        <File Name="PurchaseOrdersModel.CompanySubAddress.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.CompanySubAddress.Generated.cs" />
+        <File Name="PurchaseOrdersModel.CountryCode.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.CountryCode.Generated.cs" />
+        <File Name="PurchaseOrdersModel.Buyer.cs" OverwriteMode="None" />
+        <File Name="PurchaseOrdersModel.Buyer.Generated.cs" />
+      </GeneratedFiles>
+    </Generation>
+    <DatabaseFirstNamingRules>
+      <EntitySet PluralizationName="Singularize" />
+      <Class UseSchemaAsPrefix="False" PluralizeCollectionNavigationPropertyName="False" AddConstraintColumnsToNavigationPropertyName="False" RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
+      <Property RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
+    </DatabaseFirstNamingRules>
+    <ModelFirst StorageSynchronizationEnabled="False" TargetSchema="public">
+      <TargetServer Server="PostgreSQL" ServerVersion="9.2" />
+      <ModelFirstNamingRules>
+        <Table RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Pluralize" />
+        <Column RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+      </ModelFirstNamingRules>
+    </ModelFirst>
+    <Diagrams>
+      <Diagram Name="Diagram1" DefaultDiagram="True" />
+    </Diagrams>
+    <Templates>
+      <Template Name="LinqConnect" Description="Use this template to generate a strongly-typed DataContext class and persistence-aware classes." Enabled="True" PredefinedTemplateName="LinqConnect C#">
+        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.1.333.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <ValidationFramework>None</ValidationFramework>
+        </ed:Property>
+        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.1.333.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <ValidationErrorMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </ed:Property>
+        <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="ModelNameAsFilesPrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.1.333.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.1.333.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="GeneratePartialClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="ImplementCloneable" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="UseCompiledQueryCache" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="GenerateDummyComments" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+      </Template>
+    </Templates>
+    <AttributeAssemblies />
+    <UpdateFromDatabaseExcludes>
+      <Exclude Name="id" Table="public.addresses" Type="Column" />
+      <Exclude Name="version" Table="public.addresses" Type="Column" />
+      <Exclude Name="cdate" Table="public.addresses" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.addresses" Type="Column" />
+      <Exclude Name="mdate" Table="public.addresses" Type="Column" />
+      <Exclude Name="muser_id" Table="public.addresses" Type="Column" />
+      <Exclude Name="status" Table="public.addresses" Type="Column" />
+      <Exclude Name="address" Table="public.addresses" Type="Column" />
+      <Exclude Name="town" Table="public.addresses" Type="Column" />
+      <Exclude Name="county" Table="public.addresses" Type="Column" />
+      <Exclude Name="postcode" Table="public.addresses" Type="Column" />
+      <Exclude Name="country_id" Table="public.addresses" Type="Column" />
+      <Exclude Name="transport_area_id" Table="public.addresses" Type="Column" />
+      <Exclude Name="addresses_pkey" Table="public.addresses" Type="Constraint" />
+      <Exclude Name="addresses_country_id_fkey" Table="public.addresses" Type="Constraint" />
+      <Exclude Name="addresses_transport_area_id_fkey" Table="public.addresses" Type="Constraint" />
+      <Exclude Name="id" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="version" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="cdate" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="mdate" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="muser_id" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="status" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="purchase_item_id" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="transfer_item_id" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="sales_item_id" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="reserve_only" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="expiry_date" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="pieces" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="weight" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="quantity" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="comments" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="allocation_type" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="product_level_allocation_id" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="cuts" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="production_item_id" Table="public.inbound_allocations" Type="Column" />
+      <Exclude Name="inbound_allocations_pkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="inbound_allocations_product_level_allocation_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="inbound_allocations_purchase_item_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="inbound_allocations_sales_item_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="inbound_allocations_transfer_item_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="inbound_allocations_production_item_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="version" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="cdate" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="mdate" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="muser_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="status" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="customer_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="number" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="name" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="description" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="product_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="dimensions_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="entry_quantity" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="entry_quantity_unit_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="standard_pieces" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="standard_quantity" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="standard_weight" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="override_allowed" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="consumption_product_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="consumption_dimensions_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="production_factor" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="expected_scrap" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="works_notes" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="production_notes" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="invoice_notes" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="part_notes" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="sales_group_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value1" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value2" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value3" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value4" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value5" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="show_prices" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="use_minimum_grade" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="end_use_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="document_number" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="revision_number" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="drawing_number" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="approved_by_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="approval_date" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="last_used_date" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="part_status" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="customer_order_number" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="description_formula" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="composite_key" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="outside_diameter" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="outside_diameter_minimum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="outside_diameter_maximum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="pack_height" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="pack_height_minimum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="pack_height_maximum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="pack_weight" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="pack_weight_minimum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="pack_weight_maximum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="inside_diameter" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="inside_diameter_minimum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="inside_diameter_maximum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value6" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value7" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value8" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value9" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="specification_value10" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="process_plan_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="pack_count_minimum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="pack_count_maximum" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="part_company_type" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="internal_notes" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="goods_inwards_notes" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="purchase_group_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="adjustment_price" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="yield_percentage" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="price_code" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="mechanical_cert" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="show_country_of_material_origin" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="show_country_of_primary_processing" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="show_country_of_final_processing" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="acknowledgement_notes" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="despatch_notes" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="invoice_packing" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="part_process_type_id" Table="public.part_number_specifications" Type="Column" />
+      <Exclude Name="part_number_specifications_pkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_approved_by_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_consumption_dimensions_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_consumption_product_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_customer_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_dimensions_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_end_use_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_entry_quantity_unit_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_part_process_type_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_process_plan_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_product_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_purchase_group_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_sales_group_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="version" Table="public.product_categories" Type="Column" />
+      <Exclude Name="cdate" Table="public.product_categories" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mdate" Table="public.product_categories" Type="Column" />
+      <Exclude Name="muser_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="status" Table="public.product_categories" Type="Column" />
+      <Exclude Name="category" Table="public.product_categories" Type="Column" />
+      <Exclude Name="base" Table="public.product_categories" Type="Column" />
+      <Exclude Name="form" Table="public.product_categories" Type="Column" />
+      <Exclude Name="product_control_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="sequence_number" Table="public.product_categories" Type="Column" />
+      <Exclude Name="description" Table="public.product_categories" Type="Column" />
+      <Exclude Name="volume_density" Table="public.product_categories" Type="Column" />
+      <Exclude Name="stock_type_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="analysis1_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="analysis2_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="vat_type1_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="vat_type2_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="vat_type3_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="vat_type4_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dynamic_density" Table="public.product_categories" Type="Column" />
+      <Exclude Name="average_cost" Table="public.product_categories" Type="Column" />
+      <Exclude Name="quantity_entry_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="manual_guide_cost" Table="public.product_categories" Type="Column" />
+      <Exclude Name="sales_nominal_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="sales_cost_centre_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="cost_nominal_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="cost_cost_centre_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="stock_nominal_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="stock_cost_centre_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="price_unit_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="buy_unit_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="cost_unit_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="sales_quantity_unit_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="buying_quantity_unit_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="price_decimals" Table="public.product_categories" Type="Column" />
+      <Exclude Name="pieces_label" Table="public.product_categories" Type="Column" />
+      <Exclude Name="pieces_plural_label" Table="public.product_categories" Type="Column" />
+      <Exclude Name="default_stock_status_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="source_category_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification1_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification1" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification2_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification2" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification3_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification3" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification4_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification4" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification5_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification5" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim1_grain_flow" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim1_positive_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim1_negative_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim1_decimals" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim1_use_in_description" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim1_use_dim_name" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim2_grain_flow" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim2_positive_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim2_negative_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim2_decimals" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim2_use_in_description" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim2_use_dim_name" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim3_grain_flow" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim3_positive_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim3_negative_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim3_decimals" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim3_use_in_description" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim3_use_dim_name" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim4_grain_flow" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim4_positive_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim4_negative_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim4_decimals" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim4_use_in_description" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim4_use_dim_name" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim5_grain_flow" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim5_positive_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim5_negative_tolerance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim5_decimals" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim5_use_in_description" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim5_use_dim_name" Table="public.product_categories" Type="Column" />
+      <Exclude Name="sales_costing_type_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="enquiry_cost_shown_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification_template_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="sales_group_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="charge_basis" Table="public.product_categories" Type="Column" />
+      <Exclude Name="minimum_margin" Table="public.product_categories" Type="Column" />
+      <Exclude Name="despatch_allocation_variance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="category_level_taxes" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification1" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification2" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification3" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification4" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification5" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification6_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification6" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification6" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification7_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification7" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification7" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification8_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification8" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification8" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification9_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification9" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification9" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification10_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_specification10" Table="public.product_categories" Type="Column" />
+      <Exclude Name="print_specification10" Table="public.product_categories" Type="Column" />
+      <Exclude Name="purchase_group_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim1_print" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim2_print" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim3_print" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim4_print" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim5_print" Table="public.product_categories" Type="Column" />
+      <Exclude Name="require_certification" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification1" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification2" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification3" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification4" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification5" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification6" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification7" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification8" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification9" Table="public.product_categories" Type="Column" />
+      <Exclude Name="mandatory_specification10" Table="public.product_categories" Type="Column" />
+      <Exclude Name="ledger_segment_code" Table="public.product_categories" Type="Column" />
+      <Exclude Name="production_quantity_entry_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="specification_check" Table="public.product_categories" Type="Column" />
+      <Exclude Name="auto_allocate" Table="public.product_categories" Type="Column" />
+      <Exclude Name="production_mixed_casts_allowed" Table="public.product_categories" Type="Column" />
+      <Exclude Name="flag_stock_items_with_notes" Table="public.product_categories" Type="Column" />
+      <Exclude Name="non_traceable" Table="public.product_categories" Type="Column" />
+      <Exclude Name="order_quantity_entry_id" Table="public.product_categories" Type="Column" />
+      <Exclude Name="validate_dynamic_density" Table="public.product_categories" Type="Column" />
+      <Exclude Name="invoice_weight_updates_item_balance" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim1_kerf" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim2_kerf" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim3_kerf" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim4_kerf" Table="public.product_categories" Type="Column" />
+      <Exclude Name="dim5_kerf" Table="public.product_categories" Type="Column" />
+      <Exclude Name="product_categories_pkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_analysis1_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_analysis2_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_buy_unit_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_buying_quantity_unit_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_cost_unit_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_default_stock_status_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_enquiry_cost_shown_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_order_quantity_entry_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_price_unit_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_product_control_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_purchase_group_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_quantity_entry_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_sales_costing_type_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_sales_group_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_sales_quantity_unit_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_source_category_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification10_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification1_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification2_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification3_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification4_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification5_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification6_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification7_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification8_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification9_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification_template_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_stock_type_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_vat_type1_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_vat_type2_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_vat_type3_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_vat_type4_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="production_quantity_entry_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="version" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="cdate" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="mdate" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="muser_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="status" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="mill_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="cast_number" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="other_reference" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="supplier_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="category_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="product_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="grade_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="cert_number" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="delivery_reference" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="approved_by_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="approval_date" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="comments" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="image_index" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="country_of_material_origin_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="country_of_primary_processing_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="country_of_final_processing_id" Table="public.stock_casts" Type="Column" />
+      <Exclude Name="stock_casts_pkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_approved_by_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_category_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_country_of_final_processing_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_country_of_material_origin_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_country_of_primary_processing_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_grade_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_mill_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_product_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="stock_casts_supplier_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="id" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="version" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="cdate" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="mdate" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="muser_id" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="status" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="code" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="type_id" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="scale" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="modifier" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="description" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="short_description" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="charge_quantity_decimal_places" Table="public.units_of_measure" Type="Column" />
+      <Exclude Name="units_of_measure_pkey" Table="public.units_of_measure" Type="Constraint" />
+      <Exclude Name="units_of_measure_type_id_fkey" Table="public.units_of_measure" Type="Constraint" />
+      <Exclude Name="id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="version" Table="public.warehouses" Type="Column" />
+      <Exclude Name="cdate" Table="public.warehouses" Type="Column" />
+      <Exclude Name="cuser_id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="mdate" Table="public.warehouses" Type="Column" />
+      <Exclude Name="muser_id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="status" Table="public.warehouses" Type="Column" />
+      <Exclude Name="name" Table="public.warehouses" Type="Column" />
+      <Exclude Name="telephone" Table="public.warehouses" Type="Column" />
+      <Exclude Name="fax" Table="public.warehouses" Type="Column" />
+      <Exclude Name="email" Table="public.warehouses" Type="Column" />
+      <Exclude Name="website" Table="public.warehouses" Type="Column" />
+      <Exclude Name="mandatory_location" Table="public.warehouses" Type="Column" />
+      <Exclude Name="code" Table="public.warehouses" Type="Column" />
+      <Exclude Name="short_name" Table="public.warehouses" Type="Column" />
+      <Exclude Name="warehouse_type_id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="branch_id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="default_stock_status_id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="address_id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="bay_start_character" Table="public.warehouses" Type="Column" />
+      <Exclude Name="bay_length" Table="public.warehouses" Type="Column" />
+      <Exclude Name="rack_start_character" Table="public.warehouses" Type="Column" />
+      <Exclude Name="rack_length" Table="public.warehouses" Type="Column" />
+      <Exclude Name="bin_start_character" Table="public.warehouses" Type="Column" />
+      <Exclude Name="bin_length" Table="public.warehouses" Type="Column" />
+      <Exclude Name="send_master_yard_order" Table="public.warehouses" Type="Column" />
+      <Exclude Name="sub_address_id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="production_warehouse" Table="public.warehouses" Type="Column" />
+      <Exclude Name="ledger_segment_code" Table="public.warehouses" Type="Column" />
+      <Exclude Name="restricted_visibility" Table="public.warehouses" Type="Column" />
+      <Exclude Name="default_cert_printer_id" Table="public.warehouses" Type="Column" />
+      <Exclude Name="warehouses_pkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_address_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_branch_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_default_cert_printer_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_default_stock_status_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_sub_address_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_warehouse_type_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="addresses_transport_area_id_fkey" Table="public.addresses" Type="Constraint" />
+      <Exclude Name="companies_analysis_code_1_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_analysis_code_2_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_analysis_code_3_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_analysis_code_4_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_branch_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_certifications_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_company_credit_rules_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_company_totals_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_contact_frequency_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_crm_account_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_currency_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_default_contact_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_default_nominal_code_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_personnel_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_relationship_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_sales_group_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_status_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_terms_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_territory_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_type_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_vat_type1_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_vat_type2_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_vat_type3_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_vat_type4_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="companies_default_order_classification_id_fkey" Table="public.companies" Type="Constraint" />
+      <Exclude Name="company_sub_addresses_consignment_branch_id_fkey" Table="public.company_sub_addresses" Type="Constraint" />
+      <Exclude Name="company_sub_addresses_territory_id_fkey" Table="public.company_sub_addresses" Type="Constraint" />
+      <Exclude Name="company_sub_addresses_default_commercial_terms_id_fkey" Table="public.company_sub_addresses" Type="Constraint" />
+      <Exclude Name="inbound_allocations_product_level_allocation_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="inbound_allocations_sales_item_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="inbound_allocations_transfer_item_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="inbound_allocations_production_item_id_fkey" Table="public.inbound_allocations" Type="Constraint" />
+      <Exclude Name="part_number_specifications_approved_by_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_end_use_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_part_process_type_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_process_plan_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_purchase_group_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="part_number_specifications_sales_group_id_fkey" Table="public.part_number_specifications" Type="Constraint" />
+      <Exclude Name="product_categories_default_stock_status_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_enquiry_cost_shown_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_order_quantity_entry_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_purchase_group_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_quantity_entry_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_sales_costing_type_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_sales_group_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification10_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification1_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification2_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification3_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification4_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification5_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification6_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification7_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification8_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification9_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_specification_template_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_stock_type_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_vat_type1_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_vat_type2_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_vat_type3_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_categories_vat_type4_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="production_quantity_entry_id_fkey" Table="public.product_categories" Type="Constraint" />
+      <Exclude Name="product_controls_specification10_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification1_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification2_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification3_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification4_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification5_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification6_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification7_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification8_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="product_controls_specification9_id_fkey" Table="public.product_controls" Type="Constraint" />
+      <Exclude Name="products_commodity_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_cutting_group_cost_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_enquiry_cost_shown_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_identifying_mark_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_purchase_group_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_sales_costing_type_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_sales_group_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_vat_type1_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_vat_type2_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_vat_type3_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="products_vat_type4_id_fkey" Table="public.products" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_branch_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_certifications_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_contact1_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_contact2_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_deletion_reason_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_delivery_branch_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_purchase_entry_totals_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_purchase_order_totals_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_terms_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_transport_purchase_group_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_transport_purchase_order_branch_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_transport_type_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_headers_type_id_fkey" Table="public.purchase_order_headers" Type="Constraint" />
+      <Exclude Name="purchase_order_items_btb_branch_id_fkey" Table="public.purchase_order_items" Type="Constraint" />
+      <Exclude Name="purchase_order_items_product_level_allocation_id_fkey" Table="public.purchase_order_items" Type="Constraint" />
+      <Exclude Name="purchase_order_items_purchase_group_id_fkey" Table="public.purchase_order_items" Type="Constraint" />
+      <Exclude Name="purchase_order_items_transfer_from_branch_id_fkey" Table="public.purchase_order_items" Type="Constraint" />
+      <Exclude Name="purchase_order_items_working_specification_id_fkey" Table="public.purchase_order_items" Type="Constraint" />
+      <Exclude Name="stock_casts_approved_by_id_fkey" Table="public.stock_casts" Type="Constraint" />
+      <Exclude Name="units_of_measure_type_id_fkey" Table="public.units_of_measure" Type="Constraint" />
+      <Exclude Name="warehouses_branch_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_default_cert_printer_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_default_stock_status_id_fkey" Table="public.warehouses" Type="Constraint" />
+      <Exclude Name="warehouses_warehouse_type_id_fkey" Table="public.warehouses" Type="Constraint" />
+    </UpdateFromDatabaseExcludes>
+  </ModelSettings>
+</EntityDeveloper>

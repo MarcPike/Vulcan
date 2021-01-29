@@ -1,0 +1,28 @@
+﻿/{application}/{userId}
+
+string application, string userId,
+
+
+            var statusCode = CheckToken(application, userId);
+            try
+            {
+                ThrowExceptionForBadToken(statusCode);
+
+
+            var statusCode = CheckToken(model.Application, model.UserId);
+            try
+            {
+                ThrowExceptionForBadToken(statusCode);
+
+
+return JsonResultWithStatusCode(result, statusCode);
+
+
+        public string Application { get; set; }
+        public string UserId { get; set; }
+
+
+		Application = application;
+        UserId = userId;
+
+

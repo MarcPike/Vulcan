@@ -1,0 +1,8 @@
+﻿
+
+
+
+
+
+Scaffolding DbContext
+PM> Scaffold-DbContext "Server=S-US-DW01;Database=ODS;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models

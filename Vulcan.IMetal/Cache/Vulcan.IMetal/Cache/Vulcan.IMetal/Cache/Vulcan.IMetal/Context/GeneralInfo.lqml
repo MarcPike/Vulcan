@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="live_emetal" EntityNamespace="Vulcan.IMetal.Context" ContextNamespace="Vulcan.IMetal.Context" Class="GeneralInfoContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="89f9b89b-691d-456a-a524-5096330415c1" Provider="Devart.Data.PostgreSql.Linq.Provider.PgSqlDataProvider, Devart.Data.PostgreSql.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="User Id=reporter;Host=s-us-imetalus;Port=11061;Database=live_emetal;Initial Schema=public" Provider="Devart.Data.PostgreSql" />
+  <Table Name="public.country_codes" Member="CountryCode">
+    <Type Name="CountryCode" ed:Guid="6d53f1ba-f0ae-4a19-8e1a-d17e0c7e9349">
+      <Column Name="id" Member="Id" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="60d5eaa5-4cbd-44f7-99e6-616201b12e29" />
+      <Column Name="&quot;version&quot;" Member="Version" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="629ec6df-1a26-437b-a4b6-aadb99d8aa94" />
+      <Column Name="cdate" Member="Cdate" Type="System.DateTime" DbType="TIMESTAMPTZ" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3bf2db06-c4eb-487d-b724-a95459a5a7be" />
+      <Column Name="mdate" Member="Mdate" Type="System.DateTime" DbType="TIMESTAMPTZ" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="09a20958-a5cc-47ff-ae28-56e83d78b89b" />
+      <Column Name="cuser_id" Member="CuserId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d6e9d7d4-f0e1-40ab-89a4-fa7d285cdf67" />
+      <Column Name="muser_id" Member="MuserId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="ba0e5d01-de28-4f3a-9779-7efa7aaf3c6a" />
+      <Column Name="status" Member="Status" Type="System.String" DbType="CHAR(1)" CanBeNull="true" UpdateCheck="Never" FixedLength="true" MaxLength="1" Unicode="true" ed:ValidateMaxLength="1" ed:ValidateRequired="false" ed:Guid="8e5c9f2a-6703-421b-b524-77a424d5fcef" />
+      <Column Name="code" Member="Code" Type="System.String" DbType="VARCHAR(3)" CanBeNull="true" UpdateCheck="Never" MaxLength="3" Unicode="true" ed:ValidateMaxLength="3" ed:ValidateRequired="false" ed:Guid="7799a69d-dd15-4e15-b87f-1010299012ae" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="f1142279-9617-42b6-9dd9-5eef4831656c" />
+    </Type>
+  </Table>
+  <Table Name="public.sales_groups" Member="SalesGroup">
+    <Type Name="SalesGroup" ed:Guid="3e4e0560-2e1e-4197-bb55-917f52849062">
+      <Column Name="id" Member="Id" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="c949ab21-068b-4760-b2ad-91bffba722d0" />
+      <Column Name="&quot;version&quot;" Member="Version" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="aad28c38-bb1f-493d-b9be-0d1714572355" />
+      <Column Name="cdate" Member="Cdate" Type="System.DateTime" DbType="TIMESTAMPTZ" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="7a607c01-1b37-4f88-b79e-f2260534d9cc" />
+      <Column Name="mdate" Member="Mdate" Type="System.DateTime" DbType="TIMESTAMPTZ" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="24c215be-f5fe-4201-b723-2eb606fac546" />
+      <Column Name="cuser_id" Member="CuserId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e12cc51d-485c-442b-a5ca-66c63a9a7fb8" />
+      <Column Name="muser_id" Member="MuserId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a701ab82-b4c3-4621-b194-194913d430c9" />
+      <Column Name="status" Member="Status" Type="System.String" DbType="CHAR(1)" CanBeNull="true" UpdateCheck="Never" FixedLength="true" MaxLength="1" Unicode="true" ed:ValidateMaxLength="1" ed:ValidateRequired="false" ed:Guid="71a69898-7995-46b6-8a2e-d3d4b1d4a966" />
+      <Column Name="code" Member="Code" Type="System.String" DbType="VARCHAR(3)" CanBeNull="true" UpdateCheck="Never" MaxLength="3" Unicode="true" ed:ValidateMaxLength="3" ed:ValidateRequired="false" ed:Guid="1bb884ec-17c2-41af-8c82-ff57bde0e8a3" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="VARCHAR(255)" CanBeNull="true" UpdateCheck="Never" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="218d00f1-2119-4531-b285-abf2b74d3360" />
+      <Column Name="sales_group_type_id" Member="SalesGroupTypeId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d920c36b-2789-42aa-a9d9-cddce2cf1ba1" />
+      <Column Name="external_code" Member="ExternalCode" Type="System.String" DbType="VARCHAR(30)" CanBeNull="true" UpdateCheck="Never" MaxLength="30" Unicode="true" ed:ValidateMaxLength="30" ed:ValidateRequired="false" ed:Guid="0964d5d4-ec27-4bac-a4aa-6c2cfadabce0" />
+    </Type>
+  </Table>
+</Database>
